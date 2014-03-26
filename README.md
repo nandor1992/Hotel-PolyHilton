@@ -29,11 +29,11 @@ https://rionscode.wordpress.com/2013/04/19/integrating-and-using-github-in-visua
 
 Roles
 -----
-Iza Birs - Database
-Tudor Bala - Programmer
-Ghisa Ioachim - Engineer Responsible with Quality Control
-Moldovan Alexandru - Programmer
-Verba Nandor - Guest Manager
+Iza Birs - Database - iza.birs@yahoo.com
+Tudor Bala - Programmer - beny_tudor@yahoo.ca
+Ghisa Ioachim - Engineer Responsible with Quality Control - ghisa.ioachim@yahoo.com
+Moldovan Alexandru - Programmer - m_alexandru92@yahoo.com
+Verba Nandor - Guest Manager - nandor1992@yahoo.com
 
 
 
