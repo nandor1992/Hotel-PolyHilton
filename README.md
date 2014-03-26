@@ -1,3 +1,22 @@
+Update - 26.03.2014 - Tasks and Dead-lines
+==========================================
+
+Tasks
+-----
+Ghisa - Form 1,4
+Moldovan - Form 3,5,7,8
+Tudor - Form2
+Iza - Detailed Database Diagram and Description (WPF basics)
+Nandor - Source Code Structure, Documentation
+
+Important Dates
+---------------
+Connection to GitHub through Visual Studio ( you have the tutorial below)  - 28.03.2014
+Visual Interfaces Design - 02.04.2014
+Group Meeting - 09.04.2014 16:00
+
+Updates: https://www.google.com/calendar/embed?src=9f84t1tr6bf1qsdgpmoql7vfn8%40group.calendar.google.com&ctz=Europe/Bucharest
+
 General Guidelines
 =================
 Groups:Admin, Member, Worker (Cleaning and Reception)
@@ -17,6 +36,7 @@ Moldovan Alexandru - Programmer
 Verba Nandor - Guest Manager
 
 
+
 Project Interfaces Description and Structure
 ===========================================
 
@@ -24,17 +44,18 @@ Main Page - Form1
 -----------------
 -Supports general information about Hotel
 -Login page for Users, Employes and Admins
+-Second Tab Create user
 -Can go to Form2,Form3,Form4,Form5
 
 Administrator - Form2
 ---------------------
 -Has tabs for the following:
-*Employes: Modification, Addition, Deletion, General Review,Protmote to admin
-*Prices and Discounts: Can add prices modify/delete add discounts
-*Cleaning: Gives the manager the opportunity to Distribuite work for the Cleaning
-*Room Info:Shows the information of all the rooms and allows for the modification of the room status
-*Customer Page:Displayes Information about Customers and their Reservations
-*Statistics: Displayes Interesting statistics about the Hotel
+1.Employes: Modification, Addition, Deletion, General Review,Protmote to admin
+2.Prices and Discounts: Can add prices modify/delete add discounts
+3.Cleaning: Gives the manager the opportunity to Distribuite work for the Cleaning
+4.Room Info:Shows the information of all the rooms and allows for the modification of the room status
+5.Customer Page:Displayes Information about Customers and their Reservations
+6.Statistics: Displayes Interesting statistics about the Hotel
 
 Cleaning - Form3
 ----------------
