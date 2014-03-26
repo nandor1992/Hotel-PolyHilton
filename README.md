@@ -2,8 +2,19 @@ General Guidelines
 =================
 Groups:Admin, Member, Worker (Cleaning and Reception)
 Visual Studio versions: All good if they work with git-hub, no compatibility issues, it synchronizes the root files
+Button,Tab names should be named as follow: [Form name]_[Button or other name] - It can't have the Button1, Button2 names 
 
+Github Install:
+---------------
+https://rionscode.wordpress.com/2013/04/19/integrating-and-using-github-in-visual-studio-2012/comment-page-1/
 
+Roles
+-----
+Iza Birs - Database
+Tudor Bala - Programmer
+Ghisa Ioachim - Engineer Responsible with Quality Control
+Moldovan Alexandru - Programmer
+Verba Nandor - Guest Manager
 
 
 Project Interfaces Description and Structure
@@ -37,17 +48,20 @@ Reception - Form4
 Guest Page - Form5
 ------------------
 -Shows the Rooms that the person has Reserver in the past and any current reservations, nad gives the possibility to delete these reservations if they are not less then 48 hours due,else it gives out hte managers phone number
--Can go to Reservations Form6
+-Can go to Reservations Form6 or Form7
 
-Reservation - Form6
--------------------
--Has two tabs, that give different views o the hotel
-*Shows the floor plan of the Hotel and the availability of the rooms, and allows for reservations (opens Form7 for reservation)
-*Shows teh available rooms categorized by type, price and capacity, has a built in search(opens Form7 for serervation)
+Reservation Plan - Form6
+------------------------
+-Shows the floor plan of the Hotel and the availability of the rooms, and allows for reservations (opens Form8 for reservation)
 
-Booking - Form7
+
+Reservation List - Form7
+------------------------
+-Shows the available rooms categorized by type, price and capacity, has a built in search(opens Form8 for serervation)
+
+Booking - Form8
 ---------------
-*Requires the user to insert information that is needed for the reservation and and checks if the room is still availabe before saving
+-Requires the user to insert information that is needed for the reservation and and checks if the room is still availabe before saving
 
 
 
