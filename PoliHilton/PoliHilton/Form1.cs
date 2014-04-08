@@ -26,5 +26,10 @@ namespace PoliHilton
         {
 
         }
+
+        private void form1_login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
