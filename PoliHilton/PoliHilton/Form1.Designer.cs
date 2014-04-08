@@ -72,7 +72,7 @@
             // form1_button_signin
             // 
             this.form1_button_signin.AutoSize = true;
-            this.form1_button_signin.Location = new System.Drawing.Point(213, 48);
+            this.form1_button_signin.Location = new System.Drawing.Point(218, 48);
             this.form1_button_signin.Name = "form1_button_signin";
             this.form1_button_signin.Size = new System.Drawing.Size(100, 27);
             this.form1_button_signin.TabIndex = 4;
