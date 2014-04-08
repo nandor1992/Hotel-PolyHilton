@@ -38,29 +38,29 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.form4_tabcontrol = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.form4_tabpage_createrezervations = new System.Windows.Forms.TabPage();
             this.form4_label_rezervationprice = new System.Windows.Forms.Label();
-            this.form1_label_username = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.form4_button_createuser = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.form1_label_password = new System.Windows.Forms.Label();
-            this.form4_label_lastname = new System.Windows.Forms.Label();
-            this.form4_label_firstname = new System.Windows.Forms.Label();
-            this.form4_label_usertypeid = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.form4_tabpage_createuser = new System.Windows.Forms.TabPage();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.form4_button_showrezervations = new System.Windows.Forms.Button();
-            this.form4_dataviewgrid = new System.Windows.Forms.DataGridView();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.form4_label_usertypeid = new System.Windows.Forms.Label();
+            this.form4_label_firstname = new System.Windows.Forms.Label();
+            this.form4_label_lastname = new System.Windows.Forms.Label();
+            this.form1_label_password = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.form4_button_createuser = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.form1_label_username = new System.Windows.Forms.Label();
+            this.form4_tabpage_deleterezervations = new System.Windows.Forms.TabPage();
             this.form4_button_deleterezervation = new System.Windows.Forms.Button();
+            this.form4_dataviewgrid = new System.Windows.Forms.DataGridView();
+            this.form4_button_showrezervations = new System.Windows.Forms.Button();
             this.form4_tabcontrol.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.form4_tabpage_createrezervations.SuspendLayout();
+            this.form4_tabpage_createuser.SuspendLayout();
+            this.form4_tabpage_deleterezervations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form4_dataviewgrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,63 +139,35 @@
             // 
             // form4_tabcontrol
             // 
-            this.form4_tabcontrol.Controls.Add(this.tabPage1);
-            this.form4_tabcontrol.Controls.Add(this.tabPage2);
-            this.form4_tabcontrol.Controls.Add(this.tabPage3);
+            this.form4_tabcontrol.Controls.Add(this.form4_tabpage_createrezervations);
+            this.form4_tabcontrol.Controls.Add(this.form4_tabpage_createuser);
+            this.form4_tabcontrol.Controls.Add(this.form4_tabpage_deleterezervations);
             this.form4_tabcontrol.Location = new System.Drawing.Point(26, 12);
             this.form4_tabcontrol.Name = "form4_tabcontrol";
             this.form4_tabcontrol.SelectedIndex = 0;
             this.form4_tabcontrol.Size = new System.Drawing.Size(488, 258);
             this.form4_tabcontrol.TabIndex = 12;
             // 
-            // tabPage1
+            // form4_tabpage_createrezervations
             // 
-            this.tabPage1.Controls.Add(this.form4_label_rezervationprice);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.form4_label_userid);
-            this.tabPage1.Controls.Add(this.form4_button_createrezervation);
-            this.tabPage1.Controls.Add(this.form4_label_checkoutdate);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
-            this.tabPage1.Controls.Add(this.form4_label_checkindate);
-            this.tabPage1.Controls.Add(this.form4_label_roomid);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(480, 232);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.form4_label_usertypeid);
-            this.tabPage2.Controls.Add(this.form4_label_firstname);
-            this.tabPage2.Controls.Add(this.form4_label_lastname);
-            this.tabPage2.Controls.Add(this.form1_label_password);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.form4_button_createuser);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.form1_label_username);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(480, 232);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(106, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 12;
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_rezervationprice);
+            this.form4_tabpage_createrezervations.Controls.Add(this.textBox3);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_userid);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_button_createrezervation);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_checkoutdate);
+            this.form4_tabpage_createrezervations.Controls.Add(this.dateTimePicker2);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_checkindate);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_roomid);
+            this.form4_tabpage_createrezervations.Controls.Add(this.dateTimePicker1);
+            this.form4_tabpage_createrezervations.Controls.Add(this.textBox1);
+            this.form4_tabpage_createrezervations.Controls.Add(this.textBox2);
+            this.form4_tabpage_createrezervations.Location = new System.Drawing.Point(4, 22);
+            this.form4_tabpage_createrezervations.Name = "form4_tabpage_createrezervations";
+            this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(3);
+            this.form4_tabpage_createrezervations.Size = new System.Drawing.Size(480, 232);
+            this.form4_tabpage_createrezervations.TabIndex = 0;
+            this.form4_tabpage_createrezervations.Text = "Create Rezervation";
+            this.form4_tabpage_createrezervations.UseVisualStyleBackColor = true;
             // 
             // form4_label_rezervationprice
             // 
@@ -206,21 +178,98 @@
             this.form4_label_rezervationprice.TabIndex = 13;
             this.form4_label_rezervationprice.Text = "Rezervation Price";
             // 
-            // form1_label_username
+            // textBox3
             // 
-            this.form1_label_username.AutoSize = true;
-            this.form1_label_username.Location = new System.Drawing.Point(28, 20);
-            this.form1_label_username.Name = "form1_label_username";
-            this.form1_label_username.Size = new System.Drawing.Size(55, 13);
-            this.form1_label_username.TabIndex = 3;
-            this.form1_label_username.Text = "Username";
+            this.textBox3.Location = new System.Drawing.Point(106, 152);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(200, 20);
+            this.textBox3.TabIndex = 12;
             // 
-            // textBox4
+            // form4_tabpage_createuser
             // 
-            this.textBox4.Location = new System.Drawing.Point(102, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.form4_tabpage_createuser.Controls.Add(this.textBox8);
+            this.form4_tabpage_createuser.Controls.Add(this.textBox7);
+            this.form4_tabpage_createuser.Controls.Add(this.textBox6);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_label_usertypeid);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_label_firstname);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_label_lastname);
+            this.form4_tabpage_createuser.Controls.Add(this.form1_label_password);
+            this.form4_tabpage_createuser.Controls.Add(this.textBox5);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_button_createuser);
+            this.form4_tabpage_createuser.Controls.Add(this.textBox4);
+            this.form4_tabpage_createuser.Controls.Add(this.form1_label_username);
+            this.form4_tabpage_createuser.Location = new System.Drawing.Point(4, 22);
+            this.form4_tabpage_createuser.Name = "form4_tabpage_createuser";
+            this.form4_tabpage_createuser.Padding = new System.Windows.Forms.Padding(3);
+            this.form4_tabpage_createuser.Size = new System.Drawing.Size(480, 232);
+            this.form4_tabpage_createuser.TabIndex = 1;
+            this.form4_tabpage_createuser.Text = "Create User";
+            this.form4_tabpage_createuser.UseVisualStyleBackColor = true;
+            this.form4_tabpage_createuser.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(102, 160);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 13;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(102, 124);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(102, 89);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 11;
+            // 
+            // form4_label_usertypeid
+            // 
+            this.form4_label_usertypeid.AutoSize = true;
+            this.form4_label_usertypeid.Location = new System.Drawing.Point(28, 92);
+            this.form4_label_usertypeid.Name = "form4_label_usertypeid";
+            this.form4_label_usertypeid.Size = new System.Drawing.Size(70, 13);
+            this.form4_label_usertypeid.TabIndex = 10;
+            this.form4_label_usertypeid.Text = "User Type ID";
+            // 
+            // form4_label_firstname
+            // 
+            this.form4_label_firstname.AutoSize = true;
+            this.form4_label_firstname.Location = new System.Drawing.Point(28, 127);
+            this.form4_label_firstname.Name = "form4_label_firstname";
+            this.form4_label_firstname.Size = new System.Drawing.Size(57, 13);
+            this.form4_label_firstname.TabIndex = 9;
+            this.form4_label_firstname.Text = "First Name";
+            // 
+            // form4_label_lastname
+            // 
+            this.form4_label_lastname.AutoSize = true;
+            this.form4_label_lastname.Location = new System.Drawing.Point(28, 163);
+            this.form4_label_lastname.Name = "form4_label_lastname";
+            this.form4_label_lastname.Size = new System.Drawing.Size(58, 13);
+            this.form4_label_lastname.TabIndex = 8;
+            this.form4_label_lastname.Text = "Last Name";
+            // 
+            // form1_label_password
+            // 
+            this.form1_label_password.AutoSize = true;
+            this.form1_label_password.Location = new System.Drawing.Point(28, 57);
+            this.form1_label_password.Name = "form1_label_password";
+            this.form1_label_password.Size = new System.Drawing.Size(53, 13);
+            this.form1_label_password.TabIndex = 7;
+            this.form1_label_password.Text = "Password";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(102, 54);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 6;
             // 
             // form4_button_createuser
             // 
@@ -232,100 +281,35 @@
             this.form4_button_createuser.Text = "Create User";
             this.form4_button_createuser.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // textBox4
             // 
-            this.textBox5.Location = new System.Drawing.Point(102, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.textBox4.Location = new System.Drawing.Point(102, 17);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 4;
             // 
-            // form1_label_password
+            // form1_label_username
             // 
-            this.form1_label_password.AutoSize = true;
-            this.form1_label_password.Location = new System.Drawing.Point(28, 57);
-            this.form1_label_password.Name = "form1_label_password";
-            this.form1_label_password.Size = new System.Drawing.Size(53, 13);
-            this.form1_label_password.TabIndex = 7;
-            this.form1_label_password.Text = "Password";
+            this.form1_label_username.AutoSize = true;
+            this.form1_label_username.Location = new System.Drawing.Point(28, 20);
+            this.form1_label_username.Name = "form1_label_username";
+            this.form1_label_username.Size = new System.Drawing.Size(55, 13);
+            this.form1_label_username.TabIndex = 3;
+            this.form1_label_username.Text = "Username";
             // 
-            // form4_label_lastname
+            // form4_tabpage_deleterezervations
             // 
-            this.form4_label_lastname.AutoSize = true;
-            this.form4_label_lastname.Location = new System.Drawing.Point(28, 163);
-            this.form4_label_lastname.Name = "form4_label_lastname";
-            this.form4_label_lastname.Size = new System.Drawing.Size(58, 13);
-            this.form4_label_lastname.TabIndex = 8;
-            this.form4_label_lastname.Text = "Last Name";
-            // 
-            // form4_label_firstname
-            // 
-            this.form4_label_firstname.AutoSize = true;
-            this.form4_label_firstname.Location = new System.Drawing.Point(28, 127);
-            this.form4_label_firstname.Name = "form4_label_firstname";
-            this.form4_label_firstname.Size = new System.Drawing.Size(57, 13);
-            this.form4_label_firstname.TabIndex = 9;
-            this.form4_label_firstname.Text = "First Name";
-            // 
-            // form4_label_usertypeid
-            // 
-            this.form4_label_usertypeid.AutoSize = true;
-            this.form4_label_usertypeid.Location = new System.Drawing.Point(28, 92);
-            this.form4_label_usertypeid.Name = "form4_label_usertypeid";
-            this.form4_label_usertypeid.Size = new System.Drawing.Size(70, 13);
-            this.form4_label_usertypeid.TabIndex = 10;
-            this.form4_label_usertypeid.Text = "User Type ID";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(102, 89);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(102, 124);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 12;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(102, 160);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 13;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.form4_button_deleterezervation);
-            this.tabPage3.Controls.Add(this.form4_dataviewgrid);
-            this.tabPage3.Controls.Add(this.form4_button_showrezervations);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(480, 232);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // form4_button_showrezervations
-            // 
-            this.form4_button_showrezervations.Location = new System.Drawing.Point(306, 23);
-            this.form4_button_showrezervations.Name = "form4_button_showrezervations";
-            this.form4_button_showrezervations.Size = new System.Drawing.Size(143, 23);
-            this.form4_button_showrezervations.TabIndex = 0;
-            this.form4_button_showrezervations.Text = "Show Rezervations";
-            this.form4_button_showrezervations.UseVisualStyleBackColor = true;
-            // 
-            // form4_dataviewgrid
-            // 
-            this.form4_dataviewgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form4_dataviewgrid.Location = new System.Drawing.Point(26, 23);
-            this.form4_dataviewgrid.Name = "form4_dataviewgrid";
-            this.form4_dataviewgrid.Size = new System.Drawing.Size(240, 150);
-            this.form4_dataviewgrid.TabIndex = 1;
+            this.form4_tabpage_deleterezervations.Controls.Add(this.form4_button_deleterezervation);
+            this.form4_tabpage_deleterezervations.Controls.Add(this.form4_dataviewgrid);
+            this.form4_tabpage_deleterezervations.Controls.Add(this.form4_button_showrezervations);
+            this.form4_tabpage_deleterezervations.Location = new System.Drawing.Point(4, 22);
+            this.form4_tabpage_deleterezervations.Name = "form4_tabpage_deleterezervations";
+            this.form4_tabpage_deleterezervations.Padding = new System.Windows.Forms.Padding(3);
+            this.form4_tabpage_deleterezervations.Size = new System.Drawing.Size(480, 232);
+            this.form4_tabpage_deleterezervations.TabIndex = 2;
+            this.form4_tabpage_deleterezervations.Text = "Delete Rezervation";
+            this.form4_tabpage_deleterezervations.UseVisualStyleBackColor = true;
+            this.form4_tabpage_deleterezervations.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // form4_button_deleterezervation
             // 
@@ -336,6 +320,23 @@
             this.form4_button_deleterezervation.Text = "Delete Rezervation";
             this.form4_button_deleterezervation.UseVisualStyleBackColor = true;
             // 
+            // form4_dataviewgrid
+            // 
+            this.form4_dataviewgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.form4_dataviewgrid.Location = new System.Drawing.Point(26, 23);
+            this.form4_dataviewgrid.Name = "form4_dataviewgrid";
+            this.form4_dataviewgrid.Size = new System.Drawing.Size(240, 150);
+            this.form4_dataviewgrid.TabIndex = 1;
+            // 
+            // form4_button_showrezervations
+            // 
+            this.form4_button_showrezervations.Location = new System.Drawing.Point(306, 23);
+            this.form4_button_showrezervations.Name = "form4_button_showrezervations";
+            this.form4_button_showrezervations.Size = new System.Drawing.Size(143, 23);
+            this.form4_button_showrezervations.TabIndex = 0;
+            this.form4_button_showrezervations.Text = "Show Rezervations";
+            this.form4_button_showrezervations.UseVisualStyleBackColor = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,11 +346,11 @@
             this.Name = "Form4";
             this.Text = "Form4";
             this.form4_tabcontrol.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.form4_tabpage_createrezervations.ResumeLayout(false);
+            this.form4_tabpage_createrezervations.PerformLayout();
+            this.form4_tabpage_createuser.ResumeLayout(false);
+            this.form4_tabpage_createuser.PerformLayout();
+            this.form4_tabpage_deleterezervations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.form4_dataviewgrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -367,8 +368,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TabControl form4_tabcontrol;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage form4_tabpage_createrezervations;
+        private System.Windows.Forms.TabPage form4_tabpage_createuser;
         private System.Windows.Forms.Label form4_label_rezervationprice;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label form1_label_username;
@@ -382,7 +383,7 @@
         private System.Windows.Forms.Label form4_label_usertypeid;
         private System.Windows.Forms.Label form4_label_firstname;
         private System.Windows.Forms.Label form4_label_lastname;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage form4_tabpage_deleterezervations;
         private System.Windows.Forms.Button form4_button_deleterezervation;
         private System.Windows.Forms.DataGridView form4_dataviewgrid;
         private System.Windows.Forms.Button form4_button_showrezervations;
