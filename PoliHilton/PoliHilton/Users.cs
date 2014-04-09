@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliHilton
 {
-    class Users
+    public class Users
     {
     }
 }
