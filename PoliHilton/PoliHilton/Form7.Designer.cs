@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.form7_panel = new System.Windows.Forms.Panel();
+            this.form7_label_endDate = new System.Windows.Forms.Label();
+            this.form7_label_startDate = new System.Windows.Forms.Label();
+            this.form7_dtp_end = new System.Windows.Forms.DateTimePicker();
+            this.form7_dtp_start = new System.Windows.Forms.DateTimePicker();
             this.form7_label_roomCap = new System.Windows.Forms.Label();
             this.form7_label_price = new System.Windows.Forms.Label();
             this.form7_label_roomType = new System.Windows.Forms.Label();
@@ -40,10 +44,6 @@
             this.form7_llabel_signout = new System.Windows.Forms.LinkLabel();
             this.form7_llabel_name = new System.Windows.Forms.LinkLabel();
             this.form7_label = new System.Windows.Forms.Label();
-            this.form7_dtp_end = new System.Windows.Forms.DateTimePicker();
-            this.form7_dtp_start = new System.Windows.Forms.DateTimePicker();
-            this.form7_label_endDate = new System.Windows.Forms.Label();
-            this.form7_label_startDate = new System.Windows.Forms.Label();
             this.form7_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form7_dgv)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,38 @@
             this.form7_panel.Name = "form7_panel";
             this.form7_panel.Size = new System.Drawing.Size(596, 337);
             this.form7_panel.TabIndex = 1;
+            // 
+            // form7_label_endDate
+            // 
+            this.form7_label_endDate.AutoSize = true;
+            this.form7_label_endDate.Location = new System.Drawing.Point(440, 163);
+            this.form7_label_endDate.Name = "form7_label_endDate";
+            this.form7_label_endDate.Size = new System.Drawing.Size(82, 13);
+            this.form7_label_endDate.TabIndex = 15;
+            this.form7_label_endDate.Text = "Select end date";
+            // 
+            // form7_label_startDate
+            // 
+            this.form7_label_startDate.AutoSize = true;
+            this.form7_label_startDate.Location = new System.Drawing.Point(440, 137);
+            this.form7_label_startDate.Name = "form7_label_startDate";
+            this.form7_label_startDate.Size = new System.Drawing.Size(84, 13);
+            this.form7_label_startDate.TabIndex = 14;
+            this.form7_label_startDate.Text = "Select start date";
+            // 
+            // form7_dtp_end
+            // 
+            this.form7_dtp_end.Location = new System.Drawing.Point(295, 157);
+            this.form7_dtp_end.Name = "form7_dtp_end";
+            this.form7_dtp_end.Size = new System.Drawing.Size(140, 20);
+            this.form7_dtp_end.TabIndex = 13;
+            // 
+            // form7_dtp_start
+            // 
+            this.form7_dtp_start.Location = new System.Drawing.Point(295, 130);
+            this.form7_dtp_start.Name = "form7_dtp_start";
+            this.form7_dtp_start.Size = new System.Drawing.Size(140, 20);
+            this.form7_dtp_start.TabIndex = 12;
             // 
             // form7_label_roomCap
             // 
@@ -171,38 +203,6 @@
             this.form7_label.Size = new System.Drawing.Size(58, 13);
             this.form7_label.TabIndex = 1;
             this.form7_label.Text = "Welcome, ";
-            // 
-            // form7_dtp_end
-            // 
-            this.form7_dtp_end.Location = new System.Drawing.Point(295, 157);
-            this.form7_dtp_end.Name = "form7_dtp_end";
-            this.form7_dtp_end.Size = new System.Drawing.Size(140, 20);
-            this.form7_dtp_end.TabIndex = 13;
-            // 
-            // form7_dtp_start
-            // 
-            this.form7_dtp_start.Location = new System.Drawing.Point(295, 130);
-            this.form7_dtp_start.Name = "form7_dtp_start";
-            this.form7_dtp_start.Size = new System.Drawing.Size(140, 20);
-            this.form7_dtp_start.TabIndex = 12;
-            // 
-            // form7_label_endDate
-            // 
-            this.form7_label_endDate.AutoSize = true;
-            this.form7_label_endDate.Location = new System.Drawing.Point(440, 163);
-            this.form7_label_endDate.Name = "form7_label_endDate";
-            this.form7_label_endDate.Size = new System.Drawing.Size(93, 13);
-            this.form7_label_endDate.TabIndex = 15;
-            this.form7_label_endDate.Text = "Select price range";
-            // 
-            // form7_label_startDate
-            // 
-            this.form7_label_startDate.AutoSize = true;
-            this.form7_label_startDate.Location = new System.Drawing.Point(440, 137);
-            this.form7_label_startDate.Name = "form7_label_startDate";
-            this.form7_label_startDate.Size = new System.Drawing.Size(86, 13);
-            this.form7_label_startDate.TabIndex = 14;
-            this.form7_label_startDate.Text = "Select room type";
             // 
             // Form7
             // 
