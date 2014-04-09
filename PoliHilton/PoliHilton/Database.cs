@@ -8,7 +8,7 @@ using System.Data;
 
 namespace PoliHilton
 {
-    class Database
+    public class Database
     {
         SqlConnection myConnection;
         public Database()
