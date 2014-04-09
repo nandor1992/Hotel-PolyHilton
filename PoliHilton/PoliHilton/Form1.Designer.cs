@@ -28,106 +28,250 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.form1_textBoxUsername = new System.Windows.Forms.TextBox();
+            this.form1_textBoxPass = new System.Windows.Forms.TextBox();
             this.form1_label_username = new System.Windows.Forms.Label();
             this.form1_label_password = new System.Windows.Forms.Label();
             this.form1_button_signin = new System.Windows.Forms.Button();
-            this.form1_button_signup = new System.Windows.Forms.Button();
+            this.form1_tab = new System.Windows.Forms.TabControl();
+            this.form1_tab1 = new System.Windows.Forms.TabPage();
+            this.form1_tab2 = new System.Windows.Forms.TabPage();
             this.form1_label_signup = new System.Windows.Forms.Label();
+            this.form1_button_signup = new System.Windows.Forms.Button();
+            this.form1_tab2_firstName = new System.Windows.Forms.TextBox();
+            this.form1_tab2_lastName = new System.Windows.Forms.TextBox();
+            this.form1_tab2_username = new System.Windows.Forms.TextBox();
+            this.form1_tab2_pass = new System.Windows.Forms.TextBox();
+            this.form1_lable1 = new System.Windows.Forms.Label();
+            this.form1_lable2 = new System.Windows.Forms.Label();
+            this.form1_tab2_user_lable = new System.Windows.Forms.Label();
+            this.form1_tab2_passlable = new System.Windows.Forms.Label();
+            this.form1_tab.SuspendLayout();
+            this.form1_tab1.SuspendLayout();
+            this.form1_tab2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // form1_textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.form1_textBoxUsername.Location = new System.Drawing.Point(104, 54);
+            this.form1_textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form1_textBoxUsername.Name = "form1_textBoxUsername";
+            this.form1_textBoxUsername.Size = new System.Drawing.Size(132, 22);
+            this.form1_textBoxUsername.TabIndex = 0;
             // 
-            // textBox2
+            // form1_textBoxPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.form1_textBoxPass.Location = new System.Drawing.Point(104, 103);
+            this.form1_textBoxPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form1_textBoxPass.Name = "form1_textBoxPass";
+            this.form1_textBoxPass.Size = new System.Drawing.Size(132, 22);
+            this.form1_textBoxPass.TabIndex = 1;
             // 
             // form1_label_username
             // 
             this.form1_label_username.AutoSize = true;
-            this.form1_label_username.Location = new System.Drawing.Point(12, 36);
+            this.form1_label_username.Location = new System.Drawing.Point(19, 57);
+            this.form1_label_username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form1_label_username.Name = "form1_label_username";
-            this.form1_label_username.Size = new System.Drawing.Size(55, 13);
+            this.form1_label_username.Size = new System.Drawing.Size(73, 17);
             this.form1_label_username.TabIndex = 2;
             this.form1_label_username.Text = "Username";
             // 
             // form1_label_password
             // 
             this.form1_label_password.AutoSize = true;
-            this.form1_label_password.Location = new System.Drawing.Point(12, 76);
+            this.form1_label_password.Location = new System.Drawing.Point(19, 107);
+            this.form1_label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form1_label_password.Name = "form1_label_password";
-            this.form1_label_password.Size = new System.Drawing.Size(53, 13);
+            this.form1_label_password.Size = new System.Drawing.Size(69, 17);
             this.form1_label_password.TabIndex = 3;
             this.form1_label_password.Text = "Password";
             // 
             // form1_button_signin
             // 
             this.form1_button_signin.AutoSize = true;
-            this.form1_button_signin.Location = new System.Drawing.Point(218, 48);
+            this.form1_button_signin.Location = new System.Drawing.Point(302, 72);
+            this.form1_button_signin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form1_button_signin.Name = "form1_button_signin";
-            this.form1_button_signin.Size = new System.Drawing.Size(100, 27);
+            this.form1_button_signin.Size = new System.Drawing.Size(133, 33);
             this.form1_button_signin.TabIndex = 4;
             this.form1_button_signin.Text = "Sign In";
             this.form1_button_signin.UseVisualStyleBackColor = true;
             this.form1_button_signin.Click += new System.EventHandler(this.form1_button_signin_Click);
             // 
-            // form1_button_signup
+            // form1_tab
             // 
-            this.form1_button_signup.AutoSize = true;
-            this.form1_button_signup.Location = new System.Drawing.Point(76, 150);
-            this.form1_button_signup.Name = "form1_button_signup";
-            this.form1_button_signup.Size = new System.Drawing.Size(100, 27);
-            this.form1_button_signup.TabIndex = 5;
-            this.form1_button_signup.Text = "Sign Up";
-            this.form1_button_signup.UseVisualStyleBackColor = true;
+            this.form1_tab.Controls.Add(this.form1_tab1);
+            this.form1_tab.Controls.Add(this.form1_tab2);
+            this.form1_tab.Location = new System.Drawing.Point(12, 12);
+            this.form1_tab.Name = "form1_tab";
+            this.form1_tab.SelectedIndex = 0;
+            this.form1_tab.Size = new System.Drawing.Size(486, 203);
+            this.form1_tab.TabIndex = 7;
+            // 
+            // form1_tab1
+            // 
+            this.form1_tab1.Controls.Add(this.form1_textBoxUsername);
+            this.form1_tab1.Controls.Add(this.form1_textBoxPass);
+            this.form1_tab1.Controls.Add(this.form1_label_username);
+            this.form1_tab1.Controls.Add(this.form1_button_signin);
+            this.form1_tab1.Controls.Add(this.form1_label_password);
+            this.form1_tab1.Location = new System.Drawing.Point(4, 25);
+            this.form1_tab1.Name = "form1_tab1";
+            this.form1_tab1.Padding = new System.Windows.Forms.Padding(3);
+            this.form1_tab1.Size = new System.Drawing.Size(478, 174);
+            this.form1_tab1.TabIndex = 0;
+            this.form1_tab1.Text = "Log In";
+            this.form1_tab1.UseVisualStyleBackColor = true;
+            // 
+            // form1_tab2
+            // 
+            this.form1_tab2.Controls.Add(this.form1_tab2_pass);
+            this.form1_tab2.Controls.Add(this.form1_tab2_username);
+            this.form1_tab2.Controls.Add(this.form1_tab2_lastName);
+            this.form1_tab2.Controls.Add(this.form1_tab2_firstName);
+            this.form1_tab2.Controls.Add(this.form1_lable2);
+            this.form1_tab2.Controls.Add(this.form1_tab2_passlable);
+            this.form1_tab2.Controls.Add(this.form1_tab2_user_lable);
+            this.form1_tab2.Controls.Add(this.form1_lable1);
+            this.form1_tab2.Controls.Add(this.form1_label_signup);
+            this.form1_tab2.Controls.Add(this.form1_button_signup);
+            this.form1_tab2.Location = new System.Drawing.Point(4, 25);
+            this.form1_tab2.Name = "form1_tab2";
+            this.form1_tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.form1_tab2.Size = new System.Drawing.Size(478, 174);
+            this.form1_tab2.TabIndex = 1;
+            this.form1_tab2.Text = "Sign up";
+            this.form1_tab2.UseVisualStyleBackColor = true;
             // 
             // form1_label_signup
             // 
             this.form1_label_signup.AutoSize = true;
-            this.form1_label_signup.Location = new System.Drawing.Point(12, 134);
+            this.form1_label_signup.Location = new System.Drawing.Point(95, 12);
+            this.form1_label_signup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form1_label_signup.Name = "form1_label_signup";
-            this.form1_label_signup.Size = new System.Drawing.Size(203, 13);
-            this.form1_label_signup.TabIndex = 6;
+            this.form1_label_signup.Size = new System.Drawing.Size(264, 17);
+            this.form1_label_signup.TabIndex = 8;
             this.form1_label_signup.Text = "Don\'t have an account yet? Sign Up now";
+            // 
+            // form1_button_signup
+            // 
+            this.form1_button_signup.AutoSize = true;
+            this.form1_button_signup.Location = new System.Drawing.Point(289, 119);
+            this.form1_button_signup.Margin = new System.Windows.Forms.Padding(4);
+            this.form1_button_signup.Name = "form1_button_signup";
+            this.form1_button_signup.Size = new System.Drawing.Size(133, 33);
+            this.form1_button_signup.TabIndex = 7;
+            this.form1_button_signup.Text = "Sign Up";
+            this.form1_button_signup.UseVisualStyleBackColor = true;
+            this.form1_button_signup.Click += new System.EventHandler(this.form1_button_signup_Click);
+            // 
+            // form1_tab2_firstName
+            // 
+            this.form1_tab2_firstName.Location = new System.Drawing.Point(34, 57);
+            this.form1_tab2_firstName.Name = "form1_tab2_firstName";
+            this.form1_tab2_firstName.Size = new System.Drawing.Size(100, 22);
+            this.form1_tab2_firstName.TabIndex = 9;
+            // 
+            // form1_tab2_lastName
+            // 
+            this.form1_tab2_lastName.Location = new System.Drawing.Point(34, 109);
+            this.form1_tab2_lastName.Name = "form1_tab2_lastName";
+            this.form1_tab2_lastName.Size = new System.Drawing.Size(100, 22);
+            this.form1_tab2_lastName.TabIndex = 10;
+            // 
+            // form1_tab2_username
+            // 
+            this.form1_tab2_username.Location = new System.Drawing.Point(286, 57);
+            this.form1_tab2_username.Name = "form1_tab2_username";
+            this.form1_tab2_username.Size = new System.Drawing.Size(136, 22);
+            this.form1_tab2_username.TabIndex = 11;
+            // 
+            // form1_tab2_pass
+            // 
+            this.form1_tab2_pass.Location = new System.Drawing.Point(286, 86);
+            this.form1_tab2_pass.Name = "form1_tab2_pass";
+            this.form1_tab2_pass.Size = new System.Drawing.Size(136, 22);
+            this.form1_tab2_pass.TabIndex = 12;
+            // 
+            // form1_lable1
+            // 
+            this.form1_lable1.AutoSize = true;
+            this.form1_lable1.Location = new System.Drawing.Point(45, 37);
+            this.form1_lable1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form1_lable1.Name = "form1_lable1";
+            this.form1_lable1.Size = new System.Drawing.Size(76, 17);
+            this.form1_lable1.TabIndex = 8;
+            this.form1_lable1.Text = "First Name";
+            // 
+            // form1_lable2
+            // 
+            this.form1_lable2.AutoSize = true;
+            this.form1_lable2.Location = new System.Drawing.Point(45, 89);
+            this.form1_lable2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form1_lable2.Name = "form1_lable2";
+            this.form1_lable2.Size = new System.Drawing.Size(76, 17);
+            this.form1_lable2.TabIndex = 8;
+            this.form1_lable2.Text = "Last Name";
+            // 
+            // form1_tab2_user_lable
+            // 
+            this.form1_tab2_user_lable.AutoSize = true;
+            this.form1_tab2_user_lable.Location = new System.Drawing.Point(194, 60);
+            this.form1_tab2_user_lable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form1_tab2_user_lable.Name = "form1_tab2_user_lable";
+            this.form1_tab2_user_lable.Size = new System.Drawing.Size(73, 17);
+            this.form1_tab2_user_lable.TabIndex = 8;
+            this.form1_tab2_user_lable.Text = "Username";
+            // 
+            // form1_tab2_passlable
+            // 
+            this.form1_tab2_passlable.AutoSize = true;
+            this.form1_tab2_passlable.Location = new System.Drawing.Point(194, 89);
+            this.form1_tab2_passlable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form1_tab2_passlable.Name = "form1_tab2_passlable";
+            this.form1_tab2_passlable.Size = new System.Drawing.Size(69, 17);
+            this.form1_tab2_passlable.TabIndex = 8;
+            this.form1_tab2_passlable.Text = "Password";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 230);
-            this.Controls.Add(this.form1_label_signup);
-            this.Controls.Add(this.form1_button_signup);
-            this.Controls.Add(this.form1_button_signin);
-            this.Controls.Add(this.form1_label_password);
-            this.Controls.Add(this.form1_label_username);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(796, 475);
+            this.Controls.Add(this.form1_tab);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.form1_tab.ResumeLayout(false);
+            this.form1_tab1.ResumeLayout(false);
+            this.form1_tab1.PerformLayout();
+            this.form1_tab2.ResumeLayout(false);
+            this.form1_tab2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox form1_textBoxUsername;
+        private System.Windows.Forms.TextBox form1_textBoxPass;
         private System.Windows.Forms.Label form1_label_username;
         private System.Windows.Forms.Label form1_label_password;
         private System.Windows.Forms.Button form1_button_signin;
-        private System.Windows.Forms.Button form1_button_signup;
+        private System.Windows.Forms.TabControl form1_tab;
+        private System.Windows.Forms.TabPage form1_tab1;
+        private System.Windows.Forms.TabPage form1_tab2;
+        private System.Windows.Forms.TextBox form1_tab2_pass;
+        private System.Windows.Forms.TextBox form1_tab2_username;
+        private System.Windows.Forms.TextBox form1_tab2_lastName;
+        private System.Windows.Forms.TextBox form1_tab2_firstName;
+        private System.Windows.Forms.Label form1_lable2;
+        private System.Windows.Forms.Label form1_tab2_passlable;
+        private System.Windows.Forms.Label form1_tab2_user_lable;
+        private System.Windows.Forms.Label form1_lable1;
         private System.Windows.Forms.Label form1_label_signup;
+        private System.Windows.Forms.Button form1_button_signup;
 
     }
 }

@@ -49,25 +49,29 @@
             this.form3_panel.Controls.Add(this.form3_dgv);
             this.form3_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form3_panel.Location = new System.Drawing.Point(0, 0);
+            this.form3_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form3_panel.Name = "form3_panel";
-            this.form3_panel.Size = new System.Drawing.Size(823, 324);
+            this.form3_panel.Size = new System.Drawing.Size(1097, 399);
             this.form3_panel.TabIndex = 1;
             // 
             // form3_btn_asigne
             // 
-            this.form3_btn_asigne.Location = new System.Drawing.Point(12, 116);
+            this.form3_btn_asigne.Location = new System.Drawing.Point(16, 143);
+            this.form3_btn_asigne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form3_btn_asigne.Name = "form3_btn_asigne";
-            this.form3_btn_asigne.Size = new System.Drawing.Size(216, 23);
+            this.form3_btn_asigne.Size = new System.Drawing.Size(288, 28);
             this.form3_btn_asigne.TabIndex = 6;
             this.form3_btn_asigne.Text = "asigned rooms";
             this.form3_btn_asigne.UseVisualStyleBackColor = true;
+            this.form3_btn_asigne.Click += new System.EventHandler(this.form3_btn_asigne_Click);
             // 
             // form3_llabel_signout
             // 
             this.form3_llabel_signout.AutoSize = true;
-            this.form3_llabel_signout.Location = new System.Drawing.Point(720, 31);
+            this.form3_llabel_signout.Location = new System.Drawing.Point(960, 38);
+            this.form3_llabel_signout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form3_llabel_signout.Name = "form3_llabel_signout";
-            this.form3_llabel_signout.Size = new System.Drawing.Size(44, 13);
+            this.form3_llabel_signout.Size = new System.Drawing.Size(58, 17);
             this.form3_llabel_signout.TabIndex = 4;
             this.form3_llabel_signout.TabStop = true;
             this.form3_llabel_signout.Text = "sign out";
@@ -75,9 +79,10 @@
             // form3_llabel_name
             // 
             this.form3_llabel_name.AutoSize = true;
-            this.form3_llabel_name.Location = new System.Drawing.Point(773, 9);
+            this.form3_llabel_name.Location = new System.Drawing.Point(1031, 11);
+            this.form3_llabel_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form3_llabel_name.Name = "form3_llabel_name";
-            this.form3_llabel_name.Size = new System.Drawing.Size(33, 13);
+            this.form3_llabel_name.Size = new System.Drawing.Size(43, 17);
             this.form3_llabel_name.TabIndex = 3;
             this.form3_llabel_name.TabStop = true;
             this.form3_llabel_name.Text = "name";
@@ -85,36 +90,41 @@
             // form3_label
             // 
             this.form3_label.AutoSize = true;
-            this.form3_label.Location = new System.Drawing.Point(717, 9);
+            this.form3_label.Location = new System.Drawing.Point(956, 11);
+            this.form3_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.form3_label.Name = "form3_label";
-            this.form3_label.Size = new System.Drawing.Size(58, 13);
+            this.form3_label.Size = new System.Drawing.Size(74, 17);
             this.form3_label.TabIndex = 2;
             this.form3_label.Text = "Welcome, ";
             // 
             // form3_btn_submit
             // 
-            this.form3_btn_submit.Location = new System.Drawing.Point(506, 116);
+            this.form3_btn_submit.Location = new System.Drawing.Point(675, 143);
+            this.form3_btn_submit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form3_btn_submit.Name = "form3_btn_submit";
-            this.form3_btn_submit.Size = new System.Drawing.Size(220, 23);
+            this.form3_btn_submit.Size = new System.Drawing.Size(293, 28);
             this.form3_btn_submit.TabIndex = 1;
-            this.form3_btn_submit.Text = "submit ";
+            this.form3_btn_submit.Text = "Cleand";
             this.form3_btn_submit.UseVisualStyleBackColor = true;
+            this.form3_btn_submit.Click += new System.EventHandler(this.form3_btn_submit_Click);
             // 
             // form3_dgv
             // 
             this.form3_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form3_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.form3_dgv.Location = new System.Drawing.Point(0, 145);
+            this.form3_dgv.Location = new System.Drawing.Point(0, 179);
+            this.form3_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form3_dgv.Name = "form3_dgv";
-            this.form3_dgv.Size = new System.Drawing.Size(823, 179);
+            this.form3_dgv.Size = new System.Drawing.Size(1097, 220);
             this.form3_dgv.TabIndex = 0;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 324);
+            this.ClientSize = new System.Drawing.Size(1097, 399);
             this.Controls.Add(this.form3_panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.form3_panel.ResumeLayout(false);
