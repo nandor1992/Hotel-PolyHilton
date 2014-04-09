@@ -29,49 +29,51 @@
         private void InitializeComponent()
         {
             this.form3_panel = new System.Windows.Forms.Panel();
-            this.form3_btn_asigne = new System.Windows.Forms.Button();
+            this.form3_btn_refresh = new System.Windows.Forms.Button();
             this.form3_llabel_signout = new System.Windows.Forms.LinkLabel();
             this.form3_llabel_name = new System.Windows.Forms.LinkLabel();
-            this.form3_label = new System.Windows.Forms.Label();
-            this.form3_btn_submit = new System.Windows.Forms.Button();
-            this.form3_dgv = new System.Windows.Forms.DataGridView();
+            this.form3_label_welcome = new System.Windows.Forms.Label();
+            this.form3_clb = new System.Windows.Forms.CheckedListBox();
+            this.form3_label_roomStatus = new System.Windows.Forms.Label();
+            this.form3_btn_inProgress = new System.Windows.Forms.Button();
+            this.form3_btn_cleaned = new System.Windows.Forms.Button();
+            this.form3_label_asignedRooms = new System.Windows.Forms.Label();
             this.form3_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form3_dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // form3_panel
             // 
-            this.form3_panel.Controls.Add(this.form3_btn_asigne);
+            this.form3_panel.Controls.Add(this.form3_label_asignedRooms);
+            this.form3_panel.Controls.Add(this.form3_btn_cleaned);
+            this.form3_panel.Controls.Add(this.form3_btn_inProgress);
+            this.form3_panel.Controls.Add(this.form3_label_roomStatus);
+            this.form3_panel.Controls.Add(this.form3_clb);
+            this.form3_panel.Controls.Add(this.form3_btn_refresh);
             this.form3_panel.Controls.Add(this.form3_llabel_signout);
             this.form3_panel.Controls.Add(this.form3_llabel_name);
-            this.form3_panel.Controls.Add(this.form3_label);
-            this.form3_panel.Controls.Add(this.form3_btn_submit);
-            this.form3_panel.Controls.Add(this.form3_dgv);
+            this.form3_panel.Controls.Add(this.form3_label_welcome);
             this.form3_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form3_panel.Location = new System.Drawing.Point(0, 0);
-            this.form3_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.form3_panel.Name = "form3_panel";
-            this.form3_panel.Size = new System.Drawing.Size(1097, 399);
+            this.form3_panel.Size = new System.Drawing.Size(347, 324);
             this.form3_panel.TabIndex = 1;
             // 
-            // form3_btn_asigne
+            // form3_btn_refresh
             // 
-            this.form3_btn_asigne.Location = new System.Drawing.Point(16, 143);
-            this.form3_btn_asigne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.form3_btn_asigne.Name = "form3_btn_asigne";
-            this.form3_btn_asigne.Size = new System.Drawing.Size(288, 28);
-            this.form3_btn_asigne.TabIndex = 6;
-            this.form3_btn_asigne.Text = "asigned rooms";
-            this.form3_btn_asigne.UseVisualStyleBackColor = true;
-            this.form3_btn_asigne.Click += new System.EventHandler(this.form3_btn_asigne_Click);
+            this.form3_btn_refresh.Location = new System.Drawing.Point(51, 254);
+            this.form3_btn_refresh.Name = "form3_btn_refresh";
+            this.form3_btn_refresh.Size = new System.Drawing.Size(100, 23);
+            this.form3_btn_refresh.TabIndex = 6;
+            this.form3_btn_refresh.Text = "refresh";
+            this.form3_btn_refresh.UseVisualStyleBackColor = true;
+            this.form3_btn_refresh.Click += new System.EventHandler(this.form3_btn_asigne_Click);
             // 
             // form3_llabel_signout
             // 
             this.form3_llabel_signout.AutoSize = true;
-            this.form3_llabel_signout.Location = new System.Drawing.Point(960, 38);
-            this.form3_llabel_signout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form3_llabel_signout.Location = new System.Drawing.Point(251, 31);
             this.form3_llabel_signout.Name = "form3_llabel_signout";
-            this.form3_llabel_signout.Size = new System.Drawing.Size(58, 17);
+            this.form3_llabel_signout.Size = new System.Drawing.Size(44, 13);
             this.form3_llabel_signout.TabIndex = 4;
             this.form3_llabel_signout.TabStop = true;
             this.form3_llabel_signout.Text = "sign out";
@@ -79,57 +81,76 @@
             // form3_llabel_name
             // 
             this.form3_llabel_name.AutoSize = true;
-            this.form3_llabel_name.Location = new System.Drawing.Point(1031, 11);
-            this.form3_llabel_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form3_llabel_name.Location = new System.Drawing.Point(304, 9);
             this.form3_llabel_name.Name = "form3_llabel_name";
-            this.form3_llabel_name.Size = new System.Drawing.Size(43, 17);
+            this.form3_llabel_name.Size = new System.Drawing.Size(33, 13);
             this.form3_llabel_name.TabIndex = 3;
             this.form3_llabel_name.TabStop = true;
             this.form3_llabel_name.Text = "name";
             // 
-            // form3_label
+            // form3_label_welcome
             // 
-            this.form3_label.AutoSize = true;
-            this.form3_label.Location = new System.Drawing.Point(956, 11);
-            this.form3_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.form3_label.Name = "form3_label";
-            this.form3_label.Size = new System.Drawing.Size(74, 17);
-            this.form3_label.TabIndex = 2;
-            this.form3_label.Text = "Welcome, ";
+            this.form3_label_welcome.AutoSize = true;
+            this.form3_label_welcome.Location = new System.Drawing.Point(248, 9);
+            this.form3_label_welcome.Name = "form3_label_welcome";
+            this.form3_label_welcome.Size = new System.Drawing.Size(58, 13);
+            this.form3_label_welcome.TabIndex = 2;
+            this.form3_label_welcome.Text = "Welcome, ";
             // 
-            // form3_btn_submit
+            // form3_clb
             // 
-            this.form3_btn_submit.Location = new System.Drawing.Point(675, 143);
-            this.form3_btn_submit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.form3_btn_submit.Name = "form3_btn_submit";
-            this.form3_btn_submit.Size = new System.Drawing.Size(293, 28);
-            this.form3_btn_submit.TabIndex = 1;
-            this.form3_btn_submit.Text = "Cleand";
-            this.form3_btn_submit.UseVisualStyleBackColor = true;
-            this.form3_btn_submit.Click += new System.EventHandler(this.form3_btn_submit_Click);
+            this.form3_clb.FormattingEnabled = true;
+            this.form3_clb.Location = new System.Drawing.Point(51, 124);
+            this.form3_clb.Name = "form3_clb";
+            this.form3_clb.Size = new System.Drawing.Size(100, 124);
+            this.form3_clb.TabIndex = 7;
             // 
-            // form3_dgv
+            // form3_label_roomStatus
             // 
-            this.form3_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form3_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.form3_dgv.Location = new System.Drawing.Point(0, 179);
-            this.form3_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.form3_dgv.Name = "form3_dgv";
-            this.form3_dgv.Size = new System.Drawing.Size(1097, 220);
-            this.form3_dgv.TabIndex = 0;
+            this.form3_label_roomStatus.AutoSize = true;
+            this.form3_label_roomStatus.Location = new System.Drawing.Point(202, 133);
+            this.form3_label_roomStatus.Name = "form3_label_roomStatus";
+            this.form3_label_roomStatus.Size = new System.Drawing.Size(100, 13);
+            this.form3_label_roomStatus.TabIndex = 8;
+            this.form3_label_roomStatus.Text = "change room status";
+            // 
+            // form3_btn_inProgress
+            // 
+            this.form3_btn_inProgress.Location = new System.Drawing.Point(205, 150);
+            this.form3_btn_inProgress.Name = "form3_btn_inProgress";
+            this.form3_btn_inProgress.Size = new System.Drawing.Size(75, 23);
+            this.form3_btn_inProgress.TabIndex = 9;
+            this.form3_btn_inProgress.Text = "in progress";
+            this.form3_btn_inProgress.UseVisualStyleBackColor = true;
+            // 
+            // form3_btn_cleaned
+            // 
+            this.form3_btn_cleaned.Location = new System.Drawing.Point(205, 180);
+            this.form3_btn_cleaned.Name = "form3_btn_cleaned";
+            this.form3_btn_cleaned.Size = new System.Drawing.Size(75, 23);
+            this.form3_btn_cleaned.TabIndex = 10;
+            this.form3_btn_cleaned.Text = "cleaned";
+            this.form3_btn_cleaned.UseVisualStyleBackColor = true;
+            // 
+            // form3_label_asignedRooms
+            // 
+            this.form3_label_asignedRooms.AutoSize = true;
+            this.form3_label_asignedRooms.Location = new System.Drawing.Point(51, 105);
+            this.form3_label_asignedRooms.Name = "form3_label_asignedRooms";
+            this.form3_label_asignedRooms.Size = new System.Drawing.Size(75, 13);
+            this.form3_label_asignedRooms.TabIndex = 11;
+            this.form3_label_asignedRooms.Text = "asigned rooms";
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 399);
+            this.ClientSize = new System.Drawing.Size(347, 324);
             this.Controls.Add(this.form3_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.form3_panel.ResumeLayout(false);
             this.form3_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form3_dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,11 +158,14 @@
         #endregion
 
         private System.Windows.Forms.Panel form3_panel;
-        private System.Windows.Forms.Button form3_btn_asigne;
+        private System.Windows.Forms.Button form3_btn_refresh;
         private System.Windows.Forms.LinkLabel form3_llabel_signout;
         private System.Windows.Forms.LinkLabel form3_llabel_name;
-        private System.Windows.Forms.Label form3_label;
-        private System.Windows.Forms.Button form3_btn_submit;
-        private System.Windows.Forms.DataGridView form3_dgv;
+        private System.Windows.Forms.Label form3_label_welcome;
+        private System.Windows.Forms.Label form3_label_asignedRooms;
+        private System.Windows.Forms.Button form3_btn_cleaned;
+        private System.Windows.Forms.Button form3_btn_inProgress;
+        private System.Windows.Forms.Label form3_label_roomStatus;
+        private System.Windows.Forms.CheckedListBox form3_clb;
     }
 }
