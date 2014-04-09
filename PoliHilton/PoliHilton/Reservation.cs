@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliHilton
 {
-    class Reservation
+    public class Reservation
     {
     }
 }

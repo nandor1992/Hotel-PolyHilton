@@ -12,7 +12,8 @@ namespace PoliHilton
 {
     public partial class Form3 : Form
     {
-        Cleaning clean1;
+       Cleaning clean1;
+
         public Form3(Cleaning clean1)
         {
             InitializeComponent();

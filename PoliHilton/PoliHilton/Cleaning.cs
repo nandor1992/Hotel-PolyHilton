@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PoliHilton
 {
-    class Cleaning
+    public class Cleaning
     {
         Database db1;
         int userID;

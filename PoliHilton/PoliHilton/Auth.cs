@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoliHilton
 {
-    class Auth
+    public class Auth
     {
         Database db1;
         public Auth(Database db1)
@@ -18,6 +18,7 @@ namespace PoliHilton
         { 
         //TO DO: Verify if any fields are empty
         //TO DO: Verify if present in Database, if present Switch() to required form, pass forward DB an create Object for type
+        
         }
 
         public void create_user(String username, String password, String firstname, String lastname)
