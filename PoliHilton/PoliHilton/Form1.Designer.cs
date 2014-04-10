@@ -36,6 +36,8 @@
             this.form1_tab = new System.Windows.Forms.TabControl();
             this.form1_tab1 = new System.Windows.Forms.TabPage();
             this.form1_tab2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.form1_tab2_confpass = new System.Windows.Forms.TextBox();
             this.form1_tab2_pass = new System.Windows.Forms.TextBox();
             this.form1_tab2_username = new System.Windows.Forms.TextBox();
             this.form1_tab2_lastName = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.form1_lable1 = new System.Windows.Forms.Label();
             this.form1_label_signup = new System.Windows.Forms.Label();
             this.form1_button_signup = new System.Windows.Forms.Button();
-            this.form1_tab2_confpass = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.form1_tab.SuspendLayout();
             this.form1_tab1.SuspendLayout();
             this.form1_tab2.SuspendLayout();
@@ -64,6 +64,7 @@
             // 
             this.form1_textBoxPass.Location = new System.Drawing.Point(78, 84);
             this.form1_textBoxPass.Name = "form1_textBoxPass";
+            this.form1_textBoxPass.PasswordChar = '*';
             this.form1_textBoxPass.Size = new System.Drawing.Size(100, 20);
             this.form1_textBoxPass.TabIndex = 1;
             // 
@@ -101,7 +102,7 @@
             this.form1_tab.Controls.Add(this.form1_tab1);
             this.form1_tab.Controls.Add(this.form1_tab2);
             this.form1_tab.Location = new System.Drawing.Point(9, 10);
-            this.form1_tab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab.Name = "form1_tab";
             this.form1_tab.SelectedIndex = 0;
             this.form1_tab.Size = new System.Drawing.Size(364, 187);
@@ -115,10 +116,10 @@
             this.form1_tab1.Controls.Add(this.form1_button_signin);
             this.form1_tab1.Controls.Add(this.form1_label_password);
             this.form1_tab1.Location = new System.Drawing.Point(4, 22);
-            this.form1_tab1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab1.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab1.Name = "form1_tab1";
-            this.form1_tab1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.form1_tab1.Size = new System.Drawing.Size(356, 139);
+            this.form1_tab1.Padding = new System.Windows.Forms.Padding(2);
+            this.form1_tab1.Size = new System.Drawing.Size(356, 161);
             this.form1_tab1.TabIndex = 0;
             this.form1_tab1.Text = "Log In";
             this.form1_tab1.UseVisualStyleBackColor = true;
@@ -138,26 +139,45 @@
             this.form1_tab2.Controls.Add(this.form1_label_signup);
             this.form1_tab2.Controls.Add(this.form1_button_signup);
             this.form1_tab2.Location = new System.Drawing.Point(4, 22);
-            this.form1_tab2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab2.Name = "form1_tab2";
-            this.form1_tab2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2.Padding = new System.Windows.Forms.Padding(2);
             this.form1_tab2.Size = new System.Drawing.Size(356, 161);
             this.form1_tab2.TabIndex = 1;
             this.form1_tab2.Text = "Sign up";
             this.form1_tab2.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(121, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Confirm Password";
+            // 
+            // form1_tab2_confpass
+            // 
+            this.form1_tab2_confpass.Location = new System.Drawing.Point(217, 78);
+            this.form1_tab2_confpass.Margin = new System.Windows.Forms.Padding(2);
+            this.form1_tab2_confpass.Name = "form1_tab2_confpass";
+            this.form1_tab2_confpass.PasswordChar = '*';
+            this.form1_tab2_confpass.Size = new System.Drawing.Size(103, 20);
+            this.form1_tab2_confpass.TabIndex = 13;
+            // 
             // form1_tab2_pass
             // 
             this.form1_tab2_pass.Location = new System.Drawing.Point(217, 54);
-            this.form1_tab2_pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2_pass.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab2_pass.Name = "form1_tab2_pass";
+            this.form1_tab2_pass.PasswordChar = '*';
             this.form1_tab2_pass.Size = new System.Drawing.Size(103, 20);
             this.form1_tab2_pass.TabIndex = 12;
             // 
             // form1_tab2_username
             // 
             this.form1_tab2_username.Location = new System.Drawing.Point(217, 30);
-            this.form1_tab2_username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2_username.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab2_username.Name = "form1_tab2_username";
             this.form1_tab2_username.Size = new System.Drawing.Size(103, 20);
             this.form1_tab2_username.TabIndex = 11;
@@ -165,7 +185,7 @@
             // form1_tab2_lastName
             // 
             this.form1_tab2_lastName.Location = new System.Drawing.Point(26, 89);
-            this.form1_tab2_lastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2_lastName.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab2_lastName.Name = "form1_tab2_lastName";
             this.form1_tab2_lastName.Size = new System.Drawing.Size(76, 20);
             this.form1_tab2_lastName.TabIndex = 10;
@@ -173,7 +193,7 @@
             // form1_tab2_firstName
             // 
             this.form1_tab2_firstName.Location = new System.Drawing.Point(26, 46);
-            this.form1_tab2_firstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.form1_tab2_firstName.Margin = new System.Windows.Forms.Padding(2);
             this.form1_tab2_firstName.Name = "form1_tab2_firstName";
             this.form1_tab2_firstName.Size = new System.Drawing.Size(76, 20);
             this.form1_tab2_firstName.TabIndex = 9;
@@ -234,30 +254,13 @@
             this.form1_button_signup.UseVisualStyleBackColor = true;
             this.form1_button_signup.Click += new System.EventHandler(this.form1_button_signup_Click);
             // 
-            // form1_tab2_confpass
-            // 
-            this.form1_tab2_confpass.Location = new System.Drawing.Point(217, 78);
-            this.form1_tab2_confpass.Margin = new System.Windows.Forms.Padding(2);
-            this.form1_tab2_confpass.Name = "form1_tab2_confpass";
-            this.form1_tab2_confpass.Size = new System.Drawing.Size(103, 20);
-            this.form1_tab2_confpass.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Confirm Password";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 386);
             this.Controls.Add(this.form1_tab);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.form1_tab.ResumeLayout(false);
