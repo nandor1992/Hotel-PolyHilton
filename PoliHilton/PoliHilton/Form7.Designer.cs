@@ -44,6 +44,7 @@
             this.form7_llabel_signout = new System.Windows.Forms.LinkLabel();
             this.form7_llabel_name = new System.Windows.Forms.LinkLabel();
             this.form7_label = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.form7_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form7_dgv)).BeginInit();
             this.SuspendLayout();
@@ -237,5 +238,6 @@
         private System.Windows.Forms.DateTimePicker form7_dtp_start;
         private System.Windows.Forms.Label form7_label_endDate;
         private System.Windows.Forms.Label form7_label_startDate;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
