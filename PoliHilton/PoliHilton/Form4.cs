@@ -12,9 +12,14 @@ namespace PoliHilton
 {
     public partial class Form4 : Form
     {
-        public Form4()
+       Reception r1;
+
+        public Form4(Reception r1)
         {
             InitializeComponent();
+            this.r1 = r1;
+            this.r1.init(this);
+
         }
 
         private void tabPage3_Click(object sender, EventArgs e)

@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication3
+namespace PoliHilton
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        Admin a1;
+        public Form2(Admin a1)
         {
+            this.a1 = a1;
             InitializeComponent();
+            a1.init(this);
         }
+
 
         private void tabPage2_Click(object sender, EventArgs e)
         {

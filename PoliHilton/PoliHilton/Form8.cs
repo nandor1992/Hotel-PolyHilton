@@ -12,9 +12,13 @@ namespace PoliHilton
 {
     public partial class Form8 : Form
     {
-        public Form8()
+        Users u1;
+        Reservation r1;
+        public Form8(Users u1,Reservation r1)
         {
             InitializeComponent();
+            this.u1 = u1;
+            this.r1 = r1;
         }
     }
 }

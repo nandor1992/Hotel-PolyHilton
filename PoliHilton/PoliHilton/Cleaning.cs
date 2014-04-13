@@ -9,24 +9,25 @@ namespace PoliHilton
 {
     public class Cleaning
     {
-        Database db1;
-        int userID;
-        String firstname;
-        String lastname;
+         Database db1;
+     int id;
+     String firstname;
+     String lastname;
+     Form3 f3;
         
-        public Cleaning(Database db1, int userID,String firstname,String lastname)
+       public Cleaning(int id,String firstname,String lastname,Database db1)
         {
-            this.db1 = db1;
-            this.userID = userID;
-            this.firstname=firstname;
-            this.lastname = lastname;
+        this.db1=db1;
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
         }
 
-        public void init()
-        {
-            //set Hello user
-            //get cleaning requirements from db
-        }
+       public void init(Form3 f3)
+       {
+           this.f3 = f3;
+           //initialize initial stuff
+       }
 
         public DataSet list_assigned_rooms()
         {
@@ -42,7 +43,8 @@ namespace PoliHilton
 
         public void log_out()
         {
-            //go back to login
+            this.f3.Close();
+            Form1 f1 = new Form1(this.db1);
         }
 
 

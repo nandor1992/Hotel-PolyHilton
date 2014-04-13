@@ -8,5 +8,31 @@ namespace PoliHilton
 {
    public class Reception
     {
+        Database db1;
+     int id;
+     String firstname;
+     String lastname;
+     Form4 f4;
+        
+       public Reception(int id,String firstname,String lastname,Database db1)
+        {
+        this.db1=db1;
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        }
+
+       public void init(Form4 f4)
+       {
+           this.f4 = f4;
+           //initialize initial stuff
+       }
+
+       public void log_out()
+       {
+           this.f4.Close();
+           Form1 f1 = new Form1(this.db1);
+       }
+
     }
 }

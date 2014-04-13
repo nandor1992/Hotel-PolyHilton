@@ -12,9 +12,12 @@ namespace PoliHilton
 {
     public partial class Form5 : Form
     {
-        public Form5()
+        Users u1;
+        public Form5(Users u1)
         {
             InitializeComponent();
+            this.u1 = u1;
+            u1.init_f5(this);
         }
     }
 }

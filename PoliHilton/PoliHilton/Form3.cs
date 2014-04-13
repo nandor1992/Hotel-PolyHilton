@@ -18,7 +18,7 @@ namespace PoliHilton
         {
             InitializeComponent();
             this.clean1 = clean1;
-            this.clean1.init();
+            this.clean1.init(this);
 
         }
 
