@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PoliHilton
+namespace HostingWpfUserControlInWf
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml

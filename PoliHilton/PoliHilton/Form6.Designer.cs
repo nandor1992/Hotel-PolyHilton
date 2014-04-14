@@ -1,4 +1,8 @@
-﻿namespace PoliHilton
+﻿using System.Windows.Forms.Integration;
+using System.Windows.Forms;
+
+
+namespace PoliHilton
 {
     partial class Form6
     {
@@ -29,6 +33,7 @@
         private void InitializeComponent()
         {
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            HostingWpfUserControlInWf.UserControl1 uc =new HostingWpfUserControlInWf.UserControl1();
             this.SuspendLayout();
             // 
             // elementHost1
@@ -39,7 +44,7 @@
             this.elementHost1.Size = new System.Drawing.Size(511, 352);
             this.elementHost1.TabIndex = 0;
             this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = null;
+            this.elementHost1.Child = uc;
             // 
             // Form6
             // 
@@ -49,6 +54,7 @@
             this.Controls.Add(this.elementHost1);
             this.Name = "Form6";
             this.Text = "Booking";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
 
         }
