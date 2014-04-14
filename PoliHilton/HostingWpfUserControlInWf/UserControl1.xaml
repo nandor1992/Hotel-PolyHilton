@@ -4,9 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="This is Wpf" HorizontalAlignment="Left" Height="89" Margin="51,93,0,0" VerticalAlignment="Top" Width="168"/>
+             d:DesignWidth="500" d:DesignHeight="450" Height="450" Width="688">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Canvas>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="51.5" Height="1" Data="M75,238.75 L125.5,238.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="26.75" Data="M126.5,238.75 L126.5,264.5" Canvas.Left="51.5"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="7" Height="1" Data="M127.5,265.5 L121.5,265.5" Canvas.Left="46.5" Canvas.Top="26.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="4.75" Data="M121.5,265.5 L121.5,269.25" Canvas.Left="46.5" Canvas.Top="26.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="11" Height="1" Data="M121.5,270.25 L111.5,270.25" Canvas.Left="36.5" Canvas.Top="31.5"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="5.75" Data="M111.5,270.25 L111.5,265.5" Canvas.Left="36.5" Canvas.Top="26.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="33.75" Height="1" Data="M111.5,266.5 L78.75,266.5" Canvas.Left="3.75" Canvas.Top="27.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="4.25" Data="M78.75,266.5 L78.75,263.25" Canvas.Left="3.75" Canvas.Top="24.5"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="4.75" Height="1" Data="M78.75,263.25 L75,263.25" Canvas.Top="24.5"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="25.5" Data="M75,263.25 L75,238.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="2.562" Data="M121.5,270.5 L121.5,268.9375" Canvas.Left="46.5" Canvas.Top="30.188"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1" Height="2.188" Data="M126.5,265.5 L126.5,264.3125" Canvas.Left="51.5" Canvas.Top="25.562"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1.438" Height="1.375" Data="M79.1875,266.5 L78.75,266.875" Canvas.Left="3.75" Canvas.Top="27.75"/>
+                            <Path Fill="White" Stretch="Fill" Stroke="Black" Width="1.688" Height="1.344" Data="M75.6875,263.25 L75,263.59375" Canvas.Top="24.5"/>
+                            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" Canvas.Left="18.09" Canvas.Top="7.79"/>
+                            <Path Fill="White" Stroke="Black" Width="100" Height="100" Canvas.Left="12.667" Canvas.Top="8"/>
+                        </Canvas>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,24" Width="688" Height="476">
+        <Image Margin="-24.062,1.625,-23.938,52.375" Source="map_hotel_4A057F3B.png" />
+        <Button HorizontalAlignment="Left" Margin="75,0,0,204.5" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Bottom" Width="53.5" Height="32.75" Content="318" TextBlock.TextAlignment="Center"/>
     </Grid>
 </UserControl>
