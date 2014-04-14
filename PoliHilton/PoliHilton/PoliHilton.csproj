@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Auth.cs" />
+    <Compile Include="Booking.cs" />
     <Compile Include="Cleaning.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
