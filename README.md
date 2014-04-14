@@ -1,5 +1,14 @@
 Update - 26.03.2014 - Tasks and Dead-lines
 ==========================================
+Hotel-PolyHilton
+================
+Created for Industrial Engineering Project Hotel C#
+
+
+Objective
+=========
+The objective of this project is to create a comprhensive managment system for a Hotel that provides Administrative, Reservational and Cleaning Management procedures.
+
 
 Tasks
 -----
@@ -83,10 +92,3 @@ Reservation List - Form7
 Booking - Form8
 ---------------
 -Requires the user to insert information that is needed for the reservation and and checks if the room is still availabe before saving
-
-
-
-Hotel-PolyHilton
-================
-
-Created for Industrial Engineering Project Hotel C#
