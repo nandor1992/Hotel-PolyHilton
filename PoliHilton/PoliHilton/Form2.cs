@@ -12,11 +12,14 @@ namespace PoliHilton
 {
     public partial class Form2 : Form
     {
+        //every button must call a function of the class that controlls it : required by Prof
+        //Lat form only log out required
         Admin a1;
         public Form2(Admin a1)
         {
-            this.a1 = a1;
             InitializeComponent();
+            this.Show();
+            this.a1 = a1;            
             a1.init(this);
         }
 

@@ -8,6 +8,8 @@ namespace PoliHilton
 {
    public class Reception
     {
+        //We need functions for all the buttons/actions posssible selected
+        //Initalization is done and log out
         Database db1;
      int id;
      String firstname;
@@ -20,6 +22,7 @@ namespace PoliHilton
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
+        
         }
 
        public void init(Form4 f4)

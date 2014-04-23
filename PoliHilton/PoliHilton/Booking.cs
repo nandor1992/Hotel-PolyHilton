@@ -22,7 +22,7 @@ namespace PoliHilton
             this.database = database;
         }
 
-        public void status()
+        public void getStatus()
         { //takes data about the room from the database(type, status(occupied or not), price and the date it is free from
             //if the user is admin he can see the current guest of the room
         }

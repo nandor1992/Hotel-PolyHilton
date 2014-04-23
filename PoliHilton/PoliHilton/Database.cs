@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 
 namespace PoliHilton
-{
+{//Mostly all functions that we need are implementedE
     public class Database
     {
         SqlConnection myConnection;

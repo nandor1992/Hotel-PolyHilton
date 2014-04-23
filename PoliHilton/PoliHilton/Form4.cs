@@ -12,6 +12,8 @@ namespace PoliHilton
 {
     public partial class Form4 : Form
     {
+        //every button must call a function of the class that controlls it : required by Prof
+        //Final form only log out required
        Reception r1;
 
         public Form4(Reception r1)
@@ -19,6 +21,7 @@ namespace PoliHilton
             InitializeComponent();
             this.r1 = r1;
             this.r1.init(this);
+            this.Show();
 
         }
 

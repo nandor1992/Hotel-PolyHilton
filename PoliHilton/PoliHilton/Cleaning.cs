@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace PoliHilton
 {
+    //We need functions for all the buttons/actions posssible selected
+    //Initalization is done and log out
     public class Cleaning
     {
          Database db1;

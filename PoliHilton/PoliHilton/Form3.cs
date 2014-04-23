@@ -13,12 +13,14 @@ namespace PoliHilton
     public partial class Form3 : Form
     {
        Cleaning clean1;
-
+       //every button must call a function of the class that controlls it : required by Prof
+        //Final form only log out required
         public Form3(Cleaning clean1)
         {
             InitializeComponent();
             this.clean1 = clean1;
             this.clean1.init(this);
+            this.Show();
 
         }
 
