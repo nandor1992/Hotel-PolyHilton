@@ -88,5 +88,20 @@ namespace PoliHilton
         {
 
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
