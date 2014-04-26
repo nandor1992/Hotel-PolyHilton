@@ -21,6 +21,12 @@ namespace PoliHilton
             this.Show();
             this.a1 = a1;            
             a1.init(this);
+            form_initialization_data();
+        }
+
+        public void form_initialization_data()
+        {
+            a1.cleaner_dataset_populate(form2_dataGridView_Cleaner);
         }
 
 
@@ -102,6 +108,11 @@ namespace PoliHilton
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void form2_SelectBtn_Cleaner_Click(object sender, EventArgs e)
+        {
+            a1.cleaner_dataset_select(form2_dataGridView_Cleaner, form2_Cleaner_FirstName, form2_Cleaner_LastName, form2_Cleaner_UserName, form2_Cleaner_Password);
         }
     }
 }

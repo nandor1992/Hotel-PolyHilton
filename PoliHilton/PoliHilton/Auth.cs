@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PoliHilton
 {
@@ -16,15 +18,32 @@ namespace PoliHilton
 
         public void login(String username, String password)
         { 
-        //TO DO: Verify if any fields are empty
-        //TO DO: Verify if present in Database, if present Switch() to required form, pass forward DB an create Object for type
+         String db_command="SELECT * FROM [polihilton].[dbo].[Users] Where username='"+username+"' AND password='"+password+"'";
+         DataSet ds1=db1.Read(db_command);
+         if (ds1.Tables[0].Rows.Count == 0)
+         {
+             MessageBox.Show("User and Pass combination not found");
+         }
+             else
+             {
+                 DataRow dr1 = ds1.Tables[0].Rows[0];
+                 switch (int.Parse(dr1["u_type_id"].ToString()))
+                 {
+                     case 1: MessageBox.Show("Usert type 1"); break;
+                     default: MessageBox.Show("Dude wtf user type"); break;
+                         //you just have to discuss all the cases and create users and blah blah with the examples given, 
+                 }
+             }
+         //TO DO: Verify if present in Database, if present Switch() to required form, pass forward DB an create Object for type
         //go to either of the ligin forms Functions given
         //Example for  Different logins for admin user and others
-            //login_admin(1, "Test", "TestLast");
+            login_admin(1, "Test", "TestLast");
             //login_user(1, "Test", "TestLast");
             //login_cleaner(1, "Test", "TestLast");
             //login_reception(1, "Test", "TestLast");
         }
+
+
 
         public void create_user(String username, String password, String firstname, String lastname)
         {
