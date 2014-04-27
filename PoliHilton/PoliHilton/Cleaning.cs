@@ -25,11 +25,6 @@ namespace PoliHilton
         this.lastname = lastname;
         }
 
-       public void init(Form3 f3)
-       {
-           this.f3 = f3;
-           //initialize initial stuff
-       }
 
         public DataSet list_assigned_rooms()
         {

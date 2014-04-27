@@ -19,7 +19,6 @@ namespace PoliHilton
         {
             InitializeComponent();
             this.u1 = u1;
-            u1.init_f5(this);
             this.Show();
         }
     }

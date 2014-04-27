@@ -11,14 +11,12 @@ namespace PoliHilton
     class Booking
     {
         Database database;
-        Users u;
         String type, status, guest;
         int price;
         DateTime occupiedUntil;
         
-        public Booking(Database database, Users u)
+        public Booking(Database database)
         {
-            this.u = u;
             this.database = database;
         }
 
