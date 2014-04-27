@@ -28,6 +28,11 @@ namespace PoliHilton
           //when the user clicks on a room, something(smth smth dark side from WPF) will appear which will make a reservation
         }
 
+        public void log_out()
+        {
+            Form1 f1 = new Form1(this.database);
+        }
+
 
     }
 }
