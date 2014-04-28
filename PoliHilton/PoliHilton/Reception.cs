@@ -25,12 +25,6 @@ namespace PoliHilton
         
         }
 
-       public void init(Form4 f4)
-       {
-           this.f4 = f4;
-           //initialize initial stuff
-       }
-
        public void log_out()
        {
            this.f4.Close();

@@ -20,7 +20,6 @@ namespace PoliHilton
         {
             InitializeComponent();
             this.r1 = r1;
-            this.r1.init(this);
             this.Show();
 
         }

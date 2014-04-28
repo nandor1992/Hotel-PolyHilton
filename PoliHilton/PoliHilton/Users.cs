@@ -25,6 +25,11 @@ namespace PoliHilton
         this.lastname = lastname;
         }
 
+       public Database get_Database()
+       {
+           return db1;
+       }
+
        public void create_f6()
        {
            Form6 f6 = new Form6(this);
@@ -37,9 +42,10 @@ namespace PoliHilton
            this.f7= f7;
        }
 
-       public void create_f8(Reservation r1)
+       public void create_f8()
        {
-           Form8 f8 = new Form8(this,r1);
+           //need more info about the reservation itself from from 7/6
+           Form8 f8 = new Form8(this);
            this.f8 = f8;
        }
 

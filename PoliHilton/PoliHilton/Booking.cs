@@ -11,14 +11,12 @@ namespace PoliHilton
     class Booking
     {
         Database database;
-        Users u;
         String type, status, guest;
         int price;
         DateTime occupiedUntil;
         
-        public Booking(Database database, Users u)
+        public Booking(Database database)
         {
-            this.u = u;
             this.database = database;
         }
 
@@ -28,6 +26,11 @@ namespace PoliHilton
         }
         public void reserve() { 
           //when the user clicks on a room, something(smth smth dark side from WPF) will appear which will make a reservation
+        }
+
+        public void log_out()
+        {
+            Form1 f1 = new Form1(this.database);
         }
 
 

@@ -12,13 +12,11 @@ namespace PoliHilton
 {
     public partial class Form7 : Form
     {
-        Reservation r1;
         Users u1;
         public Form7(Users u1)
         {
             InitializeComponent();
             this.u1 = u1;
-            r1 = new Reservation();
             this.Show();
         }
     }

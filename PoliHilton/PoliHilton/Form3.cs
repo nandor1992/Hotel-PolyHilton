@@ -19,19 +19,38 @@ namespace PoliHilton
         {
             InitializeComponent();
             this.clean1 = clean1;
-            this.clean1.init(this);
             this.Show();
+            clean1.list_assigned_rooms(form3_lb);
 
         }
 
         private void form3_btn_asigne_Click(object sender, EventArgs e)
         {
-            //add data table from dataset clean1.list_assigned_rooms().
+            clean1.list_assigned_rooms(form3_lb);
         }
 
         private void form3_btn_submit_Click(object sender, EventArgs e)
         {
             // get info from dataset to clean1.cleaned(int roomid)
+        }
+        
+        private void form3_btn_inProgress_Click(object sender, EventArgs e)
+        {
+            clean1.in_progress(form3_lb);
+            clean1.list_assigned_rooms(form3_lb);
+        }
+
+        private void form3_btn_cleaned_Click(object sender, EventArgs e)
+        {
+            clean1.cleaned(form3_lb);
+            clean1.list_assigned_rooms(form3_lb);
+            //form3_clb.SelectedItem.
+
+        }
+
+        private void form3_llabel_signout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            clean1.log_out();
         }
     }
 }
