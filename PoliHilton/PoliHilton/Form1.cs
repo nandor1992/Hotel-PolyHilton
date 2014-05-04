@@ -38,7 +38,7 @@ namespace PoliHilton
 
         private void form1_button_signup_Click(object sender, EventArgs e)
         {
-            auth1.create_user(form1_tab2_pass.Text, form1_tab2_username.Text, form1_tab2_firstName.Text, form1_tab2_lastName.Text);
+            auth1.create_user(form1_tab2_username.Text, form1_tab2_pass.Text, form1_tab2_firstName.Text, form1_tab2_lastName.Text);
        
         
         }
