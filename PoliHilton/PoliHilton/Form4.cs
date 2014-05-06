@@ -33,5 +33,11 @@ namespace PoliHilton
         {
 
         }
+
+        private void form4_button_createrezervation_Click(object sender, EventArgs e)
+        {
+            r1.reception_dataset_populate(form4_cb_roomid);
+
+        }
     }
 }

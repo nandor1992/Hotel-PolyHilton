@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data;
 
 namespace PoliHilton
 {
@@ -24,6 +26,21 @@ namespace PoliHilton
         this.lastname = lastname;
         
         }
+       public void reception_dataset_populate(ComboBox g1)
+       {
+           String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
+           DataSet ds1 = db1.Read(command_cleaner);
+           //g1.Items.Add("1");
+           //g1.Items.Add("2");
+           
+           //g1.DataSource = ds1.Tables["Rooms"];
+           foreach (DataTable table in ds1.Tables)
+           {
+               //cmbTripName.Items.Add(drd["FleetName"].ToString());
+              // g1.Items.Add(ds1.ToString());
+               g1.DataSource = ds1;
+           }
+       }
 
        public void log_out()
        {

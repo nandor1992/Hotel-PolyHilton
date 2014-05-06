@@ -37,6 +37,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.form4_tabcontrol = new System.Windows.Forms.TabControl();
             this.form4_tabpage_createrezervations = new System.Windows.Forms.TabPage();
+            this.form4_cb_roomid = new System.Windows.Forms.ComboBox();
+            this.form4_cb_userid = new System.Windows.Forms.ComboBox();
             this.form4_label_rezervationprice = new System.Windows.Forms.Label();
             this.form4_textPrice = new System.Windows.Forms.TextBox();
             this.form4_tabpage_createuser = new System.Windows.Forms.TabPage();
@@ -55,8 +57,6 @@
             this.form4_button_deleterezervation = new System.Windows.Forms.Button();
             this.form4_dataviewgrid = new System.Windows.Forms.DataGridView();
             this.form4_button_showrezervations = new System.Windows.Forms.Button();
-            this.form4_cb_userid = new System.Windows.Forms.ComboBox();
-            this.form4_cb_roomid = new System.Windows.Forms.ComboBox();
             this.form4_tabcontrol.SuspendLayout();
             this.form4_tabpage_createrezervations.SuspendLayout();
             this.form4_tabpage_createuser.SuspendLayout();
@@ -72,6 +72,7 @@
             this.form4_button_createrezervation.TabIndex = 0;
             this.form4_button_createrezervation.Text = "Create Reservation";
             this.form4_button_createrezervation.UseVisualStyleBackColor = true;
+            this.form4_button_createrezervation.Click += new System.EventHandler(this.form4_button_createrezervation_Click);
             // 
             // form4_label_userid
             // 
@@ -149,11 +150,27 @@
             this.form4_tabpage_createrezervations.Controls.Add(this.dateTimePicker1);
             this.form4_tabpage_createrezervations.Location = new System.Drawing.Point(4, 22);
             this.form4_tabpage_createrezervations.Name = "form4_tabpage_createrezervations";
-            this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(3);
             this.form4_tabpage_createrezervations.Size = new System.Drawing.Size(480, 232);
             this.form4_tabpage_createrezervations.TabIndex = 0;
             this.form4_tabpage_createrezervations.Text = "Create Rezervation";
             this.form4_tabpage_createrezervations.UseVisualStyleBackColor = true;
+            // 
+            // form4_cb_roomid
+            // 
+            this.form4_cb_roomid.FormattingEnabled = true;
+            this.form4_cb_roomid.Location = new System.Drawing.Point(106, 47);
+            this.form4_cb_roomid.Name = "form4_cb_roomid";
+            this.form4_cb_roomid.Size = new System.Drawing.Size(200, 21);
+            this.form4_cb_roomid.TabIndex = 15;
+            // 
+            // form4_cb_userid
+            // 
+            this.form4_cb_userid.FormattingEnabled = true;
+            this.form4_cb_userid.Location = new System.Drawing.Point(106, 12);
+            this.form4_cb_userid.Name = "form4_cb_userid";
+            this.form4_cb_userid.Size = new System.Drawing.Size(200, 21);
+            this.form4_cb_userid.TabIndex = 14;
             // 
             // form4_label_rezervationprice
             // 
@@ -187,7 +204,7 @@
             this.form4_tabpage_createuser.Controls.Add(this.form1_label_username);
             this.form4_tabpage_createuser.Location = new System.Drawing.Point(4, 22);
             this.form4_tabpage_createuser.Name = "form4_tabpage_createuser";
-            this.form4_tabpage_createuser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.form4_tabpage_createuser.Padding = new System.Windows.Forms.Padding(3);
             this.form4_tabpage_createuser.Size = new System.Drawing.Size(480, 232);
             this.form4_tabpage_createuser.TabIndex = 1;
             this.form4_tabpage_createuser.Text = "Create User";
@@ -291,7 +308,7 @@
             this.form4_tabpage_deleterezervations.Controls.Add(this.form4_button_showrezervations);
             this.form4_tabpage_deleterezervations.Location = new System.Drawing.Point(4, 22);
             this.form4_tabpage_deleterezervations.Name = "form4_tabpage_deleterezervations";
-            this.form4_tabpage_deleterezervations.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.form4_tabpage_deleterezervations.Padding = new System.Windows.Forms.Padding(3);
             this.form4_tabpage_deleterezervations.Size = new System.Drawing.Size(480, 232);
             this.form4_tabpage_deleterezervations.TabIndex = 2;
             this.form4_tabpage_deleterezervations.Text = "Delete Rezervation";
@@ -323,22 +340,6 @@
             this.form4_button_showrezervations.TabIndex = 0;
             this.form4_button_showrezervations.Text = "Show Reservations";
             this.form4_button_showrezervations.UseVisualStyleBackColor = true;
-            // 
-            // form4_cb_userid
-            // 
-            this.form4_cb_userid.FormattingEnabled = true;
-            this.form4_cb_userid.Location = new System.Drawing.Point(106, 12);
-            this.form4_cb_userid.Name = "form4_cb_userid";
-            this.form4_cb_userid.Size = new System.Drawing.Size(200, 21);
-            this.form4_cb_userid.TabIndex = 14;
-            // 
-            // form4_cb_roomid
-            // 
-            this.form4_cb_roomid.FormattingEnabled = true;
-            this.form4_cb_roomid.Location = new System.Drawing.Point(106, 47);
-            this.form4_cb_roomid.Name = "form4_cb_roomid";
-            this.form4_cb_roomid.Size = new System.Drawing.Size(200, 21);
-            this.form4_cb_roomid.TabIndex = 15;
             // 
             // Form4
             // 

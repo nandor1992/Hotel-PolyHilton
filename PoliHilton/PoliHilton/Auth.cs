@@ -31,9 +31,10 @@ namespace PoliHilton
                  DataRow dr1 = ds1.Tables[0].Rows[0];
                  switch (int.Parse(dr1["u_type_id"].ToString()))
                  {
-                     case 1: MessageBox.Show("Usert type 1 and username=:" + username); login_admin(1, "Test", "TestLast"); break;
-                     case 2: MessageBox.Show("Usert type 2 and username=:" + username); break;
-                     case 3: MessageBox.Show("Usert type 3 and username=:" + username); break;
+                     case 1: MessageBox.Show("Usert type 1(normal) and username=:" + username); login_user(1, "Test", "TestLast"); break;
+                     case 2: MessageBox.Show("Usert type 2(admin) and username=:" + username); login_admin(1, "Test", "TestLast"); break;
+                     case 3: MessageBox.Show("Usert type 3(cleaning) and username=:" + username); login_cleaner(1, "Test", "TestLast"); break;
+                     case 4: MessageBox.Show("Usert type 4(reception) and username=:" + username); login_reception(1, "Test", "TestLast"); break;
                      default: MessageBox.Show("your usertype was not recognized"); break;
                          //you just have to discuss all the cases and create users and blah blah with the examples given, 
                  }
@@ -47,11 +48,9 @@ namespace PoliHilton
             //login_reception(1, "Test", "TestLast");
         }
 
-
-
         public void create_user(String username, String password, String firstname, String lastname)
         {
-            int u_type_id = 3;
+            int u_type_id = 1;
             String db_command="SELECT * FROM [polihilton].[dbo].[Users] Where username='"+username+"'";
             DataSet ds1=db1.Read(db_command);
             if (ds1.Tables[0].Rows.Count != 0) 
@@ -60,16 +59,17 @@ namespace PoliHilton
             }
             else 
             {
-                String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_id,u_type_id,username,password,firstName,lastName)Values('" + 10 + "','" + u_type_id + "','" + username + "','" + password + "','" + firstname + "','" + lastname + "')";
-             
-                db1.Command(db_command1);
-                /*SqlCommand db_command1 = new SqlCommand("INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values(@u_type_id,@username,@password,@firstname,@lastname)");
-                db_command1.Parameters.Add("@u_type_id", SqlDbType.Int).Value = 3;
-                db_command1.Parameters.Add("@username", SqlDbType.Text).Value = username;
-                db_command1.Parameters.Add("@password", SqlDbType.Text).Value = password;
-                db_command1.Parameters.Add("@firstname", SqlDbType.Text).Value = firstname;
-                db_command1.Parameters.Add("@lastname", SqlDbType.Text).Value = lastname;
-                db_command1.ExecuteNonQuery();*/
+                try
+                {
+                    String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values('" + u_type_id + "','" + username + "','" + password + "','" + firstname + "','" + lastname + "')";
+                    db1.Command(db_command1);
+                    MessageBox.Show("User created succesfully!");
+                    login_user(1, "Test", "TestLast");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error Insert" + e.ToString());
+                }
             }
         }
 
