@@ -110,6 +110,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.logut_button_admin = new System.Windows.Forms.Button();
             this.form2_dataGridView_Prices.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.form2_Manager_FirstName.SuspendLayout();
@@ -141,7 +142,7 @@
             this.form2_dataGridView_Prices.Controls.Add(this.tabPage4);
             this.form2_dataGridView_Prices.Controls.Add(this.tabPage5);
             this.form2_dataGridView_Prices.Location = new System.Drawing.Point(0, 0);
-            this.form2_dataGridView_Prices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_dataGridView_Prices.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Prices.Name = "form2_dataGridView_Prices";
             this.form2_dataGridView_Prices.SelectedIndex = 0;
             this.form2_dataGridView_Prices.Size = new System.Drawing.Size(856, 393);
@@ -151,9 +152,9 @@
             // 
             this.tabPage1.Controls.Add(this.form2_Manager_FirstName);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(848, 364);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Employees";
@@ -167,7 +168,7 @@
             this.form2_Manager_FirstName.Controls.Add(this.tabPage8);
             this.form2_Manager_FirstName.Controls.Add(this.tabPage11);
             this.form2_Manager_FirstName.Location = new System.Drawing.Point(11, 7);
-            this.form2_Manager_FirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Manager_FirstName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Manager_FirstName.Name = "form2_Manager_FirstName";
             this.form2_Manager_FirstName.SelectedIndex = 0;
             this.form2_Manager_FirstName.Size = new System.Drawing.Size(797, 331);
@@ -190,9 +191,9 @@
             this.CleanerPage.Controls.Add(this.form2_DeleteBtn_Cleaner);
             this.CleanerPage.Controls.Add(this.form2_AddNewBtn_Cleaner);
             this.CleanerPage.Location = new System.Drawing.Point(4, 25);
-            this.CleanerPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CleanerPage.Margin = new System.Windows.Forms.Padding(4);
             this.CleanerPage.Name = "CleanerPage";
-            this.CleanerPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CleanerPage.Padding = new System.Windows.Forms.Padding(4);
             this.CleanerPage.Size = new System.Drawing.Size(789, 302);
             this.CleanerPage.TabIndex = 0;
             this.CleanerPage.Text = "Cleaner";
@@ -202,7 +203,7 @@
             // 
             this.form2_dataGridView_Cleaner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form2_dataGridView_Cleaner.Location = new System.Drawing.Point(444, 33);
-            this.form2_dataGridView_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_dataGridView_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Cleaner.Name = "form2_dataGridView_Cleaner";
             this.form2_dataGridView_Cleaner.Size = new System.Drawing.Size(320, 185);
             this.form2_dataGridView_Cleaner.TabIndex = 14;
@@ -210,7 +211,7 @@
             // form2_SelectBtn_Cleaner
             // 
             this.form2_SelectBtn_Cleaner.Location = new System.Drawing.Point(444, 238);
-            this.form2_SelectBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_SelectBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_SelectBtn_Cleaner.Name = "form2_SelectBtn_Cleaner";
             this.form2_SelectBtn_Cleaner.Size = new System.Drawing.Size(100, 28);
             this.form2_SelectBtn_Cleaner.TabIndex = 13;
@@ -221,7 +222,7 @@
             // form2_Cleaner_Password
             // 
             this.form2_Cleaner_Password.Location = new System.Drawing.Point(132, 183);
-            this.form2_Cleaner_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Cleaner_Password.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Cleaner_Password.Name = "form2_Cleaner_Password";
             this.form2_Cleaner_Password.Size = new System.Drawing.Size(132, 22);
             this.form2_Cleaner_Password.TabIndex = 11;
@@ -229,7 +230,7 @@
             // form2_Cleaner_UserName
             // 
             this.form2_Cleaner_UserName.Location = new System.Drawing.Point(132, 137);
-            this.form2_Cleaner_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Cleaner_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Cleaner_UserName.Name = "form2_Cleaner_UserName";
             this.form2_Cleaner_UserName.Size = new System.Drawing.Size(132, 22);
             this.form2_Cleaner_UserName.TabIndex = 10;
@@ -237,7 +238,7 @@
             // form2_Cleaner_LastName
             // 
             this.form2_Cleaner_LastName.Location = new System.Drawing.Point(132, 89);
-            this.form2_Cleaner_LastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Cleaner_LastName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Cleaner_LastName.Name = "form2_Cleaner_LastName";
             this.form2_Cleaner_LastName.Size = new System.Drawing.Size(132, 22);
             this.form2_Cleaner_LastName.TabIndex = 9;
@@ -246,7 +247,7 @@
             // form2_Cleaner_FirstName
             // 
             this.form2_Cleaner_FirstName.Location = new System.Drawing.Point(132, 41);
-            this.form2_Cleaner_FirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Cleaner_FirstName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Cleaner_FirstName.Name = "form2_Cleaner_FirstName";
             this.form2_Cleaner_FirstName.Size = new System.Drawing.Size(132, 22);
             this.form2_Cleaner_FirstName.TabIndex = 8;
@@ -295,7 +296,7 @@
             // form2_PromoteToAdmBtn_Cleaner
             // 
             this.form2_PromoteToAdmBtn_Cleaner.Location = new System.Drawing.Point(285, 171);
-            this.form2_PromoteToAdmBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_PromoteToAdmBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_PromoteToAdmBtn_Cleaner.Name = "form2_PromoteToAdmBtn_Cleaner";
             this.form2_PromoteToAdmBtn_Cleaner.Size = new System.Drawing.Size(100, 47);
             this.form2_PromoteToAdmBtn_Cleaner.TabIndex = 3;
@@ -305,7 +306,7 @@
             // form2_ModifyBtn_Cleaner
             // 
             this.form2_ModifyBtn_Cleaner.Location = new System.Drawing.Point(285, 128);
-            this.form2_ModifyBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_ModifyBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_ModifyBtn_Cleaner.Name = "form2_ModifyBtn_Cleaner";
             this.form2_ModifyBtn_Cleaner.Size = new System.Drawing.Size(100, 28);
             this.form2_ModifyBtn_Cleaner.TabIndex = 2;
@@ -315,7 +316,7 @@
             // form2_DeleteBtn_Cleaner
             // 
             this.form2_DeleteBtn_Cleaner.Location = new System.Drawing.Point(285, 82);
-            this.form2_DeleteBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_DeleteBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_DeleteBtn_Cleaner.Name = "form2_DeleteBtn_Cleaner";
             this.form2_DeleteBtn_Cleaner.Size = new System.Drawing.Size(100, 28);
             this.form2_DeleteBtn_Cleaner.TabIndex = 1;
@@ -325,7 +326,7 @@
             // form2_AddNewBtn_Cleaner
             // 
             this.form2_AddNewBtn_Cleaner.Location = new System.Drawing.Point(285, 34);
-            this.form2_AddNewBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_AddNewBtn_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_AddNewBtn_Cleaner.Name = "form2_AddNewBtn_Cleaner";
             this.form2_AddNewBtn_Cleaner.Size = new System.Drawing.Size(100, 28);
             this.form2_AddNewBtn_Cleaner.TabIndex = 0;
@@ -350,9 +351,9 @@
             this.tabPage7.Controls.Add(this.form2_Manager_LastName);
             this.tabPage7.Controls.Add(this.textBox8);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage7.Size = new System.Drawing.Size(789, 302);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Manager";
@@ -362,7 +363,7 @@
             // 
             this.form2_dataGridView_Manager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form2_dataGridView_Manager.Location = new System.Drawing.Point(428, 38);
-            this.form2_dataGridView_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_dataGridView_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Manager.Name = "form2_dataGridView_Manager";
             this.form2_dataGridView_Manager.Size = new System.Drawing.Size(320, 185);
             this.form2_dataGridView_Manager.TabIndex = 46;
@@ -370,7 +371,7 @@
             // form2_SelectBtn_Manager
             // 
             this.form2_SelectBtn_Manager.Location = new System.Drawing.Point(428, 242);
-            this.form2_SelectBtn_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_SelectBtn_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_SelectBtn_Manager.Name = "form2_SelectBtn_Manager";
             this.form2_SelectBtn_Manager.Size = new System.Drawing.Size(100, 28);
             this.form2_SelectBtn_Manager.TabIndex = 45;
@@ -380,7 +381,7 @@
             // form2_PromoteToAdmBtn_Manager
             // 
             this.form2_PromoteToAdmBtn_Manager.Location = new System.Drawing.Point(288, 175);
-            this.form2_PromoteToAdmBtn_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_PromoteToAdmBtn_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_PromoteToAdmBtn_Manager.Name = "form2_PromoteToAdmBtn_Manager";
             this.form2_PromoteToAdmBtn_Manager.Size = new System.Drawing.Size(100, 47);
             this.form2_PromoteToAdmBtn_Manager.TabIndex = 43;
@@ -390,7 +391,7 @@
             // form2_ModifyBtn_Manager
             // 
             this.form2_ModifyBtn_Manager.Location = new System.Drawing.Point(288, 132);
-            this.form2_ModifyBtn_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_ModifyBtn_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_ModifyBtn_Manager.Name = "form2_ModifyBtn_Manager";
             this.form2_ModifyBtn_Manager.Size = new System.Drawing.Size(100, 28);
             this.form2_ModifyBtn_Manager.TabIndex = 42;
@@ -400,7 +401,7 @@
             // form2_DeleteBtn_Manager
             // 
             this.form2_DeleteBtn_Manager.Location = new System.Drawing.Point(288, 86);
-            this.form2_DeleteBtn_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_DeleteBtn_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_DeleteBtn_Manager.Name = "form2_DeleteBtn_Manager";
             this.form2_DeleteBtn_Manager.Size = new System.Drawing.Size(100, 28);
             this.form2_DeleteBtn_Manager.TabIndex = 41;
@@ -410,7 +411,7 @@
             // form2_AddNewBtn_Manager
             // 
             this.form2_AddNewBtn_Manager.Location = new System.Drawing.Point(288, 38);
-            this.form2_AddNewBtn_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_AddNewBtn_Manager.Margin = new System.Windows.Forms.Padding(4);
             this.form2_AddNewBtn_Manager.Name = "form2_AddNewBtn_Manager";
             this.form2_AddNewBtn_Manager.Size = new System.Drawing.Size(100, 28);
             this.form2_AddNewBtn_Manager.TabIndex = 40;
@@ -460,7 +461,7 @@
             // form2_Manager_Password
             // 
             this.form2_Manager_Password.Location = new System.Drawing.Point(132, 187);
-            this.form2_Manager_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Manager_Password.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Manager_Password.Name = "form2_Manager_Password";
             this.form2_Manager_Password.Size = new System.Drawing.Size(132, 22);
             this.form2_Manager_Password.TabIndex = 35;
@@ -469,7 +470,7 @@
             // form2_Manager_UserName
             // 
             this.form2_Manager_UserName.Location = new System.Drawing.Point(132, 138);
-            this.form2_Manager_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Manager_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Manager_UserName.Name = "form2_Manager_UserName";
             this.form2_Manager_UserName.Size = new System.Drawing.Size(132, 22);
             this.form2_Manager_UserName.TabIndex = 34;
@@ -478,7 +479,7 @@
             // form2_Manager_LastName
             // 
             this.form2_Manager_LastName.Location = new System.Drawing.Point(132, 92);
-            this.form2_Manager_LastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Manager_LastName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Manager_LastName.Name = "form2_Manager_LastName";
             this.form2_Manager_LastName.Size = new System.Drawing.Size(132, 22);
             this.form2_Manager_LastName.TabIndex = 33;
@@ -486,7 +487,7 @@
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(132, 44);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(132, 22);
             this.textBox8.TabIndex = 32;
@@ -508,9 +509,9 @@
             this.tabPage8.Controls.Add(this.form2_Customer_LastName);
             this.tabPage8.Controls.Add(this.form2_Customer_FirstName);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage8.Size = new System.Drawing.Size(789, 302);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Customer";
@@ -521,7 +522,7 @@
             // 
             this.form2_dataGridView_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form2_dataGridView_Customer.Location = new System.Drawing.Point(433, 42);
-            this.form2_dataGridView_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_dataGridView_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Customer.Name = "form2_dataGridView_Customer";
             this.form2_dataGridView_Customer.Size = new System.Drawing.Size(320, 185);
             this.form2_dataGridView_Customer.TabIndex = 46;
@@ -529,7 +530,7 @@
             // form2_SelectBtn_Customer
             // 
             this.form2_SelectBtn_Customer.Location = new System.Drawing.Point(433, 246);
-            this.form2_SelectBtn_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_SelectBtn_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_SelectBtn_Customer.Name = "form2_SelectBtn_Customer";
             this.form2_SelectBtn_Customer.Size = new System.Drawing.Size(100, 28);
             this.form2_SelectBtn_Customer.TabIndex = 45;
@@ -539,7 +540,7 @@
             // form2_PromoteToAdmBtn_Customer
             // 
             this.form2_PromoteToAdmBtn_Customer.Location = new System.Drawing.Point(283, 178);
-            this.form2_PromoteToAdmBtn_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_PromoteToAdmBtn_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_PromoteToAdmBtn_Customer.Name = "form2_PromoteToAdmBtn_Customer";
             this.form2_PromoteToAdmBtn_Customer.Size = new System.Drawing.Size(100, 47);
             this.form2_PromoteToAdmBtn_Customer.TabIndex = 43;
@@ -549,7 +550,7 @@
             // form2_ModifyBtn_Customer
             // 
             this.form2_ModifyBtn_Customer.Location = new System.Drawing.Point(283, 135);
-            this.form2_ModifyBtn_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_ModifyBtn_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_ModifyBtn_Customer.Name = "form2_ModifyBtn_Customer";
             this.form2_ModifyBtn_Customer.Size = new System.Drawing.Size(100, 28);
             this.form2_ModifyBtn_Customer.TabIndex = 42;
@@ -559,7 +560,7 @@
             // form2_DeleteBtn_Customer
             // 
             this.form2_DeleteBtn_Customer.Location = new System.Drawing.Point(283, 90);
-            this.form2_DeleteBtn_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_DeleteBtn_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_DeleteBtn_Customer.Name = "form2_DeleteBtn_Customer";
             this.form2_DeleteBtn_Customer.Size = new System.Drawing.Size(100, 28);
             this.form2_DeleteBtn_Customer.TabIndex = 41;
@@ -569,7 +570,7 @@
             // form2_AddNewBtn_Customer
             // 
             this.form2_AddNewBtn_Customer.Location = new System.Drawing.Point(283, 42);
-            this.form2_AddNewBtn_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_AddNewBtn_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.form2_AddNewBtn_Customer.Name = "form2_AddNewBtn_Customer";
             this.form2_AddNewBtn_Customer.Size = new System.Drawing.Size(100, 28);
             this.form2_AddNewBtn_Customer.TabIndex = 40;
@@ -619,7 +620,7 @@
             // form2_Customer_Password
             // 
             this.form2_Customer_Password.Location = new System.Drawing.Point(127, 191);
-            this.form2_Customer_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Customer_Password.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Customer_Password.Name = "form2_Customer_Password";
             this.form2_Customer_Password.Size = new System.Drawing.Size(132, 22);
             this.form2_Customer_Password.TabIndex = 35;
@@ -627,7 +628,7 @@
             // form2_Customer_UserName
             // 
             this.form2_Customer_UserName.Location = new System.Drawing.Point(127, 142);
-            this.form2_Customer_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Customer_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Customer_UserName.Name = "form2_Customer_UserName";
             this.form2_Customer_UserName.Size = new System.Drawing.Size(132, 22);
             this.form2_Customer_UserName.TabIndex = 34;
@@ -635,7 +636,7 @@
             // form2_Customer_LastName
             // 
             this.form2_Customer_LastName.Location = new System.Drawing.Point(127, 96);
-            this.form2_Customer_LastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Customer_LastName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Customer_LastName.Name = "form2_Customer_LastName";
             this.form2_Customer_LastName.Size = new System.Drawing.Size(132, 22);
             this.form2_Customer_LastName.TabIndex = 33;
@@ -643,7 +644,7 @@
             // form2_Customer_FirstName
             // 
             this.form2_Customer_FirstName.Location = new System.Drawing.Point(127, 48);
-            this.form2_Customer_FirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Customer_FirstName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Customer_FirstName.Name = "form2_Customer_FirstName";
             this.form2_Customer_FirstName.Size = new System.Drawing.Size(132, 22);
             this.form2_Customer_FirstName.TabIndex = 32;
@@ -665,9 +666,9 @@
             this.tabPage11.Controls.Add(this.form2_DeleteBtn_Reception);
             this.tabPage11.Controls.Add(this.form2_AddNewBtn_Reception);
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
-            this.tabPage11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage11.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage11.Size = new System.Drawing.Size(789, 302);
             this.tabPage11.TabIndex = 3;
             this.tabPage11.Text = "Reception";
@@ -677,7 +678,7 @@
             // 
             this.form2_dataGridView_Reception.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form2_dataGridView_Reception.Location = new System.Drawing.Point(425, 33);
-            this.form2_dataGridView_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_dataGridView_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Reception.Name = "form2_dataGridView_Reception";
             this.form2_dataGridView_Reception.Size = new System.Drawing.Size(320, 185);
             this.form2_dataGridView_Reception.TabIndex = 28;
@@ -685,7 +686,7 @@
             // form2_SelectBtn_Reception
             // 
             this.form2_SelectBtn_Reception.Location = new System.Drawing.Point(425, 241);
-            this.form2_SelectBtn_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_SelectBtn_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_SelectBtn_Reception.Name = "form2_SelectBtn_Reception";
             this.form2_SelectBtn_Reception.Size = new System.Drawing.Size(100, 28);
             this.form2_SelectBtn_Reception.TabIndex = 27;
@@ -695,7 +696,7 @@
             // form2_Reception_Password
             // 
             this.form2_Reception_Password.Location = new System.Drawing.Point(129, 183);
-            this.form2_Reception_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Reception_Password.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Reception_Password.Name = "form2_Reception_Password";
             this.form2_Reception_Password.Size = new System.Drawing.Size(132, 22);
             this.form2_Reception_Password.TabIndex = 26;
@@ -703,7 +704,7 @@
             // form2_Reception_UserName
             // 
             this.form2_Reception_UserName.Location = new System.Drawing.Point(129, 137);
-            this.form2_Reception_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Reception_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Reception_UserName.Name = "form2_Reception_UserName";
             this.form2_Reception_UserName.Size = new System.Drawing.Size(132, 22);
             this.form2_Reception_UserName.TabIndex = 25;
@@ -711,7 +712,7 @@
             // form2_Reception_LastName
             // 
             this.form2_Reception_LastName.Location = new System.Drawing.Point(129, 89);
-            this.form2_Reception_LastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Reception_LastName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Reception_LastName.Name = "form2_Reception_LastName";
             this.form2_Reception_LastName.Size = new System.Drawing.Size(132, 22);
             this.form2_Reception_LastName.TabIndex = 24;
@@ -719,7 +720,7 @@
             // form2_Reception_FirstName
             // 
             this.form2_Reception_FirstName.Location = new System.Drawing.Point(129, 41);
-            this.form2_Reception_FirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Reception_FirstName.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Reception_FirstName.Name = "form2_Reception_FirstName";
             this.form2_Reception_FirstName.Size = new System.Drawing.Size(132, 22);
             this.form2_Reception_FirstName.TabIndex = 23;
@@ -767,7 +768,7 @@
             // form2_PromoteToAdmBtn_Reception
             // 
             this.form2_PromoteToAdmBtn_Reception.Location = new System.Drawing.Point(283, 171);
-            this.form2_PromoteToAdmBtn_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_PromoteToAdmBtn_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_PromoteToAdmBtn_Reception.Name = "form2_PromoteToAdmBtn_Reception";
             this.form2_PromoteToAdmBtn_Reception.Size = new System.Drawing.Size(100, 47);
             this.form2_PromoteToAdmBtn_Reception.TabIndex = 18;
@@ -777,7 +778,7 @@
             // form2_ModifyBtn_Reception
             // 
             this.form2_ModifyBtn_Reception.Location = new System.Drawing.Point(283, 128);
-            this.form2_ModifyBtn_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_ModifyBtn_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_ModifyBtn_Reception.Name = "form2_ModifyBtn_Reception";
             this.form2_ModifyBtn_Reception.Size = new System.Drawing.Size(100, 28);
             this.form2_ModifyBtn_Reception.TabIndex = 17;
@@ -787,7 +788,7 @@
             // form2_DeleteBtn_Reception
             // 
             this.form2_DeleteBtn_Reception.Location = new System.Drawing.Point(283, 82);
-            this.form2_DeleteBtn_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_DeleteBtn_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_DeleteBtn_Reception.Name = "form2_DeleteBtn_Reception";
             this.form2_DeleteBtn_Reception.Size = new System.Drawing.Size(100, 28);
             this.form2_DeleteBtn_Reception.TabIndex = 16;
@@ -797,7 +798,7 @@
             // form2_AddNewBtn_Reception
             // 
             this.form2_AddNewBtn_Reception.Location = new System.Drawing.Point(283, 34);
-            this.form2_AddNewBtn_Reception.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_AddNewBtn_Reception.Margin = new System.Windows.Forms.Padding(4);
             this.form2_AddNewBtn_Reception.Name = "form2_AddNewBtn_Reception";
             this.form2_AddNewBtn_Reception.Size = new System.Drawing.Size(100, 28);
             this.form2_AddNewBtn_Reception.TabIndex = 15;
@@ -808,9 +809,9 @@
             // 
             this.tabPage2.Controls.Add(this.tabControl3);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(848, 364);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Prices And Discounts";
@@ -821,7 +822,7 @@
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Location = new System.Drawing.Point(8, 7);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(797, 331);
@@ -834,9 +835,9 @@
             this.tabPage9.Controls.Add(this.form2_UpdatePricesBtn_Prices);
             this.tabPage9.Controls.Add(this.dataGridView3);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage9.Size = new System.Drawing.Size(789, 302);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Prices";
@@ -855,7 +856,7 @@
             // form2_Prices_NewPrice
             // 
             this.form2_Prices_NewPrice.Location = new System.Drawing.Point(367, 47);
-            this.form2_Prices_NewPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_Prices_NewPrice.Margin = new System.Windows.Forms.Padding(4);
             this.form2_Prices_NewPrice.Name = "form2_Prices_NewPrice";
             this.form2_Prices_NewPrice.Size = new System.Drawing.Size(132, 22);
             this.form2_Prices_NewPrice.TabIndex = 2;
@@ -864,7 +865,7 @@
             // 
             this.form2_UpdatePricesBtn_Prices.AutoEllipsis = true;
             this.form2_UpdatePricesBtn_Prices.Location = new System.Drawing.Point(367, 79);
-            this.form2_UpdatePricesBtn_Prices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form2_UpdatePricesBtn_Prices.Margin = new System.Windows.Forms.Padding(4);
             this.form2_UpdatePricesBtn_Prices.Name = "form2_UpdatePricesBtn_Prices";
             this.form2_UpdatePricesBtn_Prices.Size = new System.Drawing.Size(155, 32);
             this.form2_UpdatePricesBtn_Prices.TabIndex = 1;
@@ -875,7 +876,7 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(24, 47);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(320, 185);
             this.dataGridView3.TabIndex = 0;
@@ -889,9 +890,9 @@
             this.tabPage10.Controls.Add(this.button22);
             this.tabPage10.Controls.Add(this.dataGridView4);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage10.Size = new System.Drawing.Size(789, 302);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Discounts";
@@ -900,7 +901,7 @@
             // button23
             // 
             this.button23.Location = new System.Drawing.Point(111, 229);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button23.Margin = new System.Windows.Forms.Padding(4);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(157, 28);
             this.button23.TabIndex = 5;
@@ -910,7 +911,7 @@
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(479, 95);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(132, 22);
             this.textBox18.TabIndex = 4;
@@ -919,7 +920,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(560, 62);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 24);
             this.comboBox2.TabIndex = 3;
@@ -928,7 +929,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(368, 62);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 2;
@@ -936,7 +937,7 @@
             // button22
             // 
             this.button22.Location = new System.Drawing.Point(479, 127);
-            this.button22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(133, 28);
             this.button22.TabIndex = 1;
@@ -947,7 +948,7 @@
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(25, 25);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(320, 185);
             this.dataGridView4.TabIndex = 0;
@@ -956,9 +957,9 @@
             // 
             this.tabPage3.Controls.Add(this.dataGridView5);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(848, 364);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Room Informations";
@@ -968,7 +969,7 @@
             // 
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(29, 30);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(320, 185);
             this.dataGridView5.TabIndex = 0;
@@ -977,9 +978,9 @@
             // 
             this.tabPage4.Controls.Add(this.dataGridView6);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(848, 364);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Customer Page";
@@ -989,7 +990,7 @@
             // 
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(36, 37);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.Size = new System.Drawing.Size(320, 185);
             this.dataGridView6.TabIndex = 0;
@@ -997,21 +998,32 @@
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(848, 364);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Statistic";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // logut_button_admin
+            // 
+            this.logut_button_admin.Location = new System.Drawing.Point(387, 396);
+            this.logut_button_admin.Name = "logut_button_admin";
+            this.logut_button_admin.Size = new System.Drawing.Size(75, 23);
+            this.logut_button_admin.TabIndex = 1;
+            this.logut_button_admin.Text = "Log out";
+            this.logut_button_admin.UseVisualStyleBackColor = true;
+            this.logut_button_admin.Click += new System.EventHandler(this.logut_button_admin_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 407);
+            this.ClientSize = new System.Drawing.Size(856, 419);
+            this.Controls.Add(this.logut_button_admin);
             this.Controls.Add(this.form2_dataGridView_Prices);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Administrator";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1130,6 +1142,7 @@
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.DataGridView form2_dataGridView_Manager;
         private System.Windows.Forms.DataGridView form2_dataGridView_Customer;
+        private System.Windows.Forms.Button logut_button_admin;
 
 
     }

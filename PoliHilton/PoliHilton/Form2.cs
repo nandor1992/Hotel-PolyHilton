@@ -114,5 +114,10 @@ namespace PoliHilton
         {
             a1.cleaner_dataset_select(form2_dataGridView_Cleaner, form2_Cleaner_FirstName, form2_Cleaner_LastName, form2_Cleaner_UserName, form2_Cleaner_Password);
         }
+
+        private void logut_button_admin_Click(object sender, EventArgs e)
+        {
+            a1.log_out();
+        }
     }
 }

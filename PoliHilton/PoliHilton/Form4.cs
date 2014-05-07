@@ -21,6 +21,9 @@ namespace PoliHilton
             InitializeComponent();
             this.r1 = r1;
             this.Show();
+            //added by nandor for init 
+            //ar fi bine sa fie populat tabelul cand se creaza, asta la toate
+            r1.reception_dataset_populate(form4_cb_roomid);
 
         }
 
@@ -36,6 +39,7 @@ namespace PoliHilton
 
         private void form4_button_createrezervation_Click(object sender, EventArgs e)
         {
+            //Nandor: Asta nue bine aici, ar trebui asapara inainte savrei sa dai click pe reservation, la initalizare, sus am pus
             form4_cb_roomid.Items.Add("1");
             form4_cb_roomid.Items.Add("2");
             form4_cb_roomid.Items.Add("3");

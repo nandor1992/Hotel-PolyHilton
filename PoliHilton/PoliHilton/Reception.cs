@@ -30,16 +30,15 @@ namespace PoliHilton
        {
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
            DataSet ds1 = db1.Read(command_cleaner);
-           g1.Items.Add("asd");
-           g1.Items.Add("asdddd");
-           
-           //g1.DataSource = ds1.Tables["Rooms"];
-           /*foreach (DataTable table in ds1.Tables)
+           //am modificat sa ia fiecare row din tabel si sa le adauge, se poate si cu source cred dar asa e mai simplu
+           foreach (DataTable table in ds1.Tables)
            {
-               //cmbTripName.Items.Add(drd["FleetName"].ToString());
-              // g1.Items.Add(ds1.ToString());
-               g1.DataSource = ds1;
-           }*/
+               foreach (DataRow dr in table.Rows)
+               {
+                g1.Items.Add(dr["r_number"].ToString());
+
+               }
+           }
        }
        public void create_user(String username, String password, String firstname, String lastname, int u_type_id)
        {
