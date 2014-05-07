@@ -42,16 +42,16 @@
             this.form4_label_rezervationprice = new System.Windows.Forms.Label();
             this.form4_textPrice = new System.Windows.Forms.TextBox();
             this.form4_tabpage_createuser = new System.Windows.Forms.TabPage();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.form4_text_lastname = new System.Windows.Forms.TextBox();
+            this.form4_text_firstname = new System.Windows.Forms.TextBox();
+            this.form4_text_usertypeid = new System.Windows.Forms.TextBox();
             this.form4_label_usertypeid = new System.Windows.Forms.Label();
             this.form4_label_firstname = new System.Windows.Forms.Label();
             this.form4_label_lastname = new System.Windows.Forms.Label();
             this.form1_label_password = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.form4_text_password = new System.Windows.Forms.TextBox();
             this.form4_button_createuser = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.form4_text_username = new System.Windows.Forms.TextBox();
             this.form1_label_username = new System.Windows.Forms.Label();
             this.form4_tabpage_deleterezervations = new System.Windows.Forms.TabPage();
             this.form4_button_deleterezervation = new System.Windows.Forms.Button();
@@ -191,16 +191,16 @@
             // 
             // form4_tabpage_createuser
             // 
-            this.form4_tabpage_createuser.Controls.Add(this.textBox8);
-            this.form4_tabpage_createuser.Controls.Add(this.textBox7);
-            this.form4_tabpage_createuser.Controls.Add(this.textBox6);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_text_lastname);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_text_firstname);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_text_usertypeid);
             this.form4_tabpage_createuser.Controls.Add(this.form4_label_usertypeid);
             this.form4_tabpage_createuser.Controls.Add(this.form4_label_firstname);
             this.form4_tabpage_createuser.Controls.Add(this.form4_label_lastname);
             this.form4_tabpage_createuser.Controls.Add(this.form1_label_password);
-            this.form4_tabpage_createuser.Controls.Add(this.textBox5);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_text_password);
             this.form4_tabpage_createuser.Controls.Add(this.form4_button_createuser);
-            this.form4_tabpage_createuser.Controls.Add(this.textBox4);
+            this.form4_tabpage_createuser.Controls.Add(this.form4_text_username);
             this.form4_tabpage_createuser.Controls.Add(this.form1_label_username);
             this.form4_tabpage_createuser.Location = new System.Drawing.Point(4, 22);
             this.form4_tabpage_createuser.Name = "form4_tabpage_createuser";
@@ -211,26 +211,26 @@
             this.form4_tabpage_createuser.UseVisualStyleBackColor = true;
             this.form4_tabpage_createuser.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // textBox8
+            // form4_text_lastname
             // 
-            this.textBox8.Location = new System.Drawing.Point(102, 160);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 13;
+            this.form4_text_lastname.Location = new System.Drawing.Point(102, 160);
+            this.form4_text_lastname.Name = "form4_text_lastname";
+            this.form4_text_lastname.Size = new System.Drawing.Size(100, 20);
+            this.form4_text_lastname.TabIndex = 13;
             // 
-            // textBox7
+            // form4_text_firstname
             // 
-            this.textBox7.Location = new System.Drawing.Point(102, 124);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 12;
+            this.form4_text_firstname.Location = new System.Drawing.Point(102, 124);
+            this.form4_text_firstname.Name = "form4_text_firstname";
+            this.form4_text_firstname.Size = new System.Drawing.Size(100, 20);
+            this.form4_text_firstname.TabIndex = 12;
             // 
-            // textBox6
+            // form4_text_usertypeid
             // 
-            this.textBox6.Location = new System.Drawing.Point(102, 89);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
+            this.form4_text_usertypeid.Location = new System.Drawing.Point(102, 89);
+            this.form4_text_usertypeid.Name = "form4_text_usertypeid";
+            this.form4_text_usertypeid.Size = new System.Drawing.Size(100, 20);
+            this.form4_text_usertypeid.TabIndex = 11;
             // 
             // form4_label_usertypeid
             // 
@@ -268,12 +268,12 @@
             this.form1_label_password.TabIndex = 7;
             this.form1_label_password.Text = "Password";
             // 
-            // textBox5
+            // form4_text_password
             // 
-            this.textBox5.Location = new System.Drawing.Point(102, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.form4_text_password.Location = new System.Drawing.Point(102, 54);
+            this.form4_text_password.Name = "form4_text_password";
+            this.form4_text_password.Size = new System.Drawing.Size(100, 20);
+            this.form4_text_password.TabIndex = 6;
             // 
             // form4_button_createuser
             // 
@@ -284,13 +284,14 @@
             this.form4_button_createuser.TabIndex = 5;
             this.form4_button_createuser.Text = "Create User";
             this.form4_button_createuser.UseVisualStyleBackColor = true;
+            this.form4_button_createuser.Click += new System.EventHandler(this.form4_button_createuser_Click);
             // 
-            // textBox4
+            // form4_text_username
             // 
-            this.textBox4.Location = new System.Drawing.Point(102, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.form4_text_username.Location = new System.Drawing.Point(102, 17);
+            this.form4_text_username.Name = "form4_text_username";
+            this.form4_text_username.Size = new System.Drawing.Size(100, 20);
+            this.form4_text_username.TabIndex = 4;
             // 
             // form1_label_username
             // 
@@ -340,6 +341,7 @@
             this.form4_button_showrezervations.TabIndex = 0;
             this.form4_button_showrezervations.Text = "Show Reservations";
             this.form4_button_showrezervations.UseVisualStyleBackColor = true;
+            this.form4_button_showrezervations.Click += new System.EventHandler(this.form4_button_showrezervations_Click);
             // 
             // Form4
             // 
@@ -375,13 +377,13 @@
         private System.Windows.Forms.Label form4_label_rezervationprice;
         private System.Windows.Forms.TextBox form4_textPrice;
         private System.Windows.Forms.Label form1_label_username;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox form4_text_username;
         private System.Windows.Forms.Button form4_button_createuser;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox form4_text_password;
         private System.Windows.Forms.Label form1_label_password;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox form4_text_lastname;
+        private System.Windows.Forms.TextBox form4_text_firstname;
+        private System.Windows.Forms.TextBox form4_text_usertypeid;
         private System.Windows.Forms.Label form4_label_usertypeid;
         private System.Windows.Forms.Label form4_label_firstname;
         private System.Windows.Forms.Label form4_label_lastname;

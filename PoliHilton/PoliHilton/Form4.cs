@@ -36,7 +36,25 @@ namespace PoliHilton
 
         private void form4_button_createrezervation_Click(object sender, EventArgs e)
         {
-            r1.reception_dataset_populate(form4_cb_roomid);
+            form4_cb_roomid.Items.Add("1");
+            form4_cb_roomid.Items.Add("2");
+            form4_cb_roomid.Items.Add("3");
+           // r1.reception_dataset_populate(form4_cb_roomid);
+            
+
+        }
+
+        private void form4_button_createuser_Click(object sender, EventArgs e)
+        {
+            if (form4_text_usertypeid.Text == "")
+            {
+                form4_text_usertypeid.Text="1";
+            }
+                r1.create_user(form4_text_username.Text, form4_text_password.Text, form4_text_firstname.Text, form4_text_lastname.Text, int.Parse(form4_text_usertypeid.Text));
+        }
+
+        private void form4_button_showrezervations_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -30,15 +30,45 @@ namespace PoliHilton
        {
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
            DataSet ds1 = db1.Read(command_cleaner);
-           //g1.Items.Add("1");
-           //g1.Items.Add("2");
+           g1.Items.Add("asd");
+           g1.Items.Add("asdddd");
            
            //g1.DataSource = ds1.Tables["Rooms"];
-           foreach (DataTable table in ds1.Tables)
+           /*foreach (DataTable table in ds1.Tables)
            {
                //cmbTripName.Items.Add(drd["FleetName"].ToString());
               // g1.Items.Add(ds1.ToString());
                g1.DataSource = ds1;
+           }*/
+       }
+       public void create_user(String username, String password, String firstname, String lastname, int u_type_id)
+       {
+           String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
+           DataSet ds1 = db1.Read(db_command);
+           if (ds1.Tables[0].Rows.Count != 0)
+           {
+               MessageBox.Show("User already taken");
+           }
+           else if(u_type_id==2)
+           {
+               MessageBox.Show("You cannot create an administrator account");
+           }
+           else if (username=="" ||lastname=="" ||firstname=="" ||password=="" )
+           {
+               MessageBox.Show("No field should be left NULL");
+           }
+           else
+           {
+               try
+               {
+                   String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values('" + u_type_id + "','" + username + "','" + password + "','" + firstname + "','" + lastname + "')";
+                   db1.Command(db_command1);
+                   MessageBox.Show("User created succesfully!");
+               }
+               catch (Exception e)
+               {
+                   MessageBox.Show("Error Insert" + e.ToString());
+               }
            }
        }
 
