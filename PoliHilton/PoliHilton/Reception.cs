@@ -9,24 +9,23 @@ using System.Data;
 namespace PoliHilton
 {
    public class Reception
-    {
-        //We need functions for all the buttons/actions posssible selected
-        //Initalization is done and log out
-        Database db1;
-     int id;
-     String firstname;
-     String lastname;
-     Form4 f4;
-        
+   {
+       //We need functions for all the buttons/actions posssible selected
+       //Initalization is done and log out
+       Database db1;
+       int id;
+       String firstname;
+       String lastname;
+       Form4 f4;
        public Reception(int id,String firstname,String lastname,Database db1)
-        {
-        this.db1=db1;
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+       {
+            this.db1=db1;
+            this.id = id;
+            this.firstname = firstname;
+            this.lastname = lastname;
         
-        }
-       public void reception_dataset_populate_rid(ComboBox g1)
+       }
+       public void reception_dataset_populate_rname(ComboBox g1)
        {
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
            DataSet ds1 = db1.Read(command_cleaner);
@@ -36,7 +35,6 @@ namespace PoliHilton
                foreach (DataRow dr in table.Rows)
                {
                 g1.Items.Add(dr["r_number"].ToString());
-
                }
            }
        }
@@ -129,7 +127,23 @@ namespace PoliHilton
            }
            return int.Parse(u_name);
        }
-
+       public void reception_dataset_populate(System.Windows.Forms.DataGridView g1)
+       {
+           String command_reception = "SELECT * FROM [polihilton].[dbo].[Rezervations]";
+           DataSet ds1 = db1.Read(command_reception);
+           foreach (DataTable table in ds1.Tables)
+           {
+               g1.DataSource = table;
+           }
+       }
+       public void delete_rezervation(System.Windows.Forms.DataGridView g1)
+       {
+           int rowindex = g1.CurrentCell.RowIndex;
+           string value=g1.Rows[rowindex].Cells[0].Value.ToString();
+           String db_command = "DELETE FROM [polihilton].[dbo].[Rezervations] Where rez_id='" +int.Parse(value)  + "' ";
+           DataSet ds1 = db1.Read(db_command);
+           MessageBox.Show("Reservation deleted!");
+       }
        public void log_out()
        {
            this.f4.Close();

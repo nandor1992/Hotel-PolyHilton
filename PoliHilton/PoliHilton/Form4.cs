@@ -21,9 +21,7 @@ namespace PoliHilton
             InitializeComponent();
             this.r1 = r1;
             this.Show();
-            //added by nandor for init 
-            //ar fi bine sa fie populat tabelul cand se creaza, asta la toate
-            r1.reception_dataset_populate_rid(form4_cb_roomnumber);
+            r1.reception_dataset_populate_rname(form4_cb_roomnumber);
             r1.reception_dataset_populate_uname(form4_cb_username);
 
         }
@@ -43,8 +41,6 @@ namespace PoliHilton
             if (form4_cb_roomnumber.SelectedIndex >= 0 && form4_cb_username.SelectedIndex>=0)
             {
                 form4_textPrice.Text = r1.calculate_price(int.Parse(form4_cb_roomnumber.SelectedItem.ToString())).ToString();
-                //string check_in = form4_dtp_checkin.Value.ToString("dd-MM-yyyy");
-                //string check_out = form4_dtp_checkout.Value.ToString("dd-MM-yyyy");
                 DateTime check_in = form4_dtp_checkin.Value.Date; 
                 DateTime check_out = form4_dtp_checkout.Value.Date;
                 int uid=r1.return_uid(form4_cb_username.SelectedItem.ToString());
@@ -60,6 +56,7 @@ namespace PoliHilton
 
         private void form4_button_createuser_Click(object sender, EventArgs e)
         {
+            //in case u dont input a usertype it will be by default =1
             if (form4_text_usertypeid.Text == "")
             {
                 form4_text_usertypeid.Text="1";
@@ -69,7 +66,12 @@ namespace PoliHilton
 
         private void form4_button_showrezervations_Click(object sender, EventArgs e)
         {
-            
+            r1.reception_dataset_populate(form4_dataviewgrid);
+        }
+
+        private void form4_button_deleterezervation_Click(object sender, EventArgs e)
+        {
+            r1.delete_rezervation(form4_dataviewgrid);
         }
     }
 }

@@ -324,6 +324,7 @@
             this.form4_button_deleterezervation.TabIndex = 2;
             this.form4_button_deleterezervation.Text = "Delete Reservation";
             this.form4_button_deleterezervation.UseVisualStyleBackColor = true;
+            this.form4_button_deleterezervation.Click += new System.EventHandler(this.form4_button_deleterezervation_Click);
             // 
             // form4_dataviewgrid
             // 
