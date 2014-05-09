@@ -23,7 +23,8 @@ namespace PoliHilton
             this.Show();
             //added by nandor for init 
             //ar fi bine sa fie populat tabelul cand se creaza, asta la toate
-            r1.reception_dataset_populate(form4_cb_roomid);
+            r1.reception_dataset_populate_rid(form4_cb_roomnumber);
+            r1.reception_dataset_populate_uname(form4_cb_username);
 
         }
 
@@ -39,13 +40,22 @@ namespace PoliHilton
 
         private void form4_button_createrezervation_Click(object sender, EventArgs e)
         {
-            //Nandor: Asta nue bine aici, ar trebui asapara inainte savrei sa dai click pe reservation, la initalizare, sus am pus
-            form4_cb_roomid.Items.Add("1");
-            form4_cb_roomid.Items.Add("2");
-            form4_cb_roomid.Items.Add("3");
-           // r1.reception_dataset_populate(form4_cb_roomid);
-            
-
+            if (form4_cb_roomnumber.SelectedIndex >= 0 && form4_cb_username.SelectedIndex>=0)
+            {
+                form4_textPrice.Text = r1.calculate_price(int.Parse(form4_cb_roomnumber.SelectedItem.ToString())).ToString();
+                //string check_in = form4_dtp_checkin.Value.ToString("dd-MM-yyyy");
+                //string check_out = form4_dtp_checkout.Value.ToString("dd-MM-yyyy");
+                DateTime check_in = form4_dtp_checkin.Value.Date; 
+                DateTime check_out = form4_dtp_checkout.Value.Date;
+                int uid=r1.return_uid(form4_cb_username.SelectedItem.ToString());
+                int rid = r1.return_rid(int.Parse(form4_cb_roomnumber.SelectedItem.ToString()));
+                r1.create_rezervation(rid, uid, check_in, check_out, int.Parse(form4_textPrice.Text));
+                
+            }
+            else
+            {
+                MessageBox.Show("You must select the room and the username");
+            }
         }
 
         private void form4_button_createuser_Click(object sender, EventArgs e)
@@ -59,7 +69,7 @@ namespace PoliHilton
 
         private void form4_button_showrezervations_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

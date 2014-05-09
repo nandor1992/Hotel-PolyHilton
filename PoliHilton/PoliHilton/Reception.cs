@@ -26,7 +26,7 @@ namespace PoliHilton
         this.lastname = lastname;
         
         }
-       public void reception_dataset_populate(ComboBox g1)
+       public void reception_dataset_populate_rid(ComboBox g1)
        {
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
            DataSet ds1 = db1.Read(command_cleaner);
@@ -39,6 +39,26 @@ namespace PoliHilton
 
                }
            }
+       }
+       public void reception_dataset_populate_uname(ComboBox g1)
+       {
+           String command_cleaner = "SELECT username FROM [polihilton].[dbo].[Users]";
+           DataSet ds1 = db1.Read(command_cleaner);
+           //am modificat sa ia fiecare row din tabel si sa le adauge, se poate si cu source cred dar asa e mai simplu
+           foreach (DataTable table in ds1.Tables)
+           {
+               foreach (DataRow dr in table.Rows)
+               {
+                   g1.Items.Add(dr["username"].ToString());
+
+               }
+           }
+       }
+       public void create_rezervation(int room_id,int user_id,DateTime s_date,DateTime e_date, int r_price)
+       {
+           String db_command1 = "INSERT INTO [polihilton].[dbo].[Rezervations] (r_id,u_id,start_date,end_date,rez_price)Values('" + room_id + "','" + user_id + "','" + s_date + "','" + e_date + "','" + r_price + "')";
+           db1.Command(db_command1);
+           MessageBox.Show("Reservation created succesfully!");
        }
        public void create_user(String username, String password, String firstname, String lastname, int u_type_id)
        {
@@ -69,6 +89,45 @@ namespace PoliHilton
                    MessageBox.Show("Error Insert" + e.ToString());
                }
            }
+       }
+       public int calculate_price(int room_number)
+       {
+           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[RoomTypes] JOIN [polihilton].[dbo].[Rooms] ON [polihilton].[dbo].[RoomTypes].r_type_id=[polihilton].[dbo].[Rooms].r_type_id WHERE r_number='" + room_number + "' ";
+           DataSet ds1 = db1.Read(command_cleaner);
+           foreach (DataTable table in ds1.Tables)
+           {
+               foreach (DataRow dr in table.Rows)
+               {
+                   room_number=int.Parse(dr["price"].ToString());
+               }
+           }
+           return room_number;
+       }
+       public int return_rid(int room_number)
+       {
+           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rooms] [Rooms] WHERE r_number='" + room_number + "' ";
+           DataSet ds1 = db1.Read(command_cleaner);
+           foreach (DataTable table in ds1.Tables)
+           {
+               foreach (DataRow dr in table.Rows)
+               {
+                   room_number = int.Parse(dr["r_id"].ToString());
+               }
+           }
+           return room_number;
+       }
+       public int return_uid(string u_name)
+       {
+           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] [Rooms] WHERE username='" + u_name + "' ";
+           DataSet ds1 = db1.Read(command_cleaner);
+           foreach (DataTable table in ds1.Tables)
+           {
+               foreach (DataRow dr in table.Rows)
+               {
+                   u_name=dr["u_id"].ToString();
+               }
+           }
+           return int.Parse(u_name);
        }
 
        public void log_out()

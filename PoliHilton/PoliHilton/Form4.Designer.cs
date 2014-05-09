@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.form4_button_createrezervation = new System.Windows.Forms.Button();
-            this.form4_label_userid = new System.Windows.Forms.Label();
+            this.form4_label_username = new System.Windows.Forms.Label();
             this.form4_label_roomid = new System.Windows.Forms.Label();
             this.form4_label_checkindate = new System.Windows.Forms.Label();
             this.form4_label_checkoutdate = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.form4_dtp_checkin = new System.Windows.Forms.DateTimePicker();
+            this.form4_dtp_checkout = new System.Windows.Forms.DateTimePicker();
             this.form4_tabcontrol = new System.Windows.Forms.TabControl();
             this.form4_tabpage_createrezervations = new System.Windows.Forms.TabPage();
-            this.form4_cb_roomid = new System.Windows.Forms.ComboBox();
-            this.form4_cb_userid = new System.Windows.Forms.ComboBox();
+            this.form4_cb_roomnumber = new System.Windows.Forms.ComboBox();
+            this.form4_cb_username = new System.Windows.Forms.ComboBox();
             this.form4_label_rezervationprice = new System.Windows.Forms.Label();
             this.form4_textPrice = new System.Windows.Forms.TextBox();
             this.form4_tabpage_createuser = new System.Windows.Forms.TabPage();
@@ -74,23 +74,23 @@
             this.form4_button_createrezervation.UseVisualStyleBackColor = true;
             this.form4_button_createrezervation.Click += new System.EventHandler(this.form4_button_createrezervation_Click);
             // 
-            // form4_label_userid
+            // form4_label_username
             // 
-            this.form4_label_userid.AutoSize = true;
-            this.form4_label_userid.Location = new System.Drawing.Point(16, 20);
-            this.form4_label_userid.Name = "form4_label_userid";
-            this.form4_label_userid.Size = new System.Drawing.Size(43, 13);
-            this.form4_label_userid.TabIndex = 2;
-            this.form4_label_userid.Text = "User ID";
+            this.form4_label_username.AutoSize = true;
+            this.form4_label_username.Location = new System.Drawing.Point(16, 20);
+            this.form4_label_username.Name = "form4_label_username";
+            this.form4_label_username.Size = new System.Drawing.Size(55, 13);
+            this.form4_label_username.TabIndex = 2;
+            this.form4_label_username.Text = "Username";
             // 
             // form4_label_roomid
             // 
             this.form4_label_roomid.AutoSize = true;
             this.form4_label_roomid.Location = new System.Drawing.Point(16, 50);
             this.form4_label_roomid.Name = "form4_label_roomid";
-            this.form4_label_roomid.Size = new System.Drawing.Size(49, 13);
+            this.form4_label_roomid.Size = new System.Drawing.Size(75, 13);
             this.form4_label_roomid.TabIndex = 3;
-            this.form4_label_roomid.Text = "Room ID";
+            this.form4_label_roomid.Text = "Room Number";
             // 
             // form4_label_checkindate
             // 
@@ -110,19 +110,19 @@
             this.form4_label_checkoutdate.TabIndex = 7;
             this.form4_label_checkoutdate.Text = "Check-Out Date";
             // 
-            // dateTimePicker1
+            // form4_dtp_checkin
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(106, 82);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.form4_dtp_checkin.Location = new System.Drawing.Point(106, 82);
+            this.form4_dtp_checkin.Name = "form4_dtp_checkin";
+            this.form4_dtp_checkin.Size = new System.Drawing.Size(200, 20);
+            this.form4_dtp_checkin.TabIndex = 10;
             // 
-            // dateTimePicker2
+            // form4_dtp_checkout
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(106, 116);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.form4_dtp_checkout.Location = new System.Drawing.Point(106, 116);
+            this.form4_dtp_checkout.Name = "form4_dtp_checkout";
+            this.form4_dtp_checkout.Size = new System.Drawing.Size(200, 20);
+            this.form4_dtp_checkout.TabIndex = 11;
             // 
             // form4_tabcontrol
             // 
@@ -137,17 +137,17 @@
             // 
             // form4_tabpage_createrezervations
             // 
-            this.form4_tabpage_createrezervations.Controls.Add(this.form4_cb_roomid);
-            this.form4_tabpage_createrezervations.Controls.Add(this.form4_cb_userid);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_cb_roomnumber);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_cb_username);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_rezervationprice);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_textPrice);
-            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_userid);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_username);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_button_createrezervation);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_checkoutdate);
-            this.form4_tabpage_createrezervations.Controls.Add(this.dateTimePicker2);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_dtp_checkout);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_checkindate);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_roomid);
-            this.form4_tabpage_createrezervations.Controls.Add(this.dateTimePicker1);
+            this.form4_tabpage_createrezervations.Controls.Add(this.form4_dtp_checkin);
             this.form4_tabpage_createrezervations.Location = new System.Drawing.Point(4, 22);
             this.form4_tabpage_createrezervations.Name = "form4_tabpage_createrezervations";
             this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(3);
@@ -156,21 +156,21 @@
             this.form4_tabpage_createrezervations.Text = "Create Rezervation";
             this.form4_tabpage_createrezervations.UseVisualStyleBackColor = true;
             // 
-            // form4_cb_roomid
+            // form4_cb_roomnumber
             // 
-            this.form4_cb_roomid.FormattingEnabled = true;
-            this.form4_cb_roomid.Location = new System.Drawing.Point(106, 47);
-            this.form4_cb_roomid.Name = "form4_cb_roomid";
-            this.form4_cb_roomid.Size = new System.Drawing.Size(200, 21);
-            this.form4_cb_roomid.TabIndex = 15;
+            this.form4_cb_roomnumber.FormattingEnabled = true;
+            this.form4_cb_roomnumber.Location = new System.Drawing.Point(106, 47);
+            this.form4_cb_roomnumber.Name = "form4_cb_roomnumber";
+            this.form4_cb_roomnumber.Size = new System.Drawing.Size(200, 21);
+            this.form4_cb_roomnumber.TabIndex = 15;
             // 
-            // form4_cb_userid
+            // form4_cb_username
             // 
-            this.form4_cb_userid.FormattingEnabled = true;
-            this.form4_cb_userid.Location = new System.Drawing.Point(106, 12);
-            this.form4_cb_userid.Name = "form4_cb_userid";
-            this.form4_cb_userid.Size = new System.Drawing.Size(200, 21);
-            this.form4_cb_userid.TabIndex = 14;
+            this.form4_cb_username.FormattingEnabled = true;
+            this.form4_cb_username.Location = new System.Drawing.Point(106, 12);
+            this.form4_cb_username.Name = "form4_cb_username";
+            this.form4_cb_username.Size = new System.Drawing.Size(200, 21);
+            this.form4_cb_username.TabIndex = 14;
             // 
             // form4_label_rezervationprice
             // 
@@ -365,12 +365,12 @@
         #endregion
 
         private System.Windows.Forms.Button form4_button_createrezervation;
-        private System.Windows.Forms.Label form4_label_userid;
+        private System.Windows.Forms.Label form4_label_username;
         private System.Windows.Forms.Label form4_label_roomid;
         private System.Windows.Forms.Label form4_label_checkindate;
         private System.Windows.Forms.Label form4_label_checkoutdate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker form4_dtp_checkin;
+        private System.Windows.Forms.DateTimePicker form4_dtp_checkout;
         private System.Windows.Forms.TabControl form4_tabcontrol;
         private System.Windows.Forms.TabPage form4_tabpage_createrezervations;
         private System.Windows.Forms.TabPage form4_tabpage_createuser;
@@ -391,7 +391,7 @@
         private System.Windows.Forms.Button form4_button_deleterezervation;
         private System.Windows.Forms.DataGridView form4_dataviewgrid;
         private System.Windows.Forms.Button form4_button_showrezervations;
-        private System.Windows.Forms.ComboBox form4_cb_roomid;
-        private System.Windows.Forms.ComboBox form4_cb_userid;
+        private System.Windows.Forms.ComboBox form4_cb_roomnumber;
+        private System.Windows.Forms.ComboBox form4_cb_username;
     }
 }
