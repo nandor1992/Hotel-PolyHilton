@@ -26,7 +26,6 @@ namespace PoliHilton
         public Form1(Database db1)
         {
             this.db1 = db1;
-            db1.init();
             InitializeComponent();
             auth1 = new Auth(db1);
         }

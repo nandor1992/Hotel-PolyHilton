@@ -31,8 +31,9 @@ namespace PoliHilton
                  DataRow dr1 = ds1.Tables[0].Rows[0];
                  switch (int.Parse(dr1["u_type_id"].ToString()))
                  {
+                         //TO-DO: Have to change to real values of user!!
                      case 1: MessageBox.Show("Usert type 1(normal) and username=:" + username); login_user(1, "Test", "TestLast"); break;
-                     case 2: MessageBox.Show("Usert type 2(admin) and username=:" + username); login_admin(1, "Test", "TestLast"); break;
+                     case 2: MessageBox.Show("Usert type 2(admin) and username=:" + username); login_admin(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString()); break;
                      case 3: MessageBox.Show("Usert type 3(cleaning) and username=:" + username); login_cleaner(1, "Test", "TestLast"); break;
                      case 4: MessageBox.Show("Usert type 4(reception) and username=:" + username); login_reception(1, "Test", "TestLast"); break;
                      default: MessageBox.Show("your usertype was not recognized"); break;

@@ -47,7 +47,6 @@
             this.form2_DeleteBtn_Cleaner = new System.Windows.Forms.Button();
             this.form2_AddNewBtn_Cleaner = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.form2_dataGridView_Manager = new System.Windows.Forms.DataGridView();
             this.form2_SelectBtn_Manager = new System.Windows.Forms.Button();
             this.form2_PromoteToAdmBtn_Manager = new System.Windows.Forms.Button();
             this.form2_ModifyBtn_Manager = new System.Windows.Forms.Button();
@@ -62,7 +61,6 @@
             this.form2_Manager_LastName = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.form2_dataGridView_Customer = new System.Windows.Forms.DataGridView();
             this.form2_SelectBtn_Customer = new System.Windows.Forms.Button();
             this.form2_PromoteToAdmBtn_Customer = new System.Windows.Forms.Button();
             this.form2_ModifyBtn_Customer = new System.Windows.Forms.Button();
@@ -77,7 +75,6 @@
             this.form2_Customer_LastName = new System.Windows.Forms.TextBox();
             this.form2_Customer_FirstName = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.form2_dataGridView_Reception = new System.Windows.Forms.DataGridView();
             this.form2_SelectBtn_Reception = new System.Windows.Forms.Button();
             this.form2_Reception_Password = new System.Windows.Forms.TextBox();
             this.form2_Reception_UserName = new System.Windows.Forms.TextBox();
@@ -111,17 +108,17 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.logut_button_admin = new System.Windows.Forms.Button();
+            this.form2_dataGridView_Manager = new System.Windows.Forms.DataGridView();
+            this.form2_DataGridView_Customer = new System.Windows.Forms.DataGridView();
+            this.form2_DataGridView_Reception = new System.Windows.Forms.DataGridView();
             this.form2_dataGridView_Prices.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.form2_Manager_FirstName.SuspendLayout();
             this.CleanerPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Cleaner)).BeginInit();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Manager)).BeginInit();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Customer)).BeginInit();
             this.tabPage11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Reception)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -132,6 +129,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Manager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_DataGridView_Customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_DataGridView_Reception)).BeginInit();
             this.SuspendLayout();
             // 
             // form2_dataGridView_Prices
@@ -201,12 +201,19 @@
             // 
             // form2_dataGridView_Cleaner
             // 
+            this.form2_dataGridView_Cleaner.AllowUserToAddRows = false;
+            this.form2_dataGridView_Cleaner.AllowUserToDeleteRows = false;
+            this.form2_dataGridView_Cleaner.AllowUserToResizeColumns = false;
+            this.form2_dataGridView_Cleaner.AllowUserToResizeRows = false;
             this.form2_dataGridView_Cleaner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form2_dataGridView_Cleaner.Location = new System.Drawing.Point(444, 33);
             this.form2_dataGridView_Cleaner.Margin = new System.Windows.Forms.Padding(4);
             this.form2_dataGridView_Cleaner.Name = "form2_dataGridView_Cleaner";
+            this.form2_dataGridView_Cleaner.ReadOnly = true;
+            this.form2_dataGridView_Cleaner.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.form2_dataGridView_Cleaner.Size = new System.Drawing.Size(320, 185);
             this.form2_dataGridView_Cleaner.TabIndex = 14;
+            this.form2_dataGridView_Cleaner.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.form2_dataGridView_Cleaner_CellContentClick);
             // 
             // form2_SelectBtn_Cleaner
             // 
@@ -322,6 +329,7 @@
             this.form2_DeleteBtn_Cleaner.TabIndex = 1;
             this.form2_DeleteBtn_Cleaner.Text = "Delete";
             this.form2_DeleteBtn_Cleaner.UseVisualStyleBackColor = true;
+            this.form2_DeleteBtn_Cleaner.Click += new System.EventHandler(this.form2_DeleteBtn_Cleaner_Click);
             // 
             // form2_AddNewBtn_Cleaner
             // 
@@ -359,15 +367,6 @@
             this.tabPage7.Text = "Manager";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // form2_dataGridView_Manager
-            // 
-            this.form2_dataGridView_Manager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form2_dataGridView_Manager.Location = new System.Drawing.Point(428, 38);
-            this.form2_dataGridView_Manager.Margin = new System.Windows.Forms.Padding(4);
-            this.form2_dataGridView_Manager.Name = "form2_dataGridView_Manager";
-            this.form2_dataGridView_Manager.Size = new System.Drawing.Size(320, 185);
-            this.form2_dataGridView_Manager.TabIndex = 46;
-            // 
             // form2_SelectBtn_Manager
             // 
             this.form2_SelectBtn_Manager.Location = new System.Drawing.Point(428, 242);
@@ -377,6 +376,7 @@
             this.form2_SelectBtn_Manager.TabIndex = 45;
             this.form2_SelectBtn_Manager.Text = "Select";
             this.form2_SelectBtn_Manager.UseVisualStyleBackColor = true;
+            this.form2_SelectBtn_Manager.Click += new System.EventHandler(this.form2_SelectBtn_Manager_Click);
             // 
             // form2_PromoteToAdmBtn_Manager
             // 
@@ -407,6 +407,7 @@
             this.form2_DeleteBtn_Manager.TabIndex = 41;
             this.form2_DeleteBtn_Manager.Text = "Delete";
             this.form2_DeleteBtn_Manager.UseVisualStyleBackColor = true;
+            this.form2_DeleteBtn_Manager.Click += new System.EventHandler(this.form2_DeleteBtn_Manager_Click);
             // 
             // form2_AddNewBtn_Manager
             // 
@@ -417,6 +418,7 @@
             this.form2_AddNewBtn_Manager.TabIndex = 40;
             this.form2_AddNewBtn_Manager.Text = "Add New";
             this.form2_AddNewBtn_Manager.UseVisualStyleBackColor = true;
+            this.form2_AddNewBtn_Manager.Click += new System.EventHandler(this.form2_AddNewBtn_Manager_Click);
             // 
             // label5
             // 
@@ -494,7 +496,7 @@
             // 
             // tabPage8
             // 
-            this.tabPage8.Controls.Add(this.form2_dataGridView_Customer);
+            this.tabPage8.Controls.Add(this.form2_DataGridView_Customer);
             this.tabPage8.Controls.Add(this.form2_SelectBtn_Customer);
             this.tabPage8.Controls.Add(this.form2_PromoteToAdmBtn_Customer);
             this.tabPage8.Controls.Add(this.form2_ModifyBtn_Customer);
@@ -518,15 +520,6 @@
             this.tabPage8.UseVisualStyleBackColor = true;
             this.tabPage8.Click += new System.EventHandler(this.tabPage8_Click);
             // 
-            // form2_dataGridView_Customer
-            // 
-            this.form2_dataGridView_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form2_dataGridView_Customer.Location = new System.Drawing.Point(433, 42);
-            this.form2_dataGridView_Customer.Margin = new System.Windows.Forms.Padding(4);
-            this.form2_dataGridView_Customer.Name = "form2_dataGridView_Customer";
-            this.form2_dataGridView_Customer.Size = new System.Drawing.Size(320, 185);
-            this.form2_dataGridView_Customer.TabIndex = 46;
-            // 
             // form2_SelectBtn_Customer
             // 
             this.form2_SelectBtn_Customer.Location = new System.Drawing.Point(433, 246);
@@ -536,6 +529,7 @@
             this.form2_SelectBtn_Customer.TabIndex = 45;
             this.form2_SelectBtn_Customer.Text = "Select";
             this.form2_SelectBtn_Customer.UseVisualStyleBackColor = true;
+            this.form2_SelectBtn_Customer.Click += new System.EventHandler(this.form2_SelectBtn_Customer_Click);
             // 
             // form2_PromoteToAdmBtn_Customer
             // 
@@ -556,6 +550,7 @@
             this.form2_ModifyBtn_Customer.TabIndex = 42;
             this.form2_ModifyBtn_Customer.Text = "Modify";
             this.form2_ModifyBtn_Customer.UseVisualStyleBackColor = true;
+            this.form2_ModifyBtn_Customer.Click += new System.EventHandler(this.form2_ModifyBtn_Customer_Click);
             // 
             // form2_DeleteBtn_Customer
             // 
@@ -566,6 +561,7 @@
             this.form2_DeleteBtn_Customer.TabIndex = 41;
             this.form2_DeleteBtn_Customer.Text = "Delete";
             this.form2_DeleteBtn_Customer.UseVisualStyleBackColor = true;
+            this.form2_DeleteBtn_Customer.Click += new System.EventHandler(this.form2_DeleteBtn_Customer_Click);
             // 
             // form2_AddNewBtn_Customer
             // 
@@ -576,6 +572,7 @@
             this.form2_AddNewBtn_Customer.TabIndex = 40;
             this.form2_AddNewBtn_Customer.Text = "Add New";
             this.form2_AddNewBtn_Customer.UseVisualStyleBackColor = true;
+            this.form2_AddNewBtn_Customer.Click += new System.EventHandler(this.form2_AddNewBtn_Customer_Click);
             // 
             // label9
             // 
@@ -651,7 +648,7 @@
             // 
             // tabPage11
             // 
-            this.tabPage11.Controls.Add(this.form2_dataGridView_Reception);
+            this.tabPage11.Controls.Add(this.form2_DataGridView_Reception);
             this.tabPage11.Controls.Add(this.form2_SelectBtn_Reception);
             this.tabPage11.Controls.Add(this.form2_Reception_Password);
             this.tabPage11.Controls.Add(this.form2_Reception_UserName);
@@ -674,15 +671,6 @@
             this.tabPage11.Text = "Reception";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // form2_dataGridView_Reception
-            // 
-            this.form2_dataGridView_Reception.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form2_dataGridView_Reception.Location = new System.Drawing.Point(425, 33);
-            this.form2_dataGridView_Reception.Margin = new System.Windows.Forms.Padding(4);
-            this.form2_dataGridView_Reception.Name = "form2_dataGridView_Reception";
-            this.form2_dataGridView_Reception.Size = new System.Drawing.Size(320, 185);
-            this.form2_dataGridView_Reception.TabIndex = 28;
-            // 
             // form2_SelectBtn_Reception
             // 
             this.form2_SelectBtn_Reception.Location = new System.Drawing.Point(425, 241);
@@ -692,6 +680,7 @@
             this.form2_SelectBtn_Reception.TabIndex = 27;
             this.form2_SelectBtn_Reception.Text = "Select";
             this.form2_SelectBtn_Reception.UseVisualStyleBackColor = true;
+            this.form2_SelectBtn_Reception.Click += new System.EventHandler(this.form2_SelectBtn_Reception_Click);
             // 
             // form2_Reception_Password
             // 
@@ -794,6 +783,7 @@
             this.form2_DeleteBtn_Reception.TabIndex = 16;
             this.form2_DeleteBtn_Reception.Text = "Delete";
             this.form2_DeleteBtn_Reception.UseVisualStyleBackColor = true;
+            this.form2_DeleteBtn_Reception.Click += new System.EventHandler(this.form2_DeleteBtn_Reception_Click);
             // 
             // form2_AddNewBtn_Reception
             // 
@@ -804,6 +794,7 @@
             this.form2_AddNewBtn_Reception.TabIndex = 15;
             this.form2_AddNewBtn_Reception.Text = "Add New";
             this.form2_AddNewBtn_Reception.UseVisualStyleBackColor = true;
+            this.form2_AddNewBtn_Reception.Click += new System.EventHandler(this.form2_AddNewBtn_Reception_Click);
             // 
             // tabPage2
             // 
@@ -1016,6 +1007,55 @@
             this.logut_button_admin.UseVisualStyleBackColor = true;
             this.logut_button_admin.Click += new System.EventHandler(this.logut_button_admin_Click);
             // 
+            // form2_dataGridView_Manager
+            // 
+            this.form2_dataGridView_Manager.AllowUserToAddRows = false;
+            this.form2_dataGridView_Manager.AllowUserToDeleteRows = false;
+            this.form2_dataGridView_Manager.AllowUserToResizeColumns = false;
+            this.form2_dataGridView_Manager.AllowUserToResizeRows = false;
+            this.form2_dataGridView_Manager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.form2_dataGridView_Manager.Location = new System.Drawing.Point(428, 37);
+            this.form2_dataGridView_Manager.Margin = new System.Windows.Forms.Padding(4);
+            this.form2_dataGridView_Manager.Name = "form2_dataGridView_Manager";
+            this.form2_dataGridView_Manager.ReadOnly = true;
+            this.form2_dataGridView_Manager.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.form2_dataGridView_Manager.Size = new System.Drawing.Size(320, 185);
+            this.form2_dataGridView_Manager.TabIndex = 46;
+            this.form2_dataGridView_Manager.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.form2_dataGridView_Manager_CellContentClick);
+            // 
+            // form2_DataGridView_Customer
+            // 
+            this.form2_DataGridView_Customer.AllowUserToAddRows = false;
+            this.form2_DataGridView_Customer.AllowUserToDeleteRows = false;
+            this.form2_DataGridView_Customer.AllowUserToResizeColumns = false;
+            this.form2_DataGridView_Customer.AllowUserToResizeRows = false;
+            this.form2_DataGridView_Customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.form2_DataGridView_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.form2_DataGridView_Customer.Location = new System.Drawing.Point(433, 40);
+            this.form2_DataGridView_Customer.Margin = new System.Windows.Forms.Padding(4);
+            this.form2_DataGridView_Customer.Name = "form2_DataGridView_Customer";
+            this.form2_DataGridView_Customer.ReadOnly = true;
+            this.form2_DataGridView_Customer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.form2_DataGridView_Customer.Size = new System.Drawing.Size(320, 185);
+            this.form2_DataGridView_Customer.TabIndex = 46;
+            this.form2_DataGridView_Customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.form2_DataGridView_Customer_CellContentClick);
+            // 
+            // form2_DataGridView_Reception
+            // 
+            this.form2_DataGridView_Reception.AllowUserToAddRows = false;
+            this.form2_DataGridView_Reception.AllowUserToDeleteRows = false;
+            this.form2_DataGridView_Reception.AllowUserToResizeColumns = false;
+            this.form2_DataGridView_Reception.AllowUserToResizeRows = false;
+            this.form2_DataGridView_Reception.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.form2_DataGridView_Reception.Location = new System.Drawing.Point(425, 33);
+            this.form2_DataGridView_Reception.Margin = new System.Windows.Forms.Padding(4);
+            this.form2_DataGridView_Reception.Name = "form2_DataGridView_Reception";
+            this.form2_DataGridView_Reception.ReadOnly = true;
+            this.form2_DataGridView_Reception.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.form2_DataGridView_Reception.Size = new System.Drawing.Size(320, 185);
+            this.form2_DataGridView_Reception.TabIndex = 28;
+            this.form2_DataGridView_Reception.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.form2_DataGridView_Reception_CellContentClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1035,13 +1075,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Cleaner)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Manager)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Customer)).EndInit();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Reception)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -1054,6 +1091,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_dataGridView_Manager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_DataGridView_Customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form2_DataGridView_Reception)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1114,7 +1154,6 @@
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.DataGridView form2_dataGridView_Cleaner;
         private System.Windows.Forms.TabPage tabPage11;
-        private System.Windows.Forms.DataGridView form2_dataGridView_Reception;
         private System.Windows.Forms.Button form2_SelectBtn_Reception;
         private System.Windows.Forms.TextBox form2_Reception_Password;
         private System.Windows.Forms.TextBox form2_Reception_UserName;
@@ -1140,9 +1179,10 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridView form2_dataGridView_Manager;
-        private System.Windows.Forms.DataGridView form2_dataGridView_Customer;
         private System.Windows.Forms.Button logut_button_admin;
+        private System.Windows.Forms.DataGridView form2_dataGridView_Manager;
+        private System.Windows.Forms.DataGridView form2_DataGridView_Customer;
+        private System.Windows.Forms.DataGridView form2_DataGridView_Reception;
 
 
     }
