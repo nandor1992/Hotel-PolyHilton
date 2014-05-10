@@ -23,6 +23,30 @@ namespace HostingWpfUserControlInWf
         public UserControl1()
         {
             InitializeComponent();
+            long today=DateTime.Now.Ticks;
+            arrivalDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today) ) );
+            departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
+        }
+
+        private void arrivalDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            departureDate.SelectedDate = null;
+            long lastBlackOut = arrivalDate.SelectedDate.Value.Ticks;
+            departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(lastBlackOut)));
+        }
+
+
+        private void Button_ToolTipOpening(object sender, ToolTipEventArgs e)
+        {
+            // ... Set ToolTip on Button before it is shown.
+            Button room = sender as Button;
+            char[] roomName = room.Name.ToCharArray();
+            Console.WriteLine(roomName);
+            char[] roomNumber = {roomName[6], roomName[7], roomName[8]};
+            String roomNo = new String(roomNumber);
+           
+            room.ToolTip = "Status of room "+roomNo+": \n";
+            
         }
     }
 }
