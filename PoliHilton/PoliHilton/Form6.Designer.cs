@@ -33,23 +33,23 @@ namespace PoliHilton
         private void InitializeComponent()
         {
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.uc = new HostingWpfUserControlInWf.UserControl1();
+            this.userControl11 = new HostingWpfUserControlInWf.UserControl1();
             this.SuspendLayout();
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Location = new System.Drawing.Point(0, -5);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(686, 454);
+            this.elementHost1.Size = new System.Drawing.Size(686, 496);
             this.elementHost1.TabIndex = 0;
             this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.uc;
+            this.elementHost1.Child = this.userControl11;
             // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 419);
+            this.ClientSize = new System.Drawing.Size(683, 476);
             this.Controls.Add(this.elementHost1);
             this.Name = "Form6";
             this.Text = "Booking";
@@ -60,7 +60,8 @@ namespace PoliHilton
 
         #endregion
 
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private HostingWpfUserControlInWf.UserControl1 uc;
+        private ElementHost elementHost1;
+        private HostingWpfUserControlInWf.UserControl1 userControl11;
+
     }
 }
