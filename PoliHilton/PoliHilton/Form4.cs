@@ -15,15 +15,24 @@ namespace PoliHilton
         //every button must call a function of the class that controlls it : required by Prof
         //Final form only log out required
        Reception r1;
-
-        public Form4(Reception r1)
+       Database db1;
+        public Form4(String username,Database db1)
         {
             InitializeComponent();
-            this.r1 = r1;
+            this.db1 = db1;
             this.Show();
+            init_reception(username);
             r1.reception_dataset_populate_rname(form4_cb_roomnumber);
             r1.reception_dataset_populate_uname(form4_cb_username);
 
+        }
+
+        public void init_reception(String username)
+        {
+            String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
+            DataSet ds1 = db1.Read(db_command);
+            DataRow dr1 = ds1.Tables[0].Rows[0];
+            this.r1 = new Reception(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
         }
 
         private void tabPage3_Click(object sender, EventArgs e)

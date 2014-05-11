@@ -31,8 +31,14 @@ namespace PoliHilton
         }
         private void form1_button_signin_Click(object sender, EventArgs e)
         {
-            auth1.login(form1_textBoxUsername.Text.ToString(), form1_textBoxPass.Text.ToString());
-            this.Hide();
+            int id=auth1.login(form1_textBoxUsername.Text.ToString(), form1_textBoxPass.Text.ToString());
+            switch (id)
+            {
+                case 1: login_user(form1_textBoxUsername.Text.ToString()); this.Hide(); break;
+                case 2: login_admin(form1_textBoxUsername.Text.ToString()); this.Hide(); break;
+                case 3: login_cleaner(form1_textBoxUsername.Text.ToString()); this.Hide(); break;
+                case 4: login_reception(form1_textBoxUsername.Text.ToString()); this.Hide(); break;
+            }
         }
 
         private void form1_button_signup_Click(object sender, EventArgs e)
@@ -50,6 +56,23 @@ namespace PoliHilton
                 auth1.create_user(form1_tab2_username.Text, form1_tab2_pass.Text, form1_tab2_firstName.Text, form1_tab2_lastName.Text);
             }
         
+        }
+
+        public void login_user(String username)
+        {
+          Form5 f5 = new Form5(username, this.db1);
+        }
+        public void login_admin(String username)
+        {
+            Form2 f2 = new Form2(username, this.db1);
+        }
+        public void login_cleaner(String username)
+        {
+             Form3 f3 = new Form3(username, this.db1);
+        }
+        public void login_reception(String username)
+        {
+            Form4 f4 = new Form4(username,this.db1);
         }
     }
 }

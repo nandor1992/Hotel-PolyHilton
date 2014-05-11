@@ -15,12 +15,13 @@ namespace PoliHilton
         //every button must call a function of the class that controlls it : required by Prof
         //Lat form only log out required
         Admin a1;
-        public Form2(Admin a1)
+        Database db1;
+        public Form2(String username,Database db1)
         {
             InitializeComponent();
             this.Show();
-            this.a1 = a1;            
-            a1.init(this);
+            this.db1 = db1;
+            init_admin(username);           
             form_initialization_data();
         }
 
@@ -32,6 +33,13 @@ namespace PoliHilton
             a1.dataset_populate(form2_DataGridView_Reception, 4);
         }
 
+        public void init_admin(String username)
+        {
+            String db_command="SELECT * FROM [polihilton].[dbo].[Users] Where username='"+username+"'";
+         DataSet ds1=db1.Read(db_command);
+         DataRow dr1 = ds1.Tables[0].Rows[0];
+         this.a1 = new Admin(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(),this.db1);
+        }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -121,7 +129,9 @@ namespace PoliHilton
 
         private void logut_button_admin_Click(object sender, EventArgs e)
         {
-            a1.log_out();
+            Form1 f1 = new Form1(this.db1);
+            this.Hide();
+            f1.Show();
         }
 
         private void form2_dataGridView_Cleaner_CellContentClick(object sender, DataGridViewCellEventArgs e)
