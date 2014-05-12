@@ -30,7 +30,13 @@ namespace PoliHilton
             a1.dataset_populate(form2_dataGridView_Cleaner,3);
             a1.dataset_populate(form2_dataGridView_Manager, 2);
             a1.dataset_populate(form2_DataGridView_Customer, 1);
+            a1.dataset_populate(dataGridView6, 1);
             a1.dataset_populate(form2_DataGridView_Reception, 4);
+            a1.prices_udpate(dataGridView3, dataGridView4);
+            a1.room_info_update(dataGridView5);
+            a1.populate_discount_drop_type(comboBox1);
+            a1.dataset_populate(dataGridView2, 3);
+            a1.populate_cleaning_assigned(dataGridView7, dataGridView8);
         }
 
         public void init_admin(String username)
@@ -203,6 +209,8 @@ namespace PoliHilton
 
         private void form2_ModifyBtn_Customer_Click(object sender, EventArgs e)
         {
+            a1.modify_user(form2_DataGridView_Customer, form2_Customer_FirstName, form2_Customer_LastName, form2_Customer_UserName, form2_Customer_Password);
+            form_initialization_data();
         }
 
         private void form2_DeleteBtn_Reception_Click(object sender, EventArgs e)
@@ -214,6 +222,111 @@ namespace PoliHilton
         private void form2_DeleteBtn_Customer_Click(object sender, EventArgs e)
         {
             a1.delete_user(form2_DataGridView_Customer);
+            form_initialization_data();
+        }
+
+        private void form2_ModifyBtn_Cleaner_Click(object sender, EventArgs e)
+        {
+            a1.modify_user(form2_dataGridView_Cleaner, form2_Cleaner_FirstName, form2_Cleaner_LastName, form2_Cleaner_UserName, form2_Cleaner_Password);
+            form_initialization_data();
+        }
+
+        private void form2_ModifyBtn_Manager_Click(object sender, EventArgs e)
+        {
+            a1.modify_user(form2_dataGridView_Manager, textBox8, form2_Manager_LastName, form2_Manager_UserName, form2_Manager_Password);
+            form_initialization_data();
+        }
+
+        private void form2_ModifyBtn_Reception_Click(object sender, EventArgs e)
+        {
+            a1.modify_user(form2_DataGridView_Reception, form2_Reception_FirstName, form2_Reception_LastName, form2_Reception_UserName, form2_Reception_Password);
+            form_initialization_data();
+        }
+
+        private void form2_PromoteToAdmBtn_Cleaner_Click(object sender, EventArgs e)
+        {
+            a1.promote_admin(form2_dataGridView_Cleaner);
+            form_initialization_data();
+        }
+
+        private void form2_PromoteToAdmBtn_Customer_Click(object sender, EventArgs e)
+        {
+            a1.promote_admin(form2_DataGridView_Customer);
+            form_initialization_data();
+        }
+
+        private void form2_PromoteToAdmBtn_Reception_Click(object sender, EventArgs e)
+        {
+            a1.promote_admin(form2_DataGridView_Reception);
+            form_initialization_data();
+        }
+
+        private void form2_PromoteToAdmBtn_Manager_Click(object sender, EventArgs e)
+        {
+            a1.demote_admin(form2_dataGridView_Manager);
+            form_initialization_data();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.prices_selected(dataGridView3,form2_Prices_NewPrice);
+        }
+
+        private void form2_UpdatePricesBtn_Prices_Click(object sender, EventArgs e)
+        {
+            a1.prices_new_update(dataGridView3, form2_Prices_NewPrice);
+            form_initialization_data();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            a1.delete_discount(dataGridView4);
+            form_initialization_data();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String type = comboBox1.Text;
+            a1.populate_discount_drop_room(comboBox2,textBox18, type);  
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            a1.add_discount(comboBox2, textBox18);
+            form_initialization_data();
+        }
+
+        private void form2_Rez_Delete_Click(object sender, EventArgs e)
+        {
+            a1.delete_rezervation(dataGridView5);
+            form_initialization_data();
+        }
+
+        private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.populate_user_reservation(dataGridView6, dataGridView1);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            a1.assign_cleaning(dataGridView2, dataGridView7);
+            form_initialization_data();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            a1.delete_assignment(dataGridView8);
+            form_initialization_data();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            a1.auto_assign_cleaning();
             form_initialization_data();
         }
     }
