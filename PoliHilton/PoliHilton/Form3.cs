@@ -31,7 +31,8 @@ namespace PoliHilton
             String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
             DataSet ds1 = db1.Read(db_command);
             DataRow dr1 = ds1.Tables[0].Rows[0];
-            this.clean1 = new Cleaning(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
+            this.clean1 = new Cleaning(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(),dr1["username"].ToString(), this.db1,Form3_label_name);
+            
         }
 
         private void form3_btn_asigne_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace PoliHilton
         {
             clean1.cleaned(form3_lb);
             clean1.list_assigned_rooms(form3_lb);
-            //form3_clb.SelectedItem.
+        
 
         }
 
