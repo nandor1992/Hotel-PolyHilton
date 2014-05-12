@@ -1,5 +1,8 @@
-Update - 26.03.2014 - Tasks and Dead-lines
+To-DO
 ==========================================
+- Modify users in Database so "Cascade on Delete"
+- On Cleaning u_id should be able to be NULL
+- 
 Hotel-PolyHilton
 ================
 Created for Industrial Engineering Project Hotel C#
