@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HostingWpfUserControlInWf;
 
 namespace PoliHilton
 {
@@ -14,7 +15,8 @@ namespace PoliHilton
     {
         Users u1;
         Booking b1;
-
+        UserControl1 wpf = new UserControl1();
+      
         public Form6() {
             InitializeComponent();
         }
@@ -33,7 +35,7 @@ namespace PoliHilton
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
