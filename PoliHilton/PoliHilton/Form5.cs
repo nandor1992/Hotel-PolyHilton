@@ -15,11 +15,22 @@ namespace PoliHilton
         //every button must call a function of the class that controlls it : required by Prof
         //is based on users, Iza needs to implement the creation of Booking and the req fuctions
         Users u1;
-        public Form5(Users u1)
+        Database db1;
+        public Form5(String username,Database db1)
         {
             InitializeComponent();
-            this.u1 = u1;
             this.Show();
+            this.db1 = db1;
+            init_user(username);
         }
+
+        public void init_user(String username)
+        {
+            String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
+            DataSet ds1 = db1.Read(db_command);
+            DataRow dr1 = ds1.Tables[0].Rows[0];
+            this.u1 = new Users(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
+        }
+
     }
 }

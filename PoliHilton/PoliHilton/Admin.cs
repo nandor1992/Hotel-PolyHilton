@@ -16,7 +16,6 @@ namespace PoliHilton
      int id;
      String firstname;
      String lastname;
-     Form2 f2;
         
        public Admin(int id,String firstname,String lastname,Database db1)
         {
@@ -26,15 +25,10 @@ namespace PoliHilton
         this.lastname = lastname;
         }
 
-       public void init(Form2 f2)
-       {
-           this.f2 = f2;
-           //initialize initial stuff
-       }
 
-       public void cleaner_dataset_populate(System.Windows.Forms.DataGridView g1)
+       public void dataset_populate(System.Windows.Forms.DataGridView g1,int type)
        {
-           String command_cleaner="SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='3'";
+           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='" + type + "'";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
@@ -42,7 +36,7 @@ namespace PoliHilton
            }
        }
 
-       public void cleaner_dataset_select(System.Windows.Forms.DataGridView g1,System.Windows.Forms.TextBox t1,System.Windows.Forms.TextBox t2,System.Windows.Forms.TextBox t3,System.Windows.Forms.TextBox t4)
+       public void dataset_select(System.Windows.Forms.DataGridView g1,System.Windows.Forms.TextBox t1,System.Windows.Forms.TextBox t2,System.Windows.Forms.TextBox t3,System.Windows.Forms.TextBox t4)
        {
            if (g1.SelectedRows.Count != 0)
            {
@@ -55,16 +49,42 @@ namespace PoliHilton
            }
        }
 
-       public void cleaner_dataset_select()
+       public void adding_user(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4, int type)
        {
-
+            String db_command= "SELECT * FROM [polihilton].[dbo].[Users] WHERE username='"+t1.Text+"'";
+           DataSet ds1=db1.Read(db_command);
+           if (ds1.Tables[0].Rows.Count == 0)
+           {
+               String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values('" + type + "','" + t1.Text + "','" + t2.Text + "','" + t3.Text + "','" + t4.Text + "')";
+               db1.Command(db_command1);
+               MessageBox.Show("User created succesfully!");
+           }
+           else
+           {
+               MessageBox.Show("User Already Exists");
+           }
        }
 
-       public void log_out()
+       public void delete_user(System.Windows.Forms.DataGridView g1)
        {
-           this.f2.Close();
-           Form1 f1 = new Form1(this.db1);
+           if (g1.SelectedRows.Count != 0)
+           {
+               DataGridViewRow row = g1.SelectedRows[0];
+               if (int.Parse(row.Cells["u_id"].Value.ToString()) == this.id)
+               {
+                   MessageBox.Show("Can't Delete Yourself");
+               }
+               else
+               {
+                   //TO-DO: Add deletion of everything adjecent
+
+                   String db_command1 = "DELETE FROM [polihilton].[dbo].[Users] WHERE u_id='" + int.Parse(row.Cells["u_id"].Value.ToString()) + "' ON DELETE CASCADE";
+                   db1.Command(db_command1);
+               }
+           }
        }
+
+
 
     }
 }

@@ -32,9 +32,9 @@ namespace PoliHilton
         {
             l1.Items.Clear();
             DataSet ds_rooms = new DataSet();
-            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] WHERE u_type_id='3'";
+            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] WHERE u_id='3'";
             DataSet ds1 = db1.Read(command_cleaner);
-            foreach (DataRow dr in ds1.Tables["Cleaning"].Rows)
+            foreach (DataRow dr in ds1.Tables[0].Rows)
             {
                 String line = "room id: " + dr.ItemArray.GetValue(1).ToString() + "  status: " + dr.ItemArray.GetValue(3).ToString();
                 l1.Items.Add(line);

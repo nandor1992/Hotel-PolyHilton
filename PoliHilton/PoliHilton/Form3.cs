@@ -13,15 +13,25 @@ namespace PoliHilton
     public partial class Form3 : Form
     {
        Cleaning clean1;
+       Database db1;
        //every button must call a function of the class that controlls it : required by Prof
         //Final form only log out required
-        public Form3(Cleaning clean1)
+        public Form3(String username,Database db1)
         {
             InitializeComponent();
-            this.clean1 = clean1;
+            this.db1 = db1;
             this.Show();
+            init_cleaner(username);
             clean1.list_assigned_rooms(form3_lb);
 
+        }
+
+        public void init_cleaner(String username)
+        {
+            String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
+            DataSet ds1 = db1.Read(db_command);
+            DataRow dr1 = ds1.Tables[0].Rows[0];
+            this.clean1 = new Cleaning(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
         }
 
         private void form3_btn_asigne_Click(object sender, EventArgs e)
