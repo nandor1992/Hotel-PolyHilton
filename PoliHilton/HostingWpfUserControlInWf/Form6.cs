@@ -35,7 +35,7 @@ namespace PoliHilton
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            wpf.button101.Visible = false;
         }
     }
 }

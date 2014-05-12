@@ -81,10 +81,11 @@
             </Setter>
         </Style>
         <Style x:Key="Button205" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="AliceBlue"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid>
+                        <Grid> 
                             <Path x:Name="path" Fill="#FFA34C4C" Stretch="Fill" Stroke="#FF5F2626" Data="M47.333333,247.04 C160.33333,246.70667 159.83367,246.20666 159.83367,246.20666 158.83404,379.92567 158.83404,379.92567 158.83404,379.92567 130.50061,382.92718 130.50061,382.92718 130.50061,382.92718 100.16718,379.59286 100.16718,379.59286 100.16718,379.59286 71.833748,367.2546 71.833748,367.2546 71.833748,367.2546 53.833687,346.57969 53.833687,346.57969 53.833687,346.57969 44.833657,319.23545 44.833657,319.23545 44.833657,319.23545 40.833988,291.22428 40.833988,291.22428&#xa;40.833988,291.22428 46.834307,247.5402 47.333333,247.04 47.333333,247.04 z" Opacity="0"/>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
                         </Grid>
@@ -183,6 +184,8 @@
                     </Button>
                     <Button x:Name="button112" HorizontalAlignment="Right" Margin="0,142.873,122.333,189.167" Style="{DynamicResource Button112}" Width="121" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening"/>
                     <Button x:Name="button113" HorizontalAlignment="Right" Margin="0,0,16.25,27.416" Style="{DynamicResource Button113}" VerticalAlignment="Bottom" Width="78" Height="77.834" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening"/>
+                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="510,46,0,0" VerticalAlignment="Top" Width="96"/>
+                    <Button x:Name="button_go" Content="Go" HorizontalAlignment="Left" Margin="493,26,0,0" VerticalAlignment="Top" Width="75" Click="go_button_click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Second Floor" Margin="148,-9,-358,-2">

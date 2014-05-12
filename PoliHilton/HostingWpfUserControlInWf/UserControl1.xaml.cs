@@ -32,21 +32,25 @@ namespace HostingWpfUserControlInWf
         {
             departureDate.SelectedDate = null;
             long lastBlackOut = arrivalDate.SelectedDate.Value.Ticks;
+            departureDate.BlackoutDates.Clear();
             departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(lastBlackOut)));
         }
-
 
         private void Button_ToolTipOpening(object sender, ToolTipEventArgs e)
         {
             // ... Set ToolTip on Button before it is shown.
             Button room = sender as Button;
             char[] roomName = room.Name.ToCharArray();
-            Console.WriteLine(roomName);
             char[] roomNumber = {roomName[6], roomName[7], roomName[8]};
             String roomNo = new String(roomNumber);
-           
             room.ToolTip = "Status of room "+roomNo+": \n";
             
+        }
+        private void go_button_click(object sender, RoutedEventArgs e)
+        {
+            Database database = new Database();
+            Booking booking = new Booking(database, this);
+            booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, label1);
         }
     }
 }
