@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,10 @@ namespace PoliHilton
         this.lastname = lastname;
         }
 
+       public String getName()
+       {
+           return "" + firstname + " " + lastname;
+       }
 
        public void dataset_populate(System.Windows.Forms.DataGridView g1,int type)
        {
@@ -308,7 +313,7 @@ namespace PoliHilton
                String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] Where u_type_id='3'";
                DataSet ds1 = db1.Read(command_cleaner);
                DataTable t1 = ds1.Tables[0];
-               command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] Where status='Pending'";
+               command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] Where status='Pending' OR status='in progress'";
                ds1 = db1.Read(command_cleaner);
                DataTable t2 = ds1.Tables[0];
                int divider = t1.Rows.Count;
@@ -349,6 +354,126 @@ namespace PoliHilton
                }
            }
 
+           public void statistic_income(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2)
+           {
+               //Age wise
+               int total = 0;
+               String db_command = "SELECT * FROM [polihilton].[dbo].[Rezervations] ";
+               DataSet ds1=db1.Read(db_command);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       DateTime time1 =Convert.ToDateTime(dr["start_date"].ToString());
+                       DateTime time2 = Convert.ToDateTime(dr["end_date"].ToString());
+                       int price = Int16.Parse(dr["rez_price"].ToString());
+                       total = total + (int)(time2 - time1).TotalDays * price;
+                   }
+               }
+               t1.Text = total.ToString();
+               //Montly
+               total = 0;
+               DateTime reference = DateTime.UtcNow.AddMonths(-1);
+               string sql = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE start_date > Convert(datetime,'"+reference+"')";
+               ds1 = db1.Read(sql);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       DateTime time1 = Convert.ToDateTime(dr["start_date"].ToString());
+                       DateTime time2 = Convert.ToDateTime(dr["end_date"].ToString());
+                       int price = Int16.Parse(dr["rez_price"].ToString());
+                       total = total + (int)(time2 - time1).TotalDays * price;
+                   }
+               }
+               t2.Text = total.ToString();
+           }
 
+           public void statistic_customers(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2)
+           {
+               //Age wise
+               int total = 0;
+               String db_command = "SELECT * FROM [polihilton].[dbo].[Rezervations] ";
+               DataSet ds1 = db1.Read(db_command);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       total=total + 1;
+                   }
+               }
+               t1.Text = total.ToString();
+               //Montly
+               total = 0;
+               DateTime reference = DateTime.UtcNow.AddMonths(-1);
+               string sql = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE start_date > Convert(datetime,'" + reference + "')";
+               ds1 = db1.Read(sql);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       total = total + 1;
+                   }
+               }
+               t2.Text = total.ToString();
+           }
+
+
+           public void statistic_totals(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4)
+           {
+               //user
+               string sql = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='1'";
+              DataSet ds1 = db1.Read(sql);
+              t1.Text=ds1.Tables[0].Rows.Count.ToString();
+               //Cleaner
+              sql = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='3'";
+              ds1 = db1.Read(sql);
+              t2.Text = ds1.Tables[0].Rows.Count.ToString();
+              //Reception
+              sql = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='4'";
+              ds1 = db1.Read(sql);
+              t3.Text = ds1.Tables[0].Rows.Count.ToString();
+              //Admin
+              sql = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='2'";
+              ds1 = db1.Read(sql);
+              t4.Text = ds1.Tables[0].Rows.Count.ToString();
+           }
+
+           public void cleaned_rooms(System.Windows.Forms.TextBox t1)
+           {
+               int total = 0;
+               DateTime reference = DateTime.UtcNow.AddMonths(-1);
+               string sql = "SELECT * FROM [polihilton].[dbo].[Cleaning] WHERE status='Cleaned' AND date_required > Convert(datetime,'" + reference + "')";
+               DataSet ds1 = db1.Read(sql);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       total = total + 1;
+                   }
+               }
+               t1.Text = total.ToString();
+           }
+
+           public void statistics_rooms(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2)
+           {
+               int total = 0;
+               DateTime reference = DateTime.UtcNow;
+               string sql = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE end_date > Convert(datetime,'" + reference + "') AND start_date < Convert(datetime,'" + reference + "')";
+               DataSet ds1 = db1.Read(sql);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       total = total + 1;
+                   }
+               }
+               t1.Text = total.ToString();
+
+               sql = "SELECT * FROM [polihilton].[dbo].[Rooms]";
+               ds1 = db1.Read(sql);
+               t2.Text = (ds1.Tables[0].Rows.Count - total).ToString();
+           }
+           
     }
 }

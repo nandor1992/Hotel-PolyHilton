@@ -27,6 +27,7 @@ namespace PoliHilton
 
         public void form_initialization_data()
         {
+            label_user.Text="Hello "+a1.getName()+"!";
             a1.dataset_populate(form2_dataGridView_Cleaner,3);
             a1.dataset_populate(form2_dataGridView_Manager, 2);
             a1.dataset_populate(form2_DataGridView_Customer, 1);
@@ -37,6 +38,16 @@ namespace PoliHilton
             a1.populate_discount_drop_type(comboBox1);
             a1.dataset_populate(dataGridView2, 3);
             a1.populate_cleaning_assigned(dataGridView7, dataGridView8);
+            init_statistics();
+        }
+
+        public void init_statistics()
+        {
+            a1.statistic_income(textBox1, textBox2);
+            a1.statistic_customers(textBox3, textBox4);
+            a1.statistic_totals(textBox5, textBox6, textBox7, textBox9);
+            a1.cleaned_rooms(textBox11);
+            a1.statistics_rooms(textBox12, textBox13);
         }
 
         public void init_admin(String username)
@@ -328,6 +339,11 @@ namespace PoliHilton
         {
             a1.auto_assign_cleaning();
             form_initialization_data();
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
