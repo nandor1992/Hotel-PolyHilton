@@ -37,7 +37,7 @@ namespace PoliHilton
 
         private void form5_llabel_signout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            u1.log_out();
+            u1.log_out(1);
         }
 
         private void form5_btn_getRes_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace PoliHilton
             u1.cancel_reservation(Form5_lb);
             u1.list_current_reservations(Form5_lb);
         }
-
+        
         private void form5_btn_newRes_Click(object sender, EventArgs e)
         {
             Form7 f7 = new Form7(u1);

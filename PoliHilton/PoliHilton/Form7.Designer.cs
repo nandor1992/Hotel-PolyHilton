@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.form7_panel = new System.Windows.Forms.Panel();
+            this.Form7_btn_reserve = new System.Windows.Forms.Button();
+            this.Form7_lb = new System.Windows.Forms.ListBox();
+            this.Form7_label_name = new System.Windows.Forms.Label();
             this.form7_label_endDate = new System.Windows.Forms.Label();
             this.form7_label_startDate = new System.Windows.Forms.Label();
             this.form7_dtp_end = new System.Windows.Forms.DateTimePicker();
@@ -40,17 +43,16 @@
             this.form7_cb_price = new System.Windows.Forms.ComboBox();
             this.form7_cb_roomType = new System.Windows.Forms.ComboBox();
             this.form7_btn_search = new System.Windows.Forms.Button();
-            this.form7_dgv = new System.Windows.Forms.DataGridView();
             this.form7_llabel_signout = new System.Windows.Forms.LinkLabel();
-            this.form7_llabel_name = new System.Windows.Forms.LinkLabel();
             this.form7_label = new System.Windows.Forms.Label();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.form7_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form7_dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // form7_panel
             // 
+            this.form7_panel.Controls.Add(this.Form7_btn_reserve);
+            this.form7_panel.Controls.Add(this.Form7_lb);
+            this.form7_panel.Controls.Add(this.Form7_label_name);
             this.form7_panel.Controls.Add(this.form7_label_endDate);
             this.form7_panel.Controls.Add(this.form7_label_startDate);
             this.form7_panel.Controls.Add(this.form7_dtp_end);
@@ -62,9 +64,7 @@
             this.form7_panel.Controls.Add(this.form7_cb_price);
             this.form7_panel.Controls.Add(this.form7_cb_roomType);
             this.form7_panel.Controls.Add(this.form7_btn_search);
-            this.form7_panel.Controls.Add(this.form7_dgv);
             this.form7_panel.Controls.Add(this.form7_llabel_signout);
-            this.form7_panel.Controls.Add(this.form7_llabel_name);
             this.form7_panel.Controls.Add(this.form7_label);
             this.form7_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form7_panel.Location = new System.Drawing.Point(0, 0);
@@ -72,10 +72,38 @@
             this.form7_panel.Size = new System.Drawing.Size(596, 337);
             this.form7_panel.TabIndex = 1;
             // 
+            // Form7_btn_reserve
+            // 
+            this.Form7_btn_reserve.Location = new System.Drawing.Point(329, 187);
+            this.Form7_btn_reserve.Name = "Form7_btn_reserve";
+            this.Form7_btn_reserve.Size = new System.Drawing.Size(122, 23);
+            this.Form7_btn_reserve.TabIndex = 18;
+            this.Form7_btn_reserve.Text = "Reserve room";
+            this.Form7_btn_reserve.UseVisualStyleBackColor = true;
+            this.Form7_btn_reserve.Click += new System.EventHandler(this.Form7_btn_reserve_Click);
+            // 
+            // Form7_lb
+            // 
+            this.Form7_lb.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Form7_lb.FormattingEnabled = true;
+            this.Form7_lb.Location = new System.Drawing.Point(0, 229);
+            this.Form7_lb.Name = "Form7_lb";
+            this.Form7_lb.Size = new System.Drawing.Size(596, 108);
+            this.Form7_lb.TabIndex = 17;
+            // 
+            // Form7_label_name
+            // 
+            this.Form7_label_name.AutoSize = true;
+            this.Form7_label_name.Location = new System.Drawing.Point(540, 9);
+            this.Form7_label_name.Name = "Form7_label_name";
+            this.Form7_label_name.Size = new System.Drawing.Size(35, 13);
+            this.Form7_label_name.TabIndex = 16;
+            this.Form7_label_name.Text = "label1";
+            // 
             // form7_label_endDate
             // 
             this.form7_label_endDate.AutoSize = true;
-            this.form7_label_endDate.Location = new System.Drawing.Point(440, 163);
+            this.form7_label_endDate.Location = new System.Drawing.Point(447, 147);
             this.form7_label_endDate.Name = "form7_label_endDate";
             this.form7_label_endDate.Size = new System.Drawing.Size(82, 13);
             this.form7_label_endDate.TabIndex = 15;
@@ -84,7 +112,7 @@
             // form7_label_startDate
             // 
             this.form7_label_startDate.AutoSize = true;
-            this.form7_label_startDate.Location = new System.Drawing.Point(440, 137);
+            this.form7_label_startDate.Location = new System.Drawing.Point(447, 121);
             this.form7_label_startDate.Name = "form7_label_startDate";
             this.form7_label_startDate.Size = new System.Drawing.Size(84, 13);
             this.form7_label_startDate.TabIndex = 14;
@@ -92,16 +120,19 @@
             // 
             // form7_dtp_end
             // 
-            this.form7_dtp_end.Location = new System.Drawing.Point(295, 157);
+            this.form7_dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.form7_dtp_end.Location = new System.Drawing.Point(329, 141);
             this.form7_dtp_end.Name = "form7_dtp_end";
-            this.form7_dtp_end.Size = new System.Drawing.Size(140, 20);
+            this.form7_dtp_end.Size = new System.Drawing.Size(113, 20);
             this.form7_dtp_end.TabIndex = 13;
             // 
             // form7_dtp_start
             // 
-            this.form7_dtp_start.Location = new System.Drawing.Point(295, 130);
+            this.form7_dtp_start.Cursor = System.Windows.Forms.Cursors.Default;
+            this.form7_dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.form7_dtp_start.Location = new System.Drawing.Point(329, 114);
             this.form7_dtp_start.Name = "form7_dtp_start";
-            this.form7_dtp_start.Size = new System.Drawing.Size(140, 20);
+            this.form7_dtp_start.Size = new System.Drawing.Size(113, 20);
             this.form7_dtp_start.TabIndex = 12;
             // 
             // form7_label_roomCap
@@ -160,41 +191,24 @@
             // 
             // form7_btn_search
             // 
-            this.form7_btn_search.Location = new System.Drawing.Point(64, 200);
+            this.form7_btn_search.Location = new System.Drawing.Point(64, 187);
             this.form7_btn_search.Name = "form7_btn_search";
             this.form7_btn_search.Size = new System.Drawing.Size(75, 23);
             this.form7_btn_search.TabIndex = 5;
-            this.form7_btn_search.Text = "search";
+            this.form7_btn_search.Text = "Search";
             this.form7_btn_search.UseVisualStyleBackColor = true;
-            // 
-            // form7_dgv
-            // 
-            this.form7_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.form7_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.form7_dgv.Location = new System.Drawing.Point(0, 229);
-            this.form7_dgv.Name = "form7_dgv";
-            this.form7_dgv.Size = new System.Drawing.Size(596, 108);
-            this.form7_dgv.TabIndex = 4;
+            this.form7_btn_search.Click += new System.EventHandler(this.form7_btn_search_Click);
             // 
             // form7_llabel_signout
             // 
             this.form7_llabel_signout.AutoSize = true;
-            this.form7_llabel_signout.Location = new System.Drawing.Point(489, 26);
+            this.form7_llabel_signout.Location = new System.Drawing.Point(512, 31);
             this.form7_llabel_signout.Name = "form7_llabel_signout";
             this.form7_llabel_signout.Size = new System.Drawing.Size(44, 13);
             this.form7_llabel_signout.TabIndex = 3;
             this.form7_llabel_signout.TabStop = true;
             this.form7_llabel_signout.Text = "sign out";
-            // 
-            // form7_llabel_name
-            // 
-            this.form7_llabel_name.AutoSize = true;
-            this.form7_llabel_name.Location = new System.Drawing.Point(551, 9);
-            this.form7_llabel_name.Name = "form7_llabel_name";
-            this.form7_llabel_name.Size = new System.Drawing.Size(33, 13);
-            this.form7_llabel_name.TabIndex = 2;
-            this.form7_llabel_name.TabStop = true;
-            this.form7_llabel_name.Text = "name";
+            this.form7_llabel_signout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.form7_llabel_signout_LinkClicked);
             // 
             // form7_label
             // 
@@ -215,7 +229,6 @@
             this.Text = "Form7";
             this.form7_panel.ResumeLayout(false);
             this.form7_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form7_dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,14 +243,14 @@
         private System.Windows.Forms.ComboBox form7_cb_price;
         private System.Windows.Forms.ComboBox form7_cb_roomType;
         private System.Windows.Forms.Button form7_btn_search;
-        private System.Windows.Forms.DataGridView form7_dgv;
         private System.Windows.Forms.LinkLabel form7_llabel_signout;
-        private System.Windows.Forms.LinkLabel form7_llabel_name;
         private System.Windows.Forms.Label form7_label;
         private System.Windows.Forms.DateTimePicker form7_dtp_end;
         private System.Windows.Forms.DateTimePicker form7_dtp_start;
         private System.Windows.Forms.Label form7_label_endDate;
         private System.Windows.Forms.Label form7_label_startDate;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label Form7_label_name;
+        private System.Windows.Forms.ListBox Form7_lb;
+        private System.Windows.Forms.Button Form7_btn_reserve;
     }
 }
