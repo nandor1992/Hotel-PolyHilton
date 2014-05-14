@@ -105,5 +105,15 @@ namespace PoliHilton
             f1.Show();
             this.Close();
         }
+
+        private void form4_dtp_checkin_ValueChanged(object sender, EventArgs e)
+        {
+            form4_dtp_checkout.MinDate = form4_dtp_checkin.Value.AddDays(1);
+        }
+
+        private void form4_dtp_checkout_ValueChanged(object sender, EventArgs e)
+        {
+            form4_dtp_checkin.MaxDate = form4_dtp_checkout.Value.AddDays(-1);
+        }
     }
 }

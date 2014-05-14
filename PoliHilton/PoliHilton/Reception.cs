@@ -102,7 +102,17 @@ namespace PoliHilton
            {
                foreach (DataRow dr in table.Rows)
                {
-                   room_number=int.Parse(dr["price"].ToString());
+                   command_cleaner = "SELECT * FROM [polihilton].[dbo].[Discounts] WHERE r_id='" + dr["r_id"].ToString() +"' ";
+                   DataSet ds2 = db1.Read(command_cleaner);
+                   if (ds2.Tables[0].Rows.Count != 0)
+                   {
+                       DataRow dr2 = ds2.Tables[0].Rows[0];
+                       room_number = int.Parse(dr2["price"].ToString());
+                   }
+                   else
+                   {
+                       room_number = int.Parse(dr["price"].ToString());
+                   }
                }
            }
            return room_number;

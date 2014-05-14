@@ -58,8 +58,8 @@
             this.form4_dataviewgrid = new System.Windows.Forms.DataGridView();
             this.form4_button_showrezervations = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_user = new System.Windows.Forms.Label();
             this.logut_button_admin = new System.Windows.Forms.Button();
             this.form4_tabcontrol.SuspendLayout();
@@ -74,7 +74,7 @@
             // form4_button_createrezervation
             // 
             this.form4_button_createrezervation.Location = new System.Drawing.Point(25, 241);
-            this.form4_button_createrezervation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_button_createrezervation.Margin = new System.Windows.Forms.Padding(4);
             this.form4_button_createrezervation.Name = "form4_button_createrezervation";
             this.form4_button_createrezervation.Size = new System.Drawing.Size(383, 37);
             this.form4_button_createrezervation.TabIndex = 0;
@@ -125,18 +125,20 @@
             // form4_dtp_checkin
             // 
             this.form4_dtp_checkin.Location = new System.Drawing.Point(141, 101);
-            this.form4_dtp_checkin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_dtp_checkin.Margin = new System.Windows.Forms.Padding(4);
             this.form4_dtp_checkin.Name = "form4_dtp_checkin";
             this.form4_dtp_checkin.Size = new System.Drawing.Size(265, 22);
             this.form4_dtp_checkin.TabIndex = 10;
+            this.form4_dtp_checkin.ValueChanged += new System.EventHandler(this.form4_dtp_checkin_ValueChanged);
             // 
             // form4_dtp_checkout
             // 
             this.form4_dtp_checkout.Location = new System.Drawing.Point(141, 143);
-            this.form4_dtp_checkout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_dtp_checkout.Margin = new System.Windows.Forms.Padding(4);
             this.form4_dtp_checkout.Name = "form4_dtp_checkout";
             this.form4_dtp_checkout.Size = new System.Drawing.Size(265, 22);
             this.form4_dtp_checkout.TabIndex = 11;
+            this.form4_dtp_checkout.ValueChanged += new System.EventHandler(this.form4_dtp_checkout_ValueChanged);
             // 
             // form4_tabcontrol
             // 
@@ -145,7 +147,7 @@
             this.form4_tabcontrol.Controls.Add(this.form4_tabpage_deleterezervations);
             this.form4_tabcontrol.Controls.Add(this.tabPage1);
             this.form4_tabcontrol.Location = new System.Drawing.Point(13, 13);
-            this.form4_tabcontrol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabcontrol.Margin = new System.Windows.Forms.Padding(4);
             this.form4_tabcontrol.Name = "form4_tabcontrol";
             this.form4_tabcontrol.SelectedIndex = 0;
             this.form4_tabcontrol.Size = new System.Drawing.Size(651, 318);
@@ -165,9 +167,9 @@
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_label_roomid);
             this.form4_tabpage_createrezervations.Controls.Add(this.form4_dtp_checkin);
             this.form4_tabpage_createrezervations.Location = new System.Drawing.Point(4, 25);
-            this.form4_tabpage_createrezervations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_createrezervations.Margin = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_createrezervations.Name = "form4_tabpage_createrezervations";
-            this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_createrezervations.Padding = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_createrezervations.Size = new System.Drawing.Size(643, 289);
             this.form4_tabpage_createrezervations.TabIndex = 0;
             this.form4_tabpage_createrezervations.Text = "Create Rezervation";
@@ -177,7 +179,7 @@
             // 
             this.form4_cb_roomnumber.FormattingEnabled = true;
             this.form4_cb_roomnumber.Location = new System.Drawing.Point(141, 58);
-            this.form4_cb_roomnumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_cb_roomnumber.Margin = new System.Windows.Forms.Padding(4);
             this.form4_cb_roomnumber.Name = "form4_cb_roomnumber";
             this.form4_cb_roomnumber.Size = new System.Drawing.Size(265, 24);
             this.form4_cb_roomnumber.TabIndex = 15;
@@ -187,7 +189,7 @@
             // 
             this.form4_cb_username.FormattingEnabled = true;
             this.form4_cb_username.Location = new System.Drawing.Point(141, 15);
-            this.form4_cb_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_cb_username.Margin = new System.Windows.Forms.Padding(4);
             this.form4_cb_username.Name = "form4_cb_username";
             this.form4_cb_username.Size = new System.Drawing.Size(265, 24);
             this.form4_cb_username.TabIndex = 14;
@@ -205,7 +207,7 @@
             // form4_textPrice
             // 
             this.form4_textPrice.Location = new System.Drawing.Point(141, 187);
-            this.form4_textPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_textPrice.Margin = new System.Windows.Forms.Padding(4);
             this.form4_textPrice.Name = "form4_textPrice";
             this.form4_textPrice.ReadOnly = true;
             this.form4_textPrice.Size = new System.Drawing.Size(265, 22);
@@ -225,9 +227,9 @@
             this.form4_tabpage_createuser.Controls.Add(this.form4_text_username);
             this.form4_tabpage_createuser.Controls.Add(this.form1_label_username);
             this.form4_tabpage_createuser.Location = new System.Drawing.Point(4, 25);
-            this.form4_tabpage_createuser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_createuser.Margin = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_createuser.Name = "form4_tabpage_createuser";
-            this.form4_tabpage_createuser.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_createuser.Padding = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_createuser.Size = new System.Drawing.Size(643, 289);
             this.form4_tabpage_createuser.TabIndex = 1;
             this.form4_tabpage_createuser.Text = "Create User";
@@ -237,7 +239,7 @@
             // form4_text_lastname
             // 
             this.form4_text_lastname.Location = new System.Drawing.Point(136, 197);
-            this.form4_text_lastname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_text_lastname.Margin = new System.Windows.Forms.Padding(4);
             this.form4_text_lastname.Name = "form4_text_lastname";
             this.form4_text_lastname.Size = new System.Drawing.Size(132, 22);
             this.form4_text_lastname.TabIndex = 13;
@@ -245,7 +247,7 @@
             // form4_text_firstname
             // 
             this.form4_text_firstname.Location = new System.Drawing.Point(136, 153);
-            this.form4_text_firstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_text_firstname.Margin = new System.Windows.Forms.Padding(4);
             this.form4_text_firstname.Name = "form4_text_firstname";
             this.form4_text_firstname.Size = new System.Drawing.Size(132, 22);
             this.form4_text_firstname.TabIndex = 12;
@@ -253,7 +255,7 @@
             // form4_text_usertypeid
             // 
             this.form4_text_usertypeid.Location = new System.Drawing.Point(136, 110);
-            this.form4_text_usertypeid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_text_usertypeid.Margin = new System.Windows.Forms.Padding(4);
             this.form4_text_usertypeid.Name = "form4_text_usertypeid";
             this.form4_text_usertypeid.Size = new System.Drawing.Size(132, 22);
             this.form4_text_usertypeid.TabIndex = 11;
@@ -301,7 +303,7 @@
             // form4_text_password
             // 
             this.form4_text_password.Location = new System.Drawing.Point(136, 66);
-            this.form4_text_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_text_password.Margin = new System.Windows.Forms.Padding(4);
             this.form4_text_password.Name = "form4_text_password";
             this.form4_text_password.Size = new System.Drawing.Size(132, 22);
             this.form4_text_password.TabIndex = 6;
@@ -310,7 +312,7 @@
             // 
             this.form4_button_createuser.AutoSize = true;
             this.form4_button_createuser.Location = new System.Drawing.Point(352, 110);
-            this.form4_button_createuser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_button_createuser.Margin = new System.Windows.Forms.Padding(4);
             this.form4_button_createuser.Name = "form4_button_createuser";
             this.form4_button_createuser.Size = new System.Drawing.Size(227, 33);
             this.form4_button_createuser.TabIndex = 5;
@@ -321,7 +323,7 @@
             // form4_text_username
             // 
             this.form4_text_username.Location = new System.Drawing.Point(136, 21);
-            this.form4_text_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_text_username.Margin = new System.Windows.Forms.Padding(4);
             this.form4_text_username.Name = "form4_text_username";
             this.form4_text_username.Size = new System.Drawing.Size(132, 22);
             this.form4_text_username.TabIndex = 4;
@@ -342,9 +344,9 @@
             this.form4_tabpage_deleterezervations.Controls.Add(this.form4_dataviewgrid);
             this.form4_tabpage_deleterezervations.Controls.Add(this.form4_button_showrezervations);
             this.form4_tabpage_deleterezervations.Location = new System.Drawing.Point(4, 25);
-            this.form4_tabpage_deleterezervations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_deleterezervations.Margin = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_deleterezervations.Name = "form4_tabpage_deleterezervations";
-            this.form4_tabpage_deleterezervations.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_tabpage_deleterezervations.Padding = new System.Windows.Forms.Padding(4);
             this.form4_tabpage_deleterezervations.Size = new System.Drawing.Size(643, 289);
             this.form4_tabpage_deleterezervations.TabIndex = 2;
             this.form4_tabpage_deleterezervations.Text = "Rezervations";
@@ -354,7 +356,7 @@
             // form4_button_deleterezervation
             // 
             this.form4_button_deleterezervation.Location = new System.Drawing.Point(366, 244);
-            this.form4_button_deleterezervation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_button_deleterezervation.Margin = new System.Windows.Forms.Padding(4);
             this.form4_button_deleterezervation.Name = "form4_button_deleterezervation";
             this.form4_button_deleterezervation.Size = new System.Drawing.Size(191, 28);
             this.form4_button_deleterezervation.TabIndex = 2;
@@ -370,7 +372,7 @@
             this.form4_dataviewgrid.AllowUserToResizeRows = false;
             this.form4_dataviewgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.form4_dataviewgrid.Location = new System.Drawing.Point(19, 28);
-            this.form4_dataviewgrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_dataviewgrid.Margin = new System.Windows.Forms.Padding(4);
             this.form4_dataviewgrid.MultiSelect = false;
             this.form4_dataviewgrid.Name = "form4_dataviewgrid";
             this.form4_dataviewgrid.ReadOnly = true;
@@ -381,7 +383,7 @@
             // form4_button_showrezervations
             // 
             this.form4_button_showrezervations.Location = new System.Drawing.Point(67, 244);
-            this.form4_button_showrezervations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form4_button_showrezervations.Margin = new System.Windows.Forms.Padding(4);
             this.form4_button_showrezervations.Name = "form4_button_showrezervations";
             this.form4_button_showrezervations.Size = new System.Drawing.Size(191, 28);
             this.form4_button_showrezervations.TabIndex = 0;
@@ -401,6 +403,16 @@
             this.tabPage1.Text = "Check Out";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(230, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 27);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Check Out User";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -413,18 +425,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(603, 224);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(230, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 27);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Check Out User";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_user
             // 
@@ -454,7 +457,7 @@
             this.Controls.Add(this.label_user);
             this.Controls.Add(this.logut_button_admin);
             this.Controls.Add(this.form4_tabcontrol);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form4";
             this.Text = "Form4";
             this.form4_tabcontrol.ResumeLayout(false);
