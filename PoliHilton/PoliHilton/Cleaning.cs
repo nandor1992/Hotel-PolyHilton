@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PoliHilton
 {
@@ -32,11 +33,11 @@ namespace PoliHilton
         {
             l1.Items.Clear();
             DataSet ds_rooms = new DataSet();
-            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] WHERE u_id='"+id+"' AND status NOT LIKE 'Cleaned'";
+            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] JOIN [polihilton].[dbo].[Rooms] ON Cleaning.r_id=Rooms.r_id WHERE u_id='" + id + "' AND status NOT LIKE 'Cleaned'";
             DataSet ds1 = db1.Read(command_cleaner);
             foreach (DataRow dr in ds1.Tables[0].Rows)
             {
-                String line = "room id: " + dr.ItemArray.GetValue(1).ToString() + "  status: " + dr.ItemArray.GetValue(3).ToString();
+                String line = "room id: " + dr.ItemArray.GetValue(1).ToString() + " Room Number: " + dr.ItemArray.GetValue(7).ToString() + "  status: " + dr.ItemArray.GetValue(3).ToString();
                 l1.Items.Add(line);
             }
             return ds_rooms;

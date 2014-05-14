@@ -20,7 +20,7 @@ namespace PoliHilton
         public Form6() {
             InitializeComponent();
         }
-      /*  public Form6(Users u1)
+      /* public Form6(Users u1)
         {
             InitializeComponent();
             b1 = new Booking(u1.get_Database());

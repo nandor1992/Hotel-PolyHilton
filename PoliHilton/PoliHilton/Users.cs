@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PoliHilton
 {
@@ -27,20 +28,36 @@ namespace PoliHilton
             l1.Text = username;
         }
 
+       public String getUser()
+       {
+           return "" + firstname + " " + lastname;
+       }
+
+       public String getusername()
+       {
+           return username;
+       }
+
+       public Database getDB()
+       {
+           return db1;
+       }
+
        public DataSet list_current_reservations(System.Windows.Forms.ListBox l1)
        {
            l1.Items.Clear();
            DataSet ds_reservations = new DataSet();
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE u_id='" + id + "'";
+           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rezervations] Join [polihilton].[dbo].[Rooms] ON [polihilton].[dbo].[Rezervations].r_id=[polihilton].[dbo].[Rooms].r_id WHERE u_id='" + id + "'";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataRow dr in ds1.Tables[0].Rows)
            {
                char[] separator = { ' ' };
                string[] words1 = dr.ItemArray.GetValue(3).ToString().Split(separator, StringSplitOptions.RemoveEmptyEntries);
                string[] words2 = dr.ItemArray.GetValue(4).ToString().Split(separator, StringSplitOptions.RemoveEmptyEntries);
-               String line = "room: " + dr.ItemArray.GetValue(2).ToString() + "  start date: " + words1[0]
-                   + "  end date: " + words2[0] + "  price: " + dr.ItemArray.GetValue(5).ToString();
+               String line = "room: " + dr["r_id"].ToString() +" Room Number: "+dr["r_number"].ToString() + "  start date: " + dr["start_date"].ToString()
+                   + "  end date: " + dr["end_date"].ToString() + "  price: " + dr["rez_price"].ToString();
                l1.Items.Add(line);
+           
            }
            return ds_reservations;
 
@@ -52,7 +69,7 @@ namespace PoliHilton
            try
            {
                string[] words = l1.SelectedItem.ToString().Split(separator, StringSplitOptions.RemoveEmptyEntries);
-               String command = "DELETE FROM [polihilton].[dbo].[Rezervations] WHERE r_id = '" + int.Parse(words[1]) + "'";
+               String command = "DELETE FROM [polihilton].[dbo].[Rezervations] WHERE r_id = '" + int.Parse(words[1]) + "' AND u_id='"+this.id+"'";
                db1.Command(command);
            }
            catch (Exception e)
@@ -67,7 +84,7 @@ namespace PoliHilton
        public void init_form7_fields(System.Windows.Forms.ComboBox c1, System.Windows.Forms.ComboBox c2, 
            System.Windows.Forms.ComboBox c3,System.Windows.Forms.Label l1)
        {
-           l1.Text = username;
+           l1.Text = ""+firstname+" "+lastname;
            DataSet ds_reservations = new DataSet();
            String command = "SELECT * FROM [polihilton].[dbo].[RoomTypes] ";
            DataSet ds1 = db1.Read(command);
@@ -104,20 +121,31 @@ namespace PoliHilton
                String capacity = c3.SelectedItem.ToString();
                DateTime dateStart = d1.Value.Date;
                DateTime dateEnd = d2.Value.Date;
-            
-               //DataSet ds= new DataSet();
-               //String command = "SELECT t2.r_number, t1.price, t3.start_date, t3.end_date FROM [polihilton].[dbo].[RoomType] t1 JOIN (SELECT * FROM [polihilton].[dbo].[Rooms] t2 JOIN [polihilton].[dbo].[Rezervations] t3 ON t2.r_id = t3.r_id WHERE DATEDIFF(day,'" + dateStart + "',t3.start_date)>0 AND DATEDIFF(day,'" + dateEnd + "',t3.end_date)>0 ) ON t1.r_type_id = t2.r_type_id WHERE t1.name = '" + type + "' AND t1.capacity = '" + capacity + "' AND t1.price BETWEEN '" + price[0] + "' AND '" + price[1] + "'";
-               //String command = "SELECT t2.r_type_id, t2.r_number FROM [polihilton].[dbo].[Rooms] t2 JOIN [polihilton].[dbo].[Rezervations] t3 ON t2.r_id=t3.r_id WHERE (DATEDIFF(day,'" + dateStart + "',t3.start_date)>0 AND DATEDIFF(day,'" + dateEnd + "',t3.start_date)>0) OR (DATEDIFF(day,'" + dateStart + "',t3.end_date)<0 AND DATEDIFF(day,'" + dateEnd + "',t3.end_date)>0)";
-               //String command = "SELECT t3.start_date, t3.end_date FROM [polihilton].[dbo].[Rooms] t2 JOIN [polihilton].[dbo].[Rezervations] t3 ON t2.r_id=t3.r_id DATEDIFF(day,'" + dateStart + "',t3.start_date)<0";
-               //String command = "SELECT DATEDIFF(day,convert(datetime,'"+dateStart+"',5),convert(datetime,'"+dateEnd+"',5)) AS DiffDate";
-               String command = "SELECT t1.capacity, t1.name, t1.price, t2.r_number FROM [polihilton].[dbo].[RoomTypes] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_type_id=t2.r_type_id WHERE t1.name = '" + type + "' AND t1.capacity = '" + capacity + "' AND t1.price BETWEEN '" + price[0] + "' AND '" + price[1] + "'";
-               DataSet ds1 = db1.Read(command);            
-               System.Windows.Forms.MessageBox.Show(dateStart + " " + dateEnd);
+               String command = "SELECT * FROM [polihilton].[dbo].[RoomTypes] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_type_id=t2.r_type_id  WHERE t1.name = '" + type + "' AND t1.capacity = '" + capacity + "' AND t1.price BETWEEN '" + price[0] + "' AND '" + price[1] + "'";
+               DataSet ds1 = db1.Read(command);
                foreach (DataRow dr in ds1.Tables[0].Rows)
                {
+                   command = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE r_id='"+dr["r_id"].ToString()+"' AND ( start_date<Convert(datetime,'" + dateEnd + "') OR end_date > Convert(datetime,'" + dateStart + "'))";
+                   DataSet ds2 = db1.Read(command);
+                  if (ds2.Tables[0].Rows.Count == 0)
+                   {
+                       command = "SELECT * FROM [polihilton].[dbo].[Discounts] WHERE r_id='" + dr["r_id"].ToString() + "'";
+                       DataSet ds3 = db1.Read(command);
+                       String price_true = "";
+                       if (ds3.Tables[0].Rows.Count == 0)
+                       {
+                           price_true = dr["price"].ToString();
+                       }
+                       else
+                       {
+                           DataRow dr2 = ds3.Tables[0].Rows[0];
+                           price_true = dr2["price"].ToString();
+                       }
                        //String line = "Number:" + dr.ItemArray.GetValue(0).ToString() + "  Type:" + type + "  Capacity:" + capacity + "  Price:" + dr.ItemArray.GetValue(1).ToString();
-                   String line = "number: " + dr.ItemArray.GetValue(3).ToString() + "  capacity: " + dr.ItemArray.GetValue(0).ToString() + "  type: " + dr.ItemArray.GetValue(1).ToString() + "  price: " + dr.ItemArray.GetValue(2).ToString();
-                   l1.Items.Add(line);   
+                       String line = "number: " + dr["r_id"].ToString() + " Room Number: "+dr["r_number"].ToString()+ " capacity: " + dr["capacity"].ToString() + "  type: " + dr["name"].ToString() + "  price: " + price_true;
+                       l1.Items.Add(line);
+                  }
+                  else {  }
                }
            }
            catch (Exception e)
@@ -134,20 +162,29 @@ namespace PoliHilton
            return room_number;
        }
 
-       public void final_reserve_room(Users u,int room_number)
-       {
-           Form8 f8 = new Form8(u,room_number);
-           Form7.ActiveForm.Hide();
-           f8.Show();
-       }
+
 
         public void fill_room_fields_final(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4, 
             System.Windows.Forms.TextBox t5, System.Windows.Forms.TextBox t6, System.Windows.Forms.TextBox t7, System.Windows.Forms.TextBox t8, System.Windows.Forms.TextBox t9,int room_number)
         {
-            String command = "SELECT t1.name, t2.r_number, t2.r_floor, t1.capacity, t2.surface, t2.orientation, t1.price FROM [polihilton].[dbo].[RoomTypes] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_type_id=t2.r_type_id WHERE t2.r_number='"+room_number+"'";
+            String command = "SELECT t1.name, t2.r_number, t2.r_floor, t1.capacity, t2.surface, t2.orientation, t1.price FROM [polihilton].[dbo].[RoomTypes] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_type_id=t2.r_type_id WHERE t2.r_id='"+room_number+"'";
             DataSet ds1 = db1.Read(command);
             foreach (DataRow dr in ds1.Tables[0].Rows)
             {
+                command = "SELECT * FROM [polihilton].[dbo].[Discounts] WHERE r_id='" +room_number+ "'";
+                DataSet ds2 = db1.Read(command);
+                if (ds2.Tables[0].Rows.Count == 0)
+                {
+                    t8.Text = "0";
+                    t9.Text = dr.ItemArray.GetValue(6).ToString();
+                }
+                else
+                {
+                    DataRow dr1 = ds2.Tables[0].Rows[0];
+                    int new_price = int.Parse(dr1["price"].ToString());
+                    t8.Text = ""+(int.Parse(dr["price"].ToString())-new_price);
+                    t9.Text = new_price.ToString();
+                }
                 t1.Text = dr.ItemArray.GetValue(0).ToString();
                 t2.Text = dr.ItemArray.GetValue(1).ToString();
                 t3.Text = dr.ItemArray.GetValue(2).ToString();
@@ -155,13 +192,31 @@ namespace PoliHilton
                 t5.Text = dr.ItemArray.GetValue(4).ToString();
                 t6.Text = dr.ItemArray.GetValue(5).ToString();
                 t7.Text = dr.ItemArray.GetValue(6).ToString();
-                t8.Text = "0";
-                t9.Text = dr.ItemArray.GetValue(6).ToString();
             }
         }
 
-       
 
+        public int final_reserver_form8(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4)
+        {
+            int ret = 1;
+            int room_number = int.Parse(t1.Text);
+            DateTime start = Convert.ToDateTime(t2.Text);
+            DateTime end = Convert.ToDateTime(t3.Text);
+            int total=int.Parse(t4.Text);
+            String command = "SELECT * FROM [polihilton].[dbo].[Rooms] WHERE r_number='" + room_number + "'";
+            DataSet ds1 = db1.Read(command);
+            DataRow dr1 = ds1.Tables[0].Rows[0];
+            int room_id = int.Parse(dr1["r_id"].ToString());
+            command = "SELECT * FROM [polihilton].[dbo].[Rezervations] t1 JOIN [polihilton].[dbo].[Rooms] t2 on t1.r_id=t2.r_id WHERE r_number='" + room_number + "' AND ( start_date<Convert(datetime,'" + start + "') OR end_date > Convert(datetime,'" + end + "'))";
+            ds1 = db1.Read(command);
+            if (ds1.Tables[0].Rows.Count != 0) { ret = 0; }
+            else
+            {
+                command = "INSERT INTO [polihilton].[dbo].[Rezervations] (u_id,r_id,start_date,end_date,rez_price)Values('" + this.id + "','" + room_id + "',Convert(datetime,'" + start + "'),Convert(datetime,'" + start + "'),'"+total+"')";
+                db1.Command(command);
+            }
+            return ret;
+        }
 
 
 

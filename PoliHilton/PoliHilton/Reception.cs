@@ -25,6 +25,12 @@ namespace PoliHilton
             this.lastname = lastname;
         
        }
+
+       public String user_info()
+       {
+           return "" + firstname + " " + lastname;
+       }
+
        public void reception_dataset_populate_rname(ComboBox g1)
        {
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
@@ -129,7 +135,8 @@ namespace PoliHilton
        }
        public void reception_dataset_populate(System.Windows.Forms.DataGridView g1)
        {
-           String command_reception = "SELECT * FROM [polihilton].[dbo].[Rezervations]";
+           DateTime reference = DateTime.UtcNow.AddDays(-1);
+           String command_reception = "SELECT * FROM [polihilton].[dbo].[Rezervations] Where end_date>Convert(datetime,'" + reference + "')";
            DataSet ds1 = db1.Read(command_reception);
            foreach (DataTable table in ds1.Tables)
            {
@@ -144,11 +151,22 @@ namespace PoliHilton
            DataSet ds1 = db1.Read(db_command);
            MessageBox.Show("Reservation deleted!");
        }
-       public void log_out()
+
+       public void check_out(System.Windows.Forms.DataGridView g1)
        {
-           this.f4.Close();
-           Form1 f1 = new Form1(this.db1);
+           int rowindex = g1.CurrentCell.RowIndex;
+           string value = g1.Rows[rowindex].Cells[0].Value.ToString();
+           DateTime reference = DateTime.UtcNow;
+           String db_command = "UPDATE [polihilton].[dbo].[Rezervations] SET end_date=Convert(datetime,'" + reference + "') Where rez_id='" + int.Parse(value) + "'";
+           db1.Command(db_command);
+           DataGridViewRow row = g1.SelectedRows[0];
+           int id_room = int.Parse(row.Cells["r_id"].Value.ToString());
+           String db_command1 = "INSERT INTO [polihilton].[dbo].[Cleaning] (r_id,u_id,status,date_required)Values('" + id_room + "','2','Pending',Convert(datetime,'" + reference + "'))";
+           db1.Command(db_command1);
+           MessageBox.Show("User Checked out!");
        }
+       
+
 
     }
 }

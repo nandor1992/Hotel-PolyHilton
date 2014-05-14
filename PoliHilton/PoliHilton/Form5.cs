@@ -22,6 +22,7 @@ namespace PoliHilton
             this.Show();
             this.db1 = db1;
             init_user(username);
+            Form5_label_name.Text = u1.getUser();
             u1.list_current_reservations(Form5_lb);
         }
 
@@ -56,6 +57,11 @@ namespace PoliHilton
             Form7 f7 = new Form7(u1);
             this.Hide();
       
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("WPF Format");
         }
 
     }

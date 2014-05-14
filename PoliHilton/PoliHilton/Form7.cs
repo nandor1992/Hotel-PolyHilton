@@ -20,6 +20,7 @@ namespace PoliHilton
             this.u1 = u1;
             this.Show();
             u1.init_form7_fields(form7_cb_roomType, form7_cb_price, form7_cb_roomCap,Form7_label_name);
+            this.db1 = u1.getDB();
 
         }
 
@@ -36,8 +37,32 @@ namespace PoliHilton
         private void Form7_btn_reserve_Click(object sender, EventArgs e)
         {
             int number = u1.reserve_room(Form7_lb);
-            u1.final_reserve_room(u1,number);
+            Form8 f8 = new Form8(u1, number, form7_dtp_start.Value.Date, form7_dtp_end.Value.Date);
+            Form7.ActiveForm.Hide();
+            f8.Show();
 
+        }
+
+        private void Form7_label_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void form7_dtp_start_ValueChanged(object sender, EventArgs e)
+        {
+            form7_dtp_end.MinDate = form7_dtp_start.Value.AddDays(1);
+        }
+
+        private void form7_dtp_end_ValueChanged(object sender, EventArgs e)
+        {
+            form7_dtp_start.MaxDate = form7_dtp_end.Value.AddDays(-1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5(u1.getusername(), u1.getDB());
+            f5.Show();
+            this.Close();
         }
       
         

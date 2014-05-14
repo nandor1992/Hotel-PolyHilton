@@ -24,6 +24,9 @@ namespace PoliHilton
             init_reception(username);
             r1.reception_dataset_populate_rname(form4_cb_roomnumber);
             r1.reception_dataset_populate_uname(form4_cb_username);
+            r1.reception_dataset_populate(form4_dataviewgrid);
+            r1.reception_dataset_populate(dataGridView1);
+            label_user.Text = "Hello " + r1.user_info() + " !";
 
         }
 
@@ -71,6 +74,8 @@ namespace PoliHilton
                 form4_text_usertypeid.Text="1";
             }
                 r1.create_user(form4_text_username.Text, form4_text_password.Text, form4_text_firstname.Text, form4_text_lastname.Text, int.Parse(form4_text_usertypeid.Text));
+                form4_cb_username.Items.Clear();
+                r1.reception_dataset_populate_uname(form4_cb_username);
         }
 
         private void form4_button_showrezervations_Click(object sender, EventArgs e)
@@ -81,6 +86,24 @@ namespace PoliHilton
         private void form4_button_deleterezervation_Click(object sender, EventArgs e)
         {
             r1.delete_rezervation(form4_dataviewgrid);
+            r1.reception_dataset_populate(form4_dataviewgrid);
+        }
+
+        private void form4_cb_roomnumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             form4_textPrice.Text=r1.calculate_price(int.Parse(form4_cb_roomnumber.SelectedItem.ToString())).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            r1.check_out(dataGridView1);
+        }
+
+        private void logut_button_admin_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1(this.db1);
+            f1.Show();
+            this.Close();
         }
     }
 }
