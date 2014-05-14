@@ -30,16 +30,6 @@ namespace PoliHilton
              else
              {
                  DataRow dr1 = ds1.Tables[0].Rows[0];
-                 switch (int.Parse(dr1["u_type_id"].ToString()))
-                 {
-                         //TO-DO: Have to change to real values of user!!
-                     case 1: MessageBox.Show("Usert type 1(normal) and username=:" + username);  break;
-                     case 2: MessageBox.Show("Usert type 2(admin) and username=:" + username); break;
-                     case 3: MessageBox.Show("Usert type 3(cleaning) and username=:" + username); break;
-                     case 4: MessageBox.Show("Usert type 4(reception) and username=:" + username); break;
-                     default: MessageBox.Show("your usertype was not recognized"); break;
-                         //you just have to discuss all the cases and create users and blah blah with the examples given, 
-                 }
                  return int.Parse(dr1["u_type_id"].ToString());
          }
          //TO DO: Verify if present in Database, if present Switch() to required form, pass forward DB an create Object for type
