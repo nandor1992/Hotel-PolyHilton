@@ -30,12 +30,12 @@ namespace PoliHilton
        {
            return "" + firstname + " " + lastname;
        }
-
+      
        public void reception_dataset_populate_rname(ComboBox g1)
        {
+           //aici populam comboboxul cu camere
            String command_cleaner = "SELECT r_number FROM [polihilton].[dbo].[Rooms]";
            DataSet ds1 = db1.Read(command_cleaner);
-           //am modificat sa ia fiecare row din tabel si sa le adauge, se poate si cu source cred dar asa e mai simplu
            foreach (DataTable table in ds1.Tables)
            {
                foreach (DataRow dr in table.Rows)
@@ -46,9 +46,9 @@ namespace PoliHilton
        }
        public void reception_dataset_populate_uname(ComboBox g1)
        {
+           //aici populam comboboxul cu useri
            String command_cleaner = "SELECT username FROM [polihilton].[dbo].[Users]";
-           DataSet ds1 = db1.Read(command_cleaner);
-           //am modificat sa ia fiecare row din tabel si sa le adauge, se poate si cu source cred dar asa e mai simplu
+           DataSet ds1 = db1.Read(command_cleaner); 
            foreach (DataTable table in ds1.Tables)
            {
                foreach (DataRow dr in table.Rows)
@@ -96,6 +96,7 @@ namespace PoliHilton
        }
        public int calculate_price(int room_number)
        {
+
            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[RoomTypes] JOIN [polihilton].[dbo].[Rooms] ON [polihilton].[dbo].[RoomTypes].r_type_id=[polihilton].[dbo].[Rooms].r_type_id WHERE r_number='" + room_number + "' ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
@@ -115,10 +116,11 @@ namespace PoliHilton
                    }
                }
            }
-           return room_number;
+           return room_number;//defapt room_number aici reprezinta pretul camerei curente
        }
        public int return_rid(int room_number)
        {
+           //aici returnam numarului unei camere in fucntie de id-ul ei.adica introducem id si primim nr camerei
            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rooms] [Rooms] WHERE r_number='" + room_number + "' ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
@@ -132,6 +134,7 @@ namespace PoliHilton
        }
        public int return_uid(string u_name)
        {
+           //aici introducem id unui user si ii aflam usernamul
            String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] [Rooms] WHERE username='" + u_name + "' ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
@@ -146,12 +149,26 @@ namespace PoliHilton
        public void reception_dataset_populate(System.Windows.Forms.DataGridView g1)
        {
            DateTime reference = DateTime.UtcNow.AddDays(-1);
-           String command_reception = "SELECT * FROM [polihilton].[dbo].[Rezervations] Where end_date>Convert(datetime,'" + reference + "')";
+           String command_reception = "SELECT * FROM [polihilton].[dbo].[Users] JOIN [polihilton].[dbo].[Rezervations] on [polihilton].[dbo].[Users].u_id=[polihilton].[dbo].[Rezervations].u_id JOIN [polihilton].[dbo].[Rooms] on [polihilton].[dbo].[Rezervations].r_id=[polihilton].[dbo].[Rooms].r_id Where end_date>Convert(datetime,'" + reference + "')";
            DataSet ds1 = db1.Read(command_reception);
            foreach (DataTable table in ds1.Tables)
            {
                g1.DataSource = table;
            }
+           g1.Columns[0].Visible = false;
+           g1.Columns[1].Visible = false;
+           g1.Columns[3].Visible = false;
+           g1.Columns[4].Visible = false;
+           g1.Columns[5].Visible = false;
+           g1.Columns[6].Visible = false;
+           g1.Columns[7].Visible = false;
+           g1.Columns[8].Visible = false;
+          // g1.Columns[9].Visible = false;
+           g1.Columns[12].Visible = false;
+           g1.Columns[13].Visible = false;
+           g1.Columns[15].Visible = false; 
+           g1.Columns[16].Visible = false;
+           g1.Columns[17].Visible = false;
        }
        public void delete_rezervation(System.Windows.Forms.DataGridView g1)
        {
@@ -167,10 +184,12 @@ namespace PoliHilton
            int rowindex = g1.CurrentCell.RowIndex;
            string value = g1.Rows[rowindex].Cells[0].Value.ToString();
            DateTime reference = DateTime.UtcNow;
+           
            String db_command = "UPDATE [polihilton].[dbo].[Rezervations] SET end_date=Convert(datetime,'" + reference + "') Where rez_id='" + int.Parse(value) + "'";
            db1.Command(db_command);
            DataGridViewRow row = g1.SelectedRows[0];
            int id_room = int.Parse(row.Cells["r_id"].Value.ToString());
+           //aici mutam camera in dabelul de cleaning
            String db_command1 = "INSERT INTO [polihilton].[dbo].[Cleaning] (r_id,u_id,status,date_required)Values('" + id_room + "','2','Pending',Convert(datetime,'" + reference + "'))";
            db1.Command(db_command1);
            MessageBox.Show("User Checked out!");
