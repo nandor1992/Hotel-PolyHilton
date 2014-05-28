@@ -28,17 +28,17 @@ namespace PoliHilton
         public void form_initialization_data()
         {
             label_user.Text="Hello "+a1.getName()+"!";
-            a1.dataset_populate(form2_dataGridView_Cleaner,3);
-            a1.dataset_populate(form2_dataGridView_Manager, 2);
-            a1.dataset_populate(form2_DataGridView_Customer, 1);
-            a1.dataset_populate(dataGridView6, 1);
-            a1.dataset_populate(form2_DataGridView_Reception, 4);
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name', username AS Username,password AS Password FROM [polihilton].[dbo].[Users] WHERE u_type_id=3", form2_dataGridView_Cleaner);
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name', username AS Username,password AS Password FROM [polihilton].[dbo].[Users] WHERE u_type_id=2", form2_dataGridView_Manager);
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name', username AS Username,password AS Password FROM [polihilton].[dbo].[Users] WHERE u_type_id=1", form2_DataGridView_Customer);
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name', username AS Username,password AS Password FROM [polihilton].[dbo].[Users] WHERE u_type_id=1", dataGridView6);
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name', username AS Username,password AS Password FROM [polihilton].[dbo].[Users] WHERE u_type_id=4", form2_DataGridView_Reception);
             a1.prices_udpate(dataGridView3, dataGridView4);
             a1.room_info_update(dataGridView5);
             a1.populate_discount_drop_type(comboBox1);
-            a1.dataset_populate(dataGridView2, 3);
-            a1.populate_cleaning_assigned(dataGridView7, dataGridView8);
-            init_statistics();
+            a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name' FROM [polihilton].[dbo].[Users] WHERE u_type_id=3", dataGridView2);
+            a1.populate_cleaning_assigned(dataGridView7);
+            //init_statistics();
         }
 
         public void init_statistics()
@@ -52,10 +52,10 @@ namespace PoliHilton
 
         public void init_admin(String username)
         {
-            String db_command="SELECT * FROM [polihilton].[dbo].[Users] Where username='"+username+"'";
-         DataSet ds1=db1.Read(db_command);
-         DataRow dr1 = ds1.Tables[0].Rows[0];
-         this.a1 = new Admin(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(),this.db1);
+            String db_command = "SELECT * FROM [polihilton].[dbo].[Users] Where username='" + username + "'";
+            DataSet ds1 = db1.Read(db_command);
+            DataRow dr1 = ds1.Tables[0].Rows[0];
+            this.a1 = new Admin(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -158,8 +158,7 @@ namespace PoliHilton
 
         private void form2_SelectBtn_Manager_Click(object sender, EventArgs e)
         {
-            a1.dataset_select(form2_dataGridView_Manager,textBox8, form2_Manager_LastName, form2_Manager_UserName, form2_Manager_Password);
-        
+            a1.dataset_select(form2_dataGridView_Manager,textBox8, form2_Manager_LastName, form2_Manager_UserName, form2_Manager_Password);        
         }
 
         private void form2_dataGridView_Manager_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -342,6 +341,17 @@ namespace PoliHilton
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.populate_assigned_rooms(dataGridView2, dataGridView8);
+            
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
         {
 
         }

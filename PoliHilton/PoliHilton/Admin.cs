@@ -31,10 +31,10 @@ namespace PoliHilton
            return "" + firstname + " " + lastname;
        }
 
-       public void dataset_populate(System.Windows.Forms.DataGridView g1,int type)
+       public void dataset_populate(String command,System.Windows.Forms.DataGridView g1)
        {
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='" + type + "'";
-           DataSet ds1 = db1.Read(command_cleaner);
+           //String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Users] WHERE u_type_id='" + type + "'";
+           DataSet ds1 = db1.Read(command);
            foreach (DataTable table in ds1.Tables)
            {
                g1.DataSource = table;
@@ -46,11 +46,10 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               t1.Text=row.Cells["firstName"].Value.ToString();
-               t2.Text=row.Cells["lastName"].Value.ToString();
-               t3.Text=row.Cells["username"].Value.ToString();
-               t4.Text=row.Cells["password"].Value.ToString();
-               
+               t1.Text=row.Cells["First Name"].Value.ToString();
+               t2.Text=row.Cells["Last Name"].Value.ToString();
+               t3.Text=row.Cells["Username"].Value.ToString();
+               t4.Text=row.Cells["Password"].Value.ToString();               
            }
        }
 
@@ -59,7 +58,7 @@ namespace PoliHilton
             if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id=int.Parse(row.Cells["u_id"].Value.ToString());
+               int id=int.Parse(row.Cells["Id"].Value.ToString());
                String db_command="UPDATE [polihilton].[dbo].[Users] SET username='"+t3.Text+"',password='"+t4.Text+"',firstName='"+t1.Text+"',lastName='"+t2.Text+"' WHERE u_id='"+id+"'";
                db1.Command(db_command);
             }
@@ -71,7 +70,7 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id = int.Parse(row.Cells["u_id"].Value.ToString());
+               int id = int.Parse(row.Cells["Id"].Value.ToString());
                String db_command = "UPDATE [polihilton].[dbo].[Users] SET u_type_id='2' WHERE u_id='" + id + "'";
                db1.Command(db_command);
            }
@@ -82,7 +81,7 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id = int.Parse(row.Cells["u_id"].Value.ToString());
+               int id = int.Parse(row.Cells["Id"].Value.ToString());
                String db_command = "UPDATE [polihilton].[dbo].[Users] SET u_type_id='1' WHERE u_id='" + id + "'";
                db1.Command(db_command);
            }
@@ -109,7 +108,7 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               if (int.Parse(row.Cells["u_id"].Value.ToString()) == this.id)
+               if (int.Parse(row.Cells["Id"].Value.ToString()) == this.id)
                {
                    MessageBox.Show("Can't Delete Yourself");
                }
@@ -117,7 +116,7 @@ namespace PoliHilton
                {
                    //TO-DO: Add deletion of everything adjecent
 
-                   String db_command1 = "DELETE FROM [polihilton].[dbo].[Users] WHERE u_id='" + int.Parse(row.Cells["u_id"].Value.ToString()) + "' ON DELETE CASCADE";
+                   String db_command1 = "DELETE FROM [polihilton].[dbo].[Users] WHERE u_id='" + int.Parse(row.Cells["ID"].Value.ToString()) + "'";
                    db1.Command(db_command1);
                }
            }
@@ -125,7 +124,7 @@ namespace PoliHilton
 
        public void prices_udpate(System.Windows.Forms.DataGridView g1,System.Windows.Forms.DataGridView g2)
        {
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[RoomTypes] ";
+           String command_cleaner = "SELECT name,capacity,price FROM [polihilton].[dbo].[RoomTypes] ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
@@ -141,7 +140,7 @@ namespace PoliHilton
 
        public void room_info_update(System.Windows.Forms.DataGridView g1)
        {
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rooms] INNER JOIN [polihilton].[dbo].[Rezervations] ON Rooms.r_id=Rezervations.r_id ";
+           String command_cleaner = "SELECT rez_id AS Id, r_number AS Number, r_floor AS Floor, orientation AS Orientation, surface AS Surface, start_date AS 'Start date', end_date AS 'End date', rez_price AS Price FROM [polihilton].[dbo].[Rooms] INNER JOIN [polihilton].[dbo].[Rezervations] ON Rooms.r_id=Rezervations.r_id ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
@@ -164,8 +163,8 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id= int.Parse(row.Cells["r_type_id"].Value.ToString());
-               String db_command = "UPDATE [polihilton].[dbo].[RoomTypes] SET price='"+int.Parse(t1.Text)+"' WHERE r_type_id='" + id + "'";
+               String type=row.Cells["name"].Value.ToString();
+               String db_command = "UPDATE [polihilton].[dbo].[RoomTypes] SET price='" + int.Parse(t1.Text) + "' WHERE name ='" + type + "'";
                db1.Command(db_command);
            }
        }
@@ -240,7 +239,7 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id = int.Parse(row.Cells["rez_id"].Value.ToString());
+               int id = int.Parse(row.Cells["Id"].Value.ToString());
                String db_command1 = "DELETE FROM [polihilton].[dbo].[Rezervations] WHERE rez_id='" + id + "'";
                db1.Command(db_command1);
            }
@@ -251,8 +250,8 @@ namespace PoliHilton
            if (g1.SelectedRows.Count != 0)
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id_u = int.Parse(row.Cells["u_id"].Value.ToString());
-               String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE u_id='"+id_u+"'";
+               int id_u = int.Parse(row.Cells["Id"].Value.ToString());
+               String command_cleaner = "SELECT r_number AS Number, start_date AS 'Start date',end_date AS 'End date',rez_price AS Price FROM [polihilton].[dbo].[Rezervations] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id=t2.r_id WHERE u_id='" + id_u + "'";
                DataSet ds1 = db1.Read(command_cleaner);
                foreach (DataTable table in ds1.Tables)
                {
@@ -261,21 +260,28 @@ namespace PoliHilton
            }
        }
 
-       public void populate_cleaning_assigned(System.Windows.Forms.DataGridView g1, System.Windows.Forms.DataGridView g2)
+       public void populate_cleaning_assigned(System.Windows.Forms.DataGridView g1)
        {
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] WHERE status='Pending' ";
+           String command_cleaner = "SELECT t1.r_id AS Id, r_number as Number, r_floor AS Floor, status AS Status, date_required AS 'Required date' FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE status='Pending' ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
                g1.DataSource = table;
            }
-           command_cleaner = "SELECT * FROM [polihilton].[dbo].[Cleaning] INNER JOIN [polihilton].[dbo].[Users] ON Cleaning.u_id=Users.u_id WHERE status='Assigned' ";
-           ds1 = db1.Read(command_cleaner);
-           foreach (DataTable table in ds1.Tables)
+       }
+       public void populate_assigned_rooms(System.Windows.Forms.DataGridView g1, System.Windows.Forms.DataGridView g2)
+       {
+           if (g1.SelectedRows.Count != 0)
            {
-               g2.DataSource = table;
+               DataGridViewRow row = g1.SelectedRows[0];
+               int id_u = int.Parse(row.Cells["id"].Value.ToString());
+               String command_cleaner = "SELECT t1.r_id AS Id, r_number AS Number, r_floor AS Floor, status AS Status, date_required AS 'Required date' FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE t1.u_id = '" + id_u + "' ";
+               DataSet ds1 = db1.Read(command_cleaner);
+               foreach (DataTable table in ds1.Tables)
+               {
+                   g2.DataSource = table;
+               }
            }
-
        }
 
        public void assign_cleaning(System.Windows.Forms.DataGridView g1, System.Windows.Forms.DataGridView g2)
@@ -286,10 +292,10 @@ namespace PoliHilton
                {
 
                    DataGridViewRow row = g1.SelectedRows[0];
-                   int id_u = int.Parse(row.Cells["u_id"].Value.ToString());
+                   int id_u = int.Parse(row.Cells["Id"].Value.ToString());
                    row = g2.SelectedRows[0];
-                   int id_c = int.Parse(row.Cells["clean_id"].Value.ToString());
-                   String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Assigned', u_id='" + id_u + "' WHERE clean_id='" + id_c + "'";
+                   int id_c = int.Parse(row.Cells["Id"].Value.ToString());
+                   String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Assigned', u_id='" + id_u + "' WHERE r_id='" + id_c + "'";
                    db1.Command(db_command);
                }
            }
