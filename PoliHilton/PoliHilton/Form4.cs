@@ -24,9 +24,9 @@ namespace PoliHilton
             init_reception(username);
             r1.reception_dataset_populate_rname(form4_cb_roomnumber);
             r1.reception_dataset_populate_uname(form4_cb_username);
-            r1.reception_dataset_populate(form4_dataviewgrid);
-            r1.reception_dataset_populate(dataGridView1);
-            label_user.Text = "Hello " + r1.user_info() + " !";
+            r1.reception_dataset_populate(form4_datagridview);
+            r1.reception_dataset_populate(form4_datagridview2);
+            form4_label_user.Text = "Hello " + r1.user_info() + " !";
 
         }
 
@@ -38,15 +38,7 @@ namespace PoliHilton
             this.r1 = new Reception(int.Parse(dr1["u_id"].ToString()), dr1["firstName"].ToString(), dr1["lastName"].ToString(), this.db1);
         }
 
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void form4_button_createrezervation_Click(object sender, EventArgs e)
         {
@@ -58,6 +50,8 @@ namespace PoliHilton
                 int uid=r1.return_uid(form4_cb_username.SelectedItem.ToString());
                 int rid = r1.return_rid(int.Parse(form4_cb_roomnumber.SelectedItem.ToString()));
                 r1.create_rezervation(rid, uid, check_in, check_out, int.Parse(form4_textPrice.Text));
+                r1.reception_dataset_populate(form4_datagridview);
+                r1.reception_dataset_populate(form4_datagridview2);
                 
             }
             else
@@ -80,13 +74,14 @@ namespace PoliHilton
 
         private void form4_button_showrezervations_Click(object sender, EventArgs e)
         {
-            r1.reception_dataset_populate(form4_dataviewgrid);
+            r1.reception_dataset_populate(form4_datagridview);
         }
 
         private void form4_button_deleterezervation_Click(object sender, EventArgs e)
         {
-            r1.delete_rezervation(form4_dataviewgrid);
-            r1.reception_dataset_populate(form4_dataviewgrid);
+            r1.delete_rezervation(form4_datagridview);
+            r1.reception_dataset_populate(form4_datagridview);
+            r1.reception_dataset_populate(form4_datagridview2);
         }
 
         private void form4_cb_roomnumber_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,7 +91,9 @@ namespace PoliHilton
 
         private void button1_Click(object sender, EventArgs e)
         {
-            r1.check_out(dataGridView1);
+            r1.check_out(form4_datagridview2);
+            r1.reception_dataset_populate(form4_datagridview);
+            r1.reception_dataset_populate(form4_datagridview2);
         }
 
         private void logut_button_admin_Click(object sender, EventArgs e)

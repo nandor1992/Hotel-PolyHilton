@@ -27,18 +27,11 @@ namespace PoliHilton
              MessageBox.Show("User and Pass combination not found");
              return 0;
          }
-             else
-             {
-                 DataRow dr1 = ds1.Tables[0].Rows[0];
-                 return int.Parse(dr1["u_type_id"].ToString());
+         else
+         {
+             DataRow dr1 = ds1.Tables[0].Rows[0];
+             return int.Parse(dr1["u_type_id"].ToString());
          }
-         //TO DO: Verify if present in Database, if present Switch() to required form, pass forward DB an create Object for type
-        //go to either of the ligin forms Functions given
-        //Example for  Different logins for admin user and others
-            //login_admin(1, "Test", "TestLast");
-            //login_user(1, "Test", "TestLast");
-            //login_cleaner(1, "Test", "TestLast");
-            //login_reception(1, "Test", "TestLast");
         }
 
         public void create_user(String username, String password, String firstname, String lastname)
