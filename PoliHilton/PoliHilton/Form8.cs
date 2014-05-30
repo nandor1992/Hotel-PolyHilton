@@ -24,8 +24,8 @@ namespace PoliHilton
             this.Show();
             this.startDate = s;
             this.endDate = e;
-            textBox1.Text= endDate.ToShortDateString();
-            textBox2.Text = startDate.ToShortDateString();
+            textBox2.Text= endDate.ToShortDateString();
+            textBox1.Text = startDate.ToShortDateString();
             u1.fill_room_fields_final(form8_tb_roomName, form8_tb_roomNo, form8_tb_roomFloor, form8_tb_roomCap, form8_tb_roomSurface,form8_tb_roomOrientation,form8_tb_roomPrice,form8_tb_roomDisc,form8_tb_total,room_number);
         }
 
@@ -52,6 +52,8 @@ namespace PoliHilton
             }
             this.Close();
         }
+
+
     }
 
 }

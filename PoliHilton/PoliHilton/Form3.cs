@@ -63,5 +63,10 @@ namespace PoliHilton
         {
             clean1.log_out();
         }
+
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

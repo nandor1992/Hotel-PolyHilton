@@ -74,5 +74,10 @@ namespace PoliHilton
         {
             Form4 f4 = new Form4(username,this.db1);
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

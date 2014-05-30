@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.form7_panel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Form7_btn_reserve = new System.Windows.Forms.Button();
             this.Form7_lb = new System.Windows.Forms.ListBox();
             this.Form7_label_name = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.form7_btn_search = new System.Windows.Forms.Button();
             this.form7_llabel_signout = new System.Windows.Forms.LinkLabel();
             this.form7_label = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.form7_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,16 @@
             this.form7_panel.Name = "form7_panel";
             this.form7_panel.Size = new System.Drawing.Size(795, 337);
             this.form7_panel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(539, 153);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "View Reservations";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form7_btn_reserve
             // 
@@ -242,16 +252,6 @@
             this.form7_label.TabIndex = 1;
             this.form7_label.Text = "Welcome, ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(539, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "View Reservations";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -261,6 +261,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form7";
             this.Text = "Form7";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form7_FormClosed);
             this.form7_panel.ResumeLayout(false);
             this.form7_panel.PerformLayout();
             this.ResumeLayout(false);

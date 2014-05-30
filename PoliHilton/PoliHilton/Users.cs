@@ -125,7 +125,7 @@ namespace PoliHilton
                DataSet ds1 = db1.Read(command);
                foreach (DataRow dr in ds1.Tables[0].Rows)
                {
-                   command = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE r_id='"+dr["r_id"].ToString()+"' AND ( start_date<Convert(datetime,'" + dateEnd + "') OR end_date > Convert(datetime,'" + dateStart + "'))";
+                   command = "SELECT * FROM [polihilton].[dbo].[Rezervations] WHERE r_id='"+dr["r_id"].ToString()+"' AND end_date > Convert(datetime,'" + dateStart + "')";
                    DataSet ds2 = db1.Read(command);
                   if (ds2.Tables[0].Rows.Count == 0)
                    {
@@ -156,10 +156,11 @@ namespace PoliHilton
 
        public int reserve_room(System.Windows.Forms.ListBox l1)
        {
-           char[] separator = { ' ' };
-           string[] words = l1.SelectedItem.ToString().Split(separator, StringSplitOptions.RemoveEmptyEntries);
-           int room_number = int.Parse(words[1]);
-           return room_number;
+               char[] separator = { ' ' };
+               string[] words = l1.SelectedItem.ToString().Split(separator, StringSplitOptions.RemoveEmptyEntries);
+               int room_number = int.Parse(words[1]);
+               return room_number;
+ 
        }
 
 
@@ -207,12 +208,12 @@ namespace PoliHilton
             DataSet ds1 = db1.Read(command);
             DataRow dr1 = ds1.Tables[0].Rows[0];
             int room_id = int.Parse(dr1["r_id"].ToString());
-            command = "SELECT * FROM [polihilton].[dbo].[Rezervations] t1 JOIN [polihilton].[dbo].[Rooms] t2 on t1.r_id=t2.r_id WHERE r_number='" + room_number + "' AND ( start_date<Convert(datetime,'" + start + "') OR end_date > Convert(datetime,'" + end + "'))";
+            command = "SELECT * FROM [polihilton].[dbo].[Rezervations] t1 JOIN [polihilton].[dbo].[Rooms] t2 on t1.r_id=t2.r_id WHERE r_number='" + room_number + "' AND end_date > Convert(datetime,'" + start + "')";                    
             ds1 = db1.Read(command);
             if (ds1.Tables[0].Rows.Count != 0) { ret = 0; }
             else
             {
-                command = "INSERT INTO [polihilton].[dbo].[Rezervations] (u_id,r_id,start_date,end_date,rez_price)Values('" + this.id + "','" + room_id + "',Convert(datetime,'" + start + "'),Convert(datetime,'" + start + "'),'"+total+"')";
+                command = "INSERT INTO [polihilton].[dbo].[Rezervations] (u_id,r_id,start_date,end_date,rez_price)Values('" + this.id + "','" + room_id + "',Convert(datetime,'" + start + "'),Convert(datetime,'" + end + "'),'"+total+"')";
                 db1.Command(command);
             }
             return ret;

@@ -39,6 +39,7 @@ namespace PoliHilton
            {
                g1.DataSource = table;
            }
+           g1.Columns[0].Visible = false;
        }
 
        public void dataset_select(System.Windows.Forms.DataGridView g1,System.Windows.Forms.TextBox t1,System.Windows.Forms.TextBox t2,System.Windows.Forms.TextBox t3,System.Windows.Forms.TextBox t4)
@@ -55,14 +56,17 @@ namespace PoliHilton
 
        public void modify_user(System.Windows.Forms.DataGridView g1, System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4)
        {
-            if (g1.SelectedRows.Count != 0)
+           if ((g1.SelectedRows.Count == 0) ||(t1.TextLength<=1) ||(t2.TextLength<=1) ||(t3.TextLength<=1) ||(t4.TextLength<=1))
+           {
+               MessageBox.Show("No empty fields Please");
+           }
+           else
            {
                DataGridViewRow row = g1.SelectedRows[0];
-               int id=int.Parse(row.Cells["Id"].Value.ToString());
-               String db_command="UPDATE [polihilton].[dbo].[Users] SET username='"+t3.Text+"',password='"+t4.Text+"',firstName='"+t1.Text+"',lastName='"+t2.Text+"' WHERE u_id='"+id+"'";
+               int id = int.Parse(row.Cells["Id"].Value.ToString());
+               String db_command = "UPDATE [polihilton].[dbo].[Users] SET username='" + t3.Text + "',password='" + t4.Text + "',firstName='" + t1.Text + "',lastName='" + t2.Text + "' WHERE u_id='" + id + "'";
                db1.Command(db_command);
-            }
-                
+           }
        }
 
        public void promote_admin(System.Windows.Forms.DataGridView g1)
@@ -73,6 +77,10 @@ namespace PoliHilton
                int id = int.Parse(row.Cells["Id"].Value.ToString());
                String db_command = "UPDATE [polihilton].[dbo].[Users] SET u_type_id='2' WHERE u_id='" + id + "'";
                db1.Command(db_command);
+           }
+           else
+           {
+               MessageBox.Show("Please select entry");
            }
        }
 
@@ -85,21 +93,32 @@ namespace PoliHilton
                String db_command = "UPDATE [polihilton].[dbo].[Users] SET u_type_id='1' WHERE u_id='" + id + "'";
                db1.Command(db_command);
            }
+           else
+           {
+               MessageBox.Show("Please select entry");
+           }
        }
 
        public void adding_user(System.Windows.Forms.TextBox t1, System.Windows.Forms.TextBox t2, System.Windows.Forms.TextBox t3, System.Windows.Forms.TextBox t4, int type)
        {
-            String db_command= "SELECT * FROM [polihilton].[dbo].[Users] WHERE username='"+t1.Text+"'";
-           DataSet ds1=db1.Read(db_command);
-           if (ds1.Tables[0].Rows.Count == 0)
+           if ((t1.TextLength <= 1) || (t2.TextLength <= 1) || (t3.TextLength <= 1) || (t4.TextLength <= 1))
            {
-               String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values('" + type + "','" + t1.Text + "','" + t2.Text + "','" + t3.Text + "','" + t4.Text + "')";
-               db1.Command(db_command1);
-               MessageBox.Show("User created succesfully!");
+               MessageBox.Show("No empty fields Please");
            }
            else
            {
-               MessageBox.Show("User Already Exists");
+               String db_command = "SELECT * FROM [polihilton].[dbo].[Users] WHERE username='" + t1.Text + "'";
+               DataSet ds1 = db1.Read(db_command);
+               if (ds1.Tables[0].Rows.Count == 0)
+               {
+                   String db_command1 = "INSERT INTO [polihilton].[dbo].[Users] (u_type_id,username,password,firstName,lastName)Values('" + type + "','" + t1.Text + "','" + t2.Text + "','" + t3.Text + "','" + t4.Text + "')";
+                   db1.Command(db_command1);
+                   MessageBox.Show("User created succesfully!");
+               }
+               else
+               {
+                   MessageBox.Show("User Already Exists");
+               }
            }
        }
 
@@ -140,7 +159,8 @@ namespace PoliHilton
 
        public void room_info_update(System.Windows.Forms.DataGridView g1)
        {
-           String command_cleaner = "SELECT rez_id AS Id, r_number AS Number, r_floor AS Floor, orientation AS Orientation, surface AS Surface, start_date AS 'Start date', end_date AS 'End date', rez_price AS Price FROM [polihilton].[dbo].[Rooms] INNER JOIN [polihilton].[dbo].[Rezervations] ON Rooms.r_id=Rezervations.r_id ";
+           DateTime dateStart = DateTime.UtcNow;
+           String command_cleaner = "SELECT rez_id AS Id, r_number AS Number, r_floor AS Floor, orientation AS Orientation, surface AS Surface, start_date AS 'Start date', end_date AS 'End date', rez_price AS Price FROM [polihilton].[dbo].[Rooms] INNER JOIN [polihilton].[dbo].[Rezervations] ON Rooms.r_id=Rezervations.r_id WHERE end_date > Convert(datetime,'" + dateStart + "') ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
@@ -160,11 +180,16 @@ namespace PoliHilton
 
        public void prices_new_update(System.Windows.Forms.DataGridView g1, System.Windows.Forms.TextBox t1)
        {
-           if (g1.SelectedRows.Count != 0)
+           int price;
+           if ((g1.SelectedRows.Count == 0)||(t1.TextLength==0) || !(int.TryParse(t1.Text.ToString(),out price)))
+           {
+               MessageBox.Show("Price canot be string or empty");
+           }
+           else
            {
                DataGridViewRow row = g1.SelectedRows[0];
                String type=row.Cells["name"].Value.ToString();
-               String db_command = "UPDATE [polihilton].[dbo].[RoomTypes] SET price='" + int.Parse(t1.Text) + "' WHERE name ='" + type + "'";
+               String db_command = "UPDATE [polihilton].[dbo].[RoomTypes] SET price='" + price + "' WHERE name ='" + type + "'";
                db1.Command(db_command);
            }
        }
@@ -220,18 +245,26 @@ namespace PoliHilton
 
        public void add_discount(System.Windows.Forms.ComboBox c2, System.Windows.Forms.TextBox t1)
        {
-           String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rooms] Where r_number='" + c2.Text + "'";
-           DataSet ds1 = db1.Read(command_cleaner);
-           int id_type = 0;
-           foreach (DataTable table in ds1.Tables)
+           int price;
+           if ((c2.SelectedIndex == -1) || (t1.TextLength == 0) || !(int.TryParse(t1.Text.ToString(), out price)))
            {
-               foreach (DataRow dr in table.Rows)
-               {
-                   id_type = int.Parse(dr["r_id"].ToString());
-               }
+               MessageBox.Show("Please enter a number and not empty or string and select room and type!");
            }
-           String db_command1 = "INSERT INTO [polihilton].[dbo].[Discounts] (r_id,price)Values('"+id_type+"','"+t1.Text+"')";
-           db1.Command(db_command1);
+           else
+           {
+               String command_cleaner = "SELECT * FROM [polihilton].[dbo].[Rooms] Where r_number='" + c2.Text + "'";
+               DataSet ds1 = db1.Read(command_cleaner);
+               int id_type = 0;
+               foreach (DataTable table in ds1.Tables)
+               {
+                   foreach (DataRow dr in table.Rows)
+                   {
+                       id_type = int.Parse(dr["r_id"].ToString());
+                   }
+               }
+               String db_command1 = "INSERT INTO [polihilton].[dbo].[Discounts] (r_id,price)Values('" + id_type + "','" + price + "')";
+               db1.Command(db_command1);
+           }
        }
 
        public void delete_rezervation(System.Windows.Forms.DataGridView g1)
@@ -262,12 +295,15 @@ namespace PoliHilton
 
        public void populate_cleaning_assigned(System.Windows.Forms.DataGridView g1)
        {
-           String command_cleaner = "SELECT t1.r_id AS Id, r_number as Number, r_floor AS Floor, status AS Status, date_required AS 'Required date' FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE status='Pending' ";
+           String command_cleaner = "SELECT t1.r_id AS Id, r_number as Number, r_floor AS Floor, status AS Status, date_required AS 'Required date',clean_id FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE status='Pending' ";
            DataSet ds1 = db1.Read(command_cleaner);
            foreach (DataTable table in ds1.Tables)
            {
                g1.DataSource = table;
+               g1.Columns[0].Visible = false;
+               g1.Columns[5].Visible = false;
            }
+           
        }
        public void populate_assigned_rooms(System.Windows.Forms.DataGridView g1, System.Windows.Forms.DataGridView g2)
        {
@@ -275,12 +311,14 @@ namespace PoliHilton
            {
                DataGridViewRow row = g1.SelectedRows[0];
                int id_u = int.Parse(row.Cells["id"].Value.ToString());
-               String command_cleaner = "SELECT t1.r_id AS Id, r_number AS Number, r_floor AS Floor, status AS Status, date_required AS 'Required date' FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE t1.u_id = '" + id_u + "' ";
+               String command_cleaner = "SELECT t1.r_id AS Id, r_number AS Number, r_floor AS Floor, status AS Status, date_required AS 'Required date', clean_id FROM [polihilton].[dbo].[Cleaning] t1 JOIN [polihilton].[dbo].[Rooms] t2 ON t1.r_id = t2.r_id WHERE t1.u_id = '" + id_u + "' AND status='Assigned'";
                DataSet ds1 = db1.Read(command_cleaner);
                foreach (DataTable table in ds1.Tables)
                {
                    g2.DataSource = table;
                }
+               g2.Columns[0].Visible = false;
+               g2.Columns[5].Visible = false;
            }
        }
 
@@ -290,12 +328,12 @@ namespace PoliHilton
            {
                if (g2.SelectedRows.Count != 0)
                {
-
                    DataGridViewRow row = g1.SelectedRows[0];
                    int id_u = int.Parse(row.Cells["Id"].Value.ToString());
                    row = g2.SelectedRows[0];
-                   int id_c = int.Parse(row.Cells["Id"].Value.ToString());
-                   String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Assigned', u_id='" + id_u + "' WHERE r_id='" + id_c + "'";
+                   int id_c = int.Parse(row.Cells["clean_id"].Value.ToString());
+  
+                   String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Assigned', u_id='" + id_u + "' WHERE clean_id='" + id_c + "'";
                    db1.Command(db_command);
                }
            }
@@ -307,9 +345,9 @@ namespace PoliHilton
                if (g1.SelectedRows.Count != 0)
                {
                    DataGridViewRow row = g1.SelectedRows[0];
-                   int id_u = int.Parse(row.Cells["u_id"].Value.ToString());
+                   int id_u = int.Parse(row.Cells["Id"].Value.ToString());
                    int id_c= int.Parse(row.Cells["clean_id"].Value.ToString());
-                    String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Pending', u_id='"+id_u+"' WHERE clean_id='" + id_c + "'";
+                    String db_command = "UPDATE [polihilton].[dbo].[Cleaning] SET status='Pending' WHERE clean_id='" + id_c + "'";
                    db1.Command(db_command);
                }
            }

@@ -27,6 +27,8 @@ namespace PoliHilton
             r1.reception_dataset_populate(form4_datagridview);
             r1.reception_dataset_populate(form4_datagridview2);
             form4_label_user.Text = "Hello " + r1.user_info() + " !";
+            form4_dtp_checkin.MinDate = DateTime.UtcNow;
+            form4_dtp_checkout.MinDate = form4_dtp_checkin.MinDate.AddDays(1); ;
 
         }
 
@@ -100,7 +102,7 @@ namespace PoliHilton
         {
             Form1 f1 = new Form1(this.db1);
             f1.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void form4_dtp_checkin_ValueChanged(object sender, EventArgs e)
@@ -110,7 +112,13 @@ namespace PoliHilton
 
         private void form4_dtp_checkout_ValueChanged(object sender, EventArgs e)
         {
-            form4_dtp_checkin.MaxDate = form4_dtp_checkout.Value.AddDays(-1);
+            //form4_dtp_checkin.MaxDate = form4_dtp_checkout.Value.AddDays(-1);
+            //creates errors solves itself
+        }
+
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

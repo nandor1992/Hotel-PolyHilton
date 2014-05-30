@@ -52,7 +52,7 @@
             this.form3_panel.Controls.Add(this.form3_label_welcome);
             this.form3_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form3_panel.Location = new System.Drawing.Point(0, 0);
-            this.form3_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form3_panel.Margin = new System.Windows.Forms.Padding(4);
             this.form3_panel.Name = "form3_panel";
             this.form3_panel.Size = new System.Drawing.Size(463, 399);
             this.form3_panel.TabIndex = 1;
@@ -73,7 +73,7 @@
             this.form3_lb.HorizontalScrollbar = true;
             this.form3_lb.ItemHeight = 16;
             this.form3_lb.Location = new System.Drawing.Point(13, 52);
-            this.form3_lb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form3_lb.Margin = new System.Windows.Forms.Padding(4);
             this.form3_lb.Name = "form3_lb";
             this.form3_lb.Size = new System.Drawing.Size(433, 260);
             this.form3_lb.TabIndex = 12;
@@ -91,7 +91,7 @@
             // form3_btn_cleaned
             // 
             this.form3_btn_cleaned.Location = new System.Drawing.Point(81, 353);
-            this.form3_btn_cleaned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form3_btn_cleaned.Margin = new System.Windows.Forms.Padding(4);
             this.form3_btn_cleaned.Name = "form3_btn_cleaned";
             this.form3_btn_cleaned.Size = new System.Drawing.Size(100, 28);
             this.form3_btn_cleaned.TabIndex = 10;
@@ -102,7 +102,7 @@
             // form3_btn_inProgress
             // 
             this.form3_btn_inProgress.Location = new System.Drawing.Point(262, 353);
-            this.form3_btn_inProgress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form3_btn_inProgress.Margin = new System.Windows.Forms.Padding(4);
             this.form3_btn_inProgress.Name = "form3_btn_inProgress";
             this.form3_btn_inProgress.Size = new System.Drawing.Size(100, 28);
             this.form3_btn_inProgress.TabIndex = 9;
@@ -148,9 +148,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 399);
             this.Controls.Add(this.form3_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Form3";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.form3_panel.ResumeLayout(false);
             this.form3_panel.PerformLayout();
             this.ResumeLayout(false);

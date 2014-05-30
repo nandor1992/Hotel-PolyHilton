@@ -13,7 +13,7 @@ namespace PoliHilton
         SqlConnection myConnection;
         public Database()
         {
-            this.myConnection = new SqlConnection(@"Data Source=KIMI-PC\SQLEXPRESS;" +
+            this.myConnection = new SqlConnection(@"Data Source=localhost;" +
                                        "Trusted_Connection=yes;" +
                                        "database=polihilton;" +
                                        "connection timeout=30");

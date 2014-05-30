@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.form8_panel = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.form8_label_total = new System.Windows.Forms.Label();
             this.form8_tb_total = new System.Windows.Forms.TextBox();
             this.form8_label_endDate = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.form8_tb_roomPrice = new System.Windows.Forms.TextBox();
             this.form8_tb_roomCap = new System.Windows.Forms.TextBox();
             this.form8_tb_roomNo = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.form8_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,10 +84,26 @@
             this.form8_panel.Controls.Add(this.form8_tb_roomNo);
             this.form8_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form8_panel.Location = new System.Drawing.Point(0, 0);
-            this.form8_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_panel.Margin = new System.Windows.Forms.Padding(4);
             this.form8_panel.Name = "form8_panel";
             this.form8_panel.Size = new System.Drawing.Size(615, 388);
             this.form8_panel.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(51, 279);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(165, 22);
+            this.textBox2.TabIndex = 29;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(51, 244);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(165, 22);
+            this.textBox1.TabIndex = 28;
             // 
             // form8_label_total
             // 
@@ -103,7 +119,7 @@
             // 
             this.form8_tb_total.Enabled = false;
             this.form8_tb_total.Location = new System.Drawing.Point(379, 244);
-            this.form8_tb_total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_total.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_total.Name = "form8_tb_total";
             this.form8_tb_total.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_total.TabIndex = 26;
@@ -211,7 +227,7 @@
             // form8_btn_back
             // 
             this.form8_btn_back.Location = new System.Drawing.Point(356, 345);
-            this.form8_btn_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_btn_back.Margin = new System.Windows.Forms.Padding(4);
             this.form8_btn_back.Name = "form8_btn_back";
             this.form8_btn_back.Size = new System.Drawing.Size(100, 28);
             this.form8_btn_back.TabIndex = 11;
@@ -222,7 +238,7 @@
             // form8_btn_reserve
             // 
             this.form8_btn_reserve.Location = new System.Drawing.Point(227, 345);
-            this.form8_btn_reserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_btn_reserve.Margin = new System.Windows.Forms.Padding(4);
             this.form8_btn_reserve.Name = "form8_btn_reserve";
             this.form8_btn_reserve.Size = new System.Drawing.Size(100, 28);
             this.form8_btn_reserve.TabIndex = 10;
@@ -234,7 +250,7 @@
             // 
             this.form8_tb_roomDisc.Enabled = false;
             this.form8_tb_roomDisc.Location = new System.Drawing.Point(379, 208);
-            this.form8_tb_roomDisc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomDisc.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomDisc.Name = "form8_tb_roomDisc";
             this.form8_tb_roomDisc.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomDisc.TabIndex = 7;
@@ -243,7 +259,7 @@
             // 
             this.form8_tb_roomOrientation.Enabled = false;
             this.form8_tb_roomOrientation.Location = new System.Drawing.Point(51, 188);
-            this.form8_tb_roomOrientation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomOrientation.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomOrientation.Name = "form8_tb_roomOrientation";
             this.form8_tb_roomOrientation.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomOrientation.TabIndex = 6;
@@ -252,7 +268,7 @@
             // 
             this.form8_tb_roomSurface.Enabled = false;
             this.form8_tb_roomSurface.Location = new System.Drawing.Point(51, 156);
-            this.form8_tb_roomSurface.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomSurface.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomSurface.Name = "form8_tb_roomSurface";
             this.form8_tb_roomSurface.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomSurface.TabIndex = 5;
@@ -261,7 +277,7 @@
             // 
             this.form8_tb_roomFloor.Enabled = false;
             this.form8_tb_roomFloor.Location = new System.Drawing.Point(51, 92);
-            this.form8_tb_roomFloor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomFloor.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomFloor.Name = "form8_tb_roomFloor";
             this.form8_tb_roomFloor.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomFloor.TabIndex = 4;
@@ -270,7 +286,7 @@
             // 
             this.form8_tb_roomName.Enabled = false;
             this.form8_tb_roomName.Location = new System.Drawing.Point(51, 28);
-            this.form8_tb_roomName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomName.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomName.Name = "form8_tb_roomName";
             this.form8_tb_roomName.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomName.TabIndex = 3;
@@ -280,7 +296,7 @@
             // 
             this.form8_tb_roomPrice.Enabled = false;
             this.form8_tb_roomPrice.Location = new System.Drawing.Point(379, 176);
-            this.form8_tb_roomPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomPrice.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomPrice.Name = "form8_tb_roomPrice";
             this.form8_tb_roomPrice.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomPrice.TabIndex = 2;
@@ -289,7 +305,7 @@
             // 
             this.form8_tb_roomCap.Enabled = false;
             this.form8_tb_roomCap.Location = new System.Drawing.Point(51, 124);
-            this.form8_tb_roomCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomCap.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomCap.Name = "form8_tb_roomCap";
             this.form8_tb_roomCap.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomCap.TabIndex = 1;
@@ -298,26 +314,10 @@
             // 
             this.form8_tb_roomNo.Enabled = false;
             this.form8_tb_roomNo.Location = new System.Drawing.Point(51, 60);
-            this.form8_tb_roomNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.form8_tb_roomNo.Margin = new System.Windows.Forms.Padding(4);
             this.form8_tb_roomNo.Name = "form8_tb_roomNo";
             this.form8_tb_roomNo.Size = new System.Drawing.Size(132, 22);
             this.form8_tb_roomNo.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(51, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(165, 22);
-            this.textBox1.TabIndex = 28;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(51, 279);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(165, 22);
-            this.textBox2.TabIndex = 29;
             // 
             // Form8
             // 
@@ -325,7 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 388);
             this.Controls.Add(this.form8_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
             this.Text = "Form8";
             this.form8_panel.ResumeLayout(false);

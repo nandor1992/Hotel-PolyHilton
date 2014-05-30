@@ -173,7 +173,8 @@ namespace PoliHilton
        public void delete_rezervation(System.Windows.Forms.DataGridView g1)
        {
            int rowindex = g1.CurrentCell.RowIndex;
-           string value=g1.Rows[rowindex].Cells[0].Value.ToString();
+           string value=g1.Rows[rowindex].Cells[6].Value.ToString();
+          // MessageBox.Show(g1.Rows[rowindex].Cells[6].Value.ToString());
            String db_command = "DELETE FROM [polihilton].[dbo].[Rezervations] Where rez_id='" +int.Parse(value)  + "' ";
            DataSet ds1 = db1.Read(db_command);
            MessageBox.Show("Reservation deleted!");
@@ -182,7 +183,7 @@ namespace PoliHilton
        public void check_out(System.Windows.Forms.DataGridView g1)
        {
            int rowindex = g1.CurrentCell.RowIndex;
-           string value = g1.Rows[rowindex].Cells[0].Value.ToString();
+           string value = g1.Rows[rowindex].Cells[6].Value.ToString();
            DateTime reference = DateTime.UtcNow;
            
            String db_command = "UPDATE [polihilton].[dbo].[Rezervations] SET end_date=Convert(datetime,'" + reference + "') Where rez_id='" + int.Parse(value) + "'";

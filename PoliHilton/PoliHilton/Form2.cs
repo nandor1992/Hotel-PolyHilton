@@ -38,7 +38,7 @@ namespace PoliHilton
             a1.populate_discount_drop_type(comboBox1);
             a1.dataset_populate("SELECT u_id AS Id, firstName AS 'First Name', lastName AS 'Last Name' FROM [polihilton].[dbo].[Users] WHERE u_type_id=3", dataGridView2);
             a1.populate_cleaning_assigned(dataGridView7);
-            //init_statistics();
+            init_statistics();
         }
 
         public void init_statistics()
@@ -326,18 +326,21 @@ namespace PoliHilton
         {
             a1.assign_cleaning(dataGridView2, dataGridView7);
             form_initialization_data();
+            a1.populate_assigned_rooms(dataGridView2, dataGridView8);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             a1.delete_assignment(dataGridView8);
             form_initialization_data();
+            a1.populate_assigned_rooms(dataGridView2, dataGridView8);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             a1.auto_assign_cleaning();
             form_initialization_data();
+            a1.populate_assigned_rooms(dataGridView2, dataGridView8);
         }
 
         private void tabPage5_Click(object sender, EventArgs e)
@@ -355,5 +358,49 @@ namespace PoliHilton
         {
 
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void form2_dataGridView_Manager_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.dataset_select(form2_dataGridView_Manager, textBox8, form2_Manager_LastName, form2_Manager_UserName, form2_Manager_Password);
+        }
+
+        private void form2_DataGridView_Customer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.dataset_select(form2_DataGridView_Customer, form2_Customer_FirstName, form2_Customer_LastName, form2_Customer_UserName, form2_Customer_Password);
+       
+        }
+
+        private void form2_DataGridView_Reception_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            a1.dataset_select(form2_DataGridView_Reception, form2_Reception_FirstName, form2_Reception_LastName, form2_Reception_UserName, form2_Reception_Password);
+       
+        }
+
+        private void form2_Prices_NewPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }

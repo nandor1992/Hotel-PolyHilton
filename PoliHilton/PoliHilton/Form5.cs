@@ -64,5 +64,10 @@ namespace PoliHilton
             MessageBox.Show("WPF Format");
         }
 
+        private void Form5_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
